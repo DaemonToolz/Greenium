@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>GreeniumCore</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>2f88f810-3128-4fd2-aa40-ebf9772276e9</ProjectGuid>
+  <FullPath>C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\GreeniumCore.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\.sonarqube\out\\GreeniumCore_9091\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\.sonarqube\out\\GreeniumCore_9091</Property>
+    <Property Name="sonar.stylecop.projectFilePath">C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\GreeniumCore.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

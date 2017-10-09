@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Greenium Sonar way" ToolsVersion="15.0">
+  <Include Path="..\sonarqube\grbrowser_mastercsharp.ruleset" Action="Default" />
+</RuleSet>

@@ -1,0 +1,17 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GreeniumPrototype"
+             xmlns:CircularProgress="clr-namespace:GreeniumPrototype.Models.CircularProgress" x:Class="GreeniumPrototype.AddonItem"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200">
+    <Grid Background="White">
+        <Image x:Name="Icon" Source="{Binding ImageSource}" HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="Title" Content="{Binding Path=AddonTitle}" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="RatingBar" Value="{Binding Path=Rating}" Maximum="10" HorizontalAlignment="Left" Height="10" Margin="60,45,0,0" VerticalAlignment="Top" Width="130"/>
+        <TextBlock x:Name="DescBox" Text="{Binding Path=Description}" HorizontalAlignment="Left" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="200" FontSize="10"/>
+
+    </Grid>
+</UserControl>

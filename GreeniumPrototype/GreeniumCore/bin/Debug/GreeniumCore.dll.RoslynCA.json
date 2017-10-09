@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilateur Microsoft (R) Visual C#",
+        "version": "1.3.1.0",
+        "fileVersion": "1.3.1.60616",
+        "semanticVersion": "1.3.1",
+        "language": "fr-FR"
+      },
+      "results": [
+        {
+          "ruleId": "CS0078",
+          "level": "warning",
+          "message": "Le suffixe 'l' risque d'être facilement confondu avec le chiffre '1' -- utilisez plutôt 'L'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumCore/InMail.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 27,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 4
+          }
+        },
+        {
+          "ruleId": "S818",
+          "level": "warning",
+          "message": "Upper case this literal suffix.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumCore/InMail.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 27,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS0078": {
+          "id": "CS0078",
+          "shortDescription": "Le suffixe 'l' risque d'être facilement confondu avec le chiffre '1'",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S818": {
+          "id": "S818",
+          "shortDescription": "Literal suffixes should be upper case",
+          "fullDescription": "Using upper case literal suffixes removes the potential ambiguity between \"1\" (digit 1) and \"l\" (letter el) for declaring literals.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S818",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": false
+          }
+        }
+      }
+    }
+  ]
+}

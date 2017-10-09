@@ -1,0 +1,70 @@
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Auth\authorizer.json
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.dll.config
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.pdb
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.pdb
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csprojResolveAssemblyReference.cache
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.pdb
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Gmail.v1.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Core.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Gmail.v1.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Core.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Net.Http.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Auth\authorizer.json
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCoreUnitTests.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Core.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Gmail.v1.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Net.Http.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Core.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Gmail.v1.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.pdb

@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilateur Microsoft (R) Visual C#",
+        "version": "1.3.1.0",
+        "fileVersion": "1.3.1.60616",
+        "semanticVersion": "1.3.1",
+        "language": "fr-FR"
+      },
+      "results": [
+        {
+          "ruleId": "CS1043",
+          "level": "error",
+          "message": "{ ou ; attendu",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 17,
+                  "endLine": 31,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 17,
+                  "endLine": 31,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 10,
+                  "endLine": 33,
+                  "endColumn": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1043",
+          "level": "error",
+          "message": "{ ou ; attendu",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 17,
+                  "endLine": 40,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 17,
+                  "endLine": 40,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 10,
+                  "endLine": 42,
+                  "endColumn": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1043",
+          "level": "error",
+          "message": "{ ou ; attendu",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 17,
+                  "endLine": 49,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 17,
+                  "endLine": 49,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 10,
+                  "endLine": 51,
+                  "endColumn": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1043",
+          "level": "error",
+          "message": "{ ou ; attendu",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 17,
+                  "endLine": 57,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 17,
+                  "endLine": 57,
+                  "endColumn": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 2,
+                  "endLine": 62,
+                  "endColumn": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1026",
+          "level": "error",
+          "message": ") attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 38,
+                  "endLine": 108,
+                  "endColumn": 45
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1002",
+          "level": "error",
+          "message": "; attendu",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 45,
+                  "endLine": 108,
+                  "endColumn": 46
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS1513",
+          "level": "error",
+          "message": "} attendue",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 45,
+                  "endLine": 108,
+                  "endColumn": 46
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rules": {
+        "CS1002": {
+          "id": "CS1002",
+          "defaultLevel": "error",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "CS1026": {
+          "id": "CS1026",
+          "defaultLevel": "error",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "CS1043": {
+          "id": "CS1043",
+          "defaultLevel": "error",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "CS1513": {
+          "id": "CS1513",
+          "defaultLevel": "error",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

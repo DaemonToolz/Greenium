@@ -1,0 +1,56 @@
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Auth\authorizer.json
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.pdb
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.CoreCompileInputs.cache
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.pdb
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csprojResolveAssemblyReference.cache
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Core.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Gmail.v1.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Net.Http.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Core.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Gmail.v1.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.ResolveComReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Auth\authorizer.json
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\GreeniumCore.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Core.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Gmail.v1.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Net.Http.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Core.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Gmail.v1.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.ResolveComReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.pdb

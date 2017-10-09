@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://localhost:9000/",
+  "Organization": null,
+  "ProjectKey": "grbrowser:Master",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AV7h1flXuNUIJdq_ulnP",
+      "ProfileTimestamp": "2017-10-03T12:44:10+02:00"
+    }
+  }
+}
