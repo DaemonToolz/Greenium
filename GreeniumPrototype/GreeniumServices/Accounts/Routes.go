@@ -21,9 +21,9 @@ var routes = Routes{
 		LoadAccount,
 	},
 	Route{
-		"UpdateAccount",
+		"CreateAccount",
 		"POST",
-		"/Account/",
-		ManageAccount,
+		"/Account/Create",
+		CreateAccount,
 	},
 }

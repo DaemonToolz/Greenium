@@ -6,6 +6,8 @@ import (
 	// Git repos here
 )
 
+var redisConnector = NewConnection("localhost:6379", "", 0)
+
 func main() {
 
 	router := NewRouter()
