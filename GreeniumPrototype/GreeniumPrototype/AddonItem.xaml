@@ -6,12 +6,12 @@
              xmlns:local="clr-namespace:GreeniumPrototype"
              xmlns:CircularProgress="clr-namespace:GreeniumPrototype.Models.CircularProgress" x:Class="GreeniumPrototype.AddonItem"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="200">
+             d:DesignHeight="100" d:DesignWidth="150">
     <Grid Background="White">
         <Image x:Name="Icon" Source="{Binding ImageSource}" HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="55"/>
         <Label x:Name="Title" Content="{Binding Path=AddonTitle}" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Top"/>
-        <ProgressBar x:Name="RatingBar" Value="{Binding Path=Rating}" Maximum="10" HorizontalAlignment="Left" Height="10" Margin="60,45,0,0" VerticalAlignment="Top" Width="130"/>
-        <TextBlock x:Name="DescBox" Text="{Binding Path=Description}" HorizontalAlignment="Left" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="200" FontSize="10"/>
+        <ProgressBar x:Name="RatingBar" Value="{Binding Path=Rating}" Maximum="10" HorizontalAlignment="Left" Height="10" Margin="60,45,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBlock x:Name="DescBox" Text="{Binding Path=Description}" HorizontalAlignment="Left" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="140" FontSize="10"/>
 
     </Grid>
 </UserControl>

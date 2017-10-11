@@ -7,7 +7,7 @@
         xmlns:circularProgress="clr-namespace:GreeniumPrototype.Models.CircularProgress"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Greenium" Height="600" Width="800">
+        Title="Greenium" Height="600" Width="808.2">
 
     <Window.CommandBindings>
         <CommandBinding Command="NavigationCommands.BrowseBack" CanExecute="BrowseBack_CanExecute" Executed="BrowseBack_Executed" />
@@ -23,6 +23,15 @@
         <Storyboard x:Key="sbHideRightMenu">
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="0,0,-200,0" AccelerationRatio=".9" Duration="0:0:1" />
         </Storyboard>
+
+        <Storyboard x:Key="sbWbReduce" >
+            <DoubleAnimation Storyboard.TargetProperty="Width"  From="722.0" To="522" DecelerationRatio="0.9" Duration="0:0:1" />
+        </Storyboard>
+        <Storyboard x:Key="sbWbEnlarge">
+
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="522" To="722" AccelerationRatio="0.9" Duration="0:0:1" />
+        </Storyboard>
+
 
         <circularProgress:DoubleToPctConverter x:Key="dblToPct"/>
         <Style x:Key="pbarCircularStyle" TargetType="{x:Type ProgressBar}">
@@ -126,14 +135,16 @@
                             </Grid>
                         </Grid>
                     </GroupBox>
+                    <TextBlock x:Name="UCID_Param" HorizontalAlignment="Left" Margin="118,235,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
+                    <Label x:Name="UCID_Name" Content="ID Ordinateur" HorizontalAlignment="Left" Margin="17,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Navigation" Margin="33,-2,-40.6,-0.6">
                 <Grid Background="#FFE5E5E5">
-                    <StackPanel Panel.ZIndex="99" Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
+                    <StackPanel Panel.ZIndex="5" Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
                         <Grid Background="ForestGreen" Margin="0,0,0,0.2" Width="54">
-                            <Button Name="btn" Width="48" Height="48" Margin="0,85,6,394" Foreground="Red" BorderBrush="{x:Null}">
+                            <Button Name="btn" Margin="0,85,1,389" Foreground="Red" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/configure.png"/>
                                 </Button.Background>
@@ -145,26 +156,31 @@
                                 </Button.Background>
 
                             </Button>
-                            <Button Name="btnRightMenuShow" Width="48" Height="48" Click="btnRightMenuShow_Click" Margin="0,0,6,479" BorderBrush="{x:Null}" >
+                            <Button Name="btnRightMenuShow" Click="btnRightMenuShow_Click" Margin="0,0,-1,472" BorderBrush="{x:Null}" >
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/show.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy" Width="48" Height="48" Margin="0,138,6,341" BorderBrush="{x:Null}">
+                            <Button x:Name="btn_Copy" Margin="0,138,1,336" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/history.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy1" Width="48" Height="48" Margin="0,191,6,288" BorderBrush="{x:Null}">
+                            <Button x:Name="btn_Copy1" Margin="0,191,0,282" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/comment.png"/>
                                 </Button.Background>
 
                             </Button>
 
+                            <Button x:Name="btnMails" Margin="0,245,0,228" BorderBrush="{x:Null}" Click="btnMails_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Assets/mails.png"/>
+                                </Button.Background>
 
+                            </Button>
                             <Button x:Name="ContributeBtn" Width="48" Height="48" Margin="0,469,6,10" BorderBrush="{x:Null}" Click="ContributeBtn_Click">
                                 <Button.Background>
 
@@ -173,6 +189,7 @@
 
 
                             </Button>
+
 
 
                         </Grid>
@@ -197,7 +214,7 @@
                         </ToolBar>
 
 
-                        <WebBrowser x:Name="Browser" Panel.ZIndex="1" HorizontalAlignment="Left" Height="522" Margin="0,2.8,0,-24.8" VerticalAlignment="Top" Width="317" RenderTransformOrigin="0.5,0.5">
+                        <WebBrowser x:Name="Browser" Panel.ZIndex="99" HorizontalAlignment="Left" Height="495" Margin="0,2.8,0,0" VerticalAlignment="Top" Width="722" RenderTransformOrigin="0.5,0.5">
                             <WebBrowser.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>

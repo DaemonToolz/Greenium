@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/navigate.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/navigationback.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/right.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/mails.png")]
 
 

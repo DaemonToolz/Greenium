@@ -38,4 +38,10 @@ var routes = Routes{
 		"/Account/SetEmails",
 		SetEmails,
 	},
+	Route{
+		"Login",
+		"POST",
+		"/Account/Login",
+		Login,
+	},
 }

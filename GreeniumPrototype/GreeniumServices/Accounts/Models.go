@@ -3,10 +3,11 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"log"
 	"strings"
 	"time"
 
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
 /*
@@ -37,10 +38,20 @@ type AccountModel struct {
 
 type AccountCreateRequest struct {
 	ID       string   `json:"ID"`
+	UID      string   `json:"UID"`
 	Name     string   `json:"Name"`
 	FullName string   `json:"FullName"`
 	Emails   []string `json:"Emails"`
 	XpGain   int      `json:"XpGain"`
+}
+
+type LoginRequest struct {
+	ID string `json:"ID"`
+}
+
+type LoginModel struct {
+	ID        string `json:"ID"`
+	AccountID string `json:"ID"`
 }
 
 func Find(id string, channel chan AccountModel) {
@@ -52,6 +63,17 @@ func Find(id string, channel chan AccountModel) {
 	json.Unmarshal([]byte(<-jchannel), &account)
 	channel <- account
 
+}
+
+func FindId(id string, channel chan AccountModel) {
+	jchannel := make(chan string)
+	defer close(jchannel)
+	go redisConnector.Get(id, jchannel)
+	login := LoginModel{}
+
+	json.Unmarshal([]byte(<-jchannel), &login)
+
+	Find(login.AccountID, channel)
 }
 
 func UpdateModel(account AccountModel, channel chan<- bool) {
@@ -127,7 +149,7 @@ func Remove(ID string, channel chan<- bool) {
 	go redisConnector.Remove(ID, channel)
 }
 
-func Create(name string, fullname string, emails []string, channel chan AccountModel) {
+func Create(name string, fullname string, emails []string, myUID string, channel chan AccountModel) {
 	bChannel := make(chan bool)
 	defer close(bChannel)
 	uid := uuid.NewV4().String()
@@ -145,8 +167,17 @@ func Create(name string, fullname string, emails []string, channel chan AccountM
 	go redisConnector.Set(uid, account, bChannel)
 	if <-bChannel == false {
 		channel <- AccountModel{ID: "ERR_500INTEX"}
+		log.Println("Could not register user")
 		return
 	}
+
+	logModel := LoginModel{
+		AccountID: uid,
+		ID:        myUID,
+	}
+
+	go redisConnector.Set(uid, logModel, bChannel)
+	<-bChannel
 	channel <- account
 }
 

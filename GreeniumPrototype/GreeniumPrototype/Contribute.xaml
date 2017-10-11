@@ -12,11 +12,7 @@
         <Label x:Name="label" Content="Contribute" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontWeight="Bold" Background="#FFDFDFDF"/>
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="4" Margin="0,26,0,0" VerticalAlignment="Top" Width="200" Background="#FF8C8C8C"/>
         <ListBox x:Name="Addons" HorizontalAlignment="Left" Height="189" Margin="0,31,0,0" VerticalAlignment="Top" Width="200">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <local:AddonItem/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+          
         </ListBox>
 
 

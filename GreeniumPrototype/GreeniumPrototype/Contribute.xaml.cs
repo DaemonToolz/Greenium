@@ -30,9 +30,9 @@ namespace GreeniumPrototype
                 addons.Add(new AddonItem()
                 {
                     Description = "No description",
-                    ImageSource = "~/Assets/refresh.png",
+                    ImageSource = "./Assets/refresh.png",
                     AddonTitle = $"Title {i}",
-                    Rating = 3
+                    Rating = (i % 10)
                 });
             }
 

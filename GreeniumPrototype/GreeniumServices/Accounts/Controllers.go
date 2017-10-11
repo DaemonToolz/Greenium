@@ -32,7 +32,7 @@ func NewConnection(Address string, Password string, DbIndex int) *RedisClientWra
 		panic(err)
 	}
 
-	client.Timer = time.NewTicker(30 * time.Second)
+	client.Timer = time.NewTicker(60 * time.Second)
 	client.Callback = make(chan struct{})
 	go func() {
 		for {

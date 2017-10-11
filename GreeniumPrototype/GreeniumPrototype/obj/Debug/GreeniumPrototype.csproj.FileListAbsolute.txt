@@ -18,3 +18,39 @@ C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumP
 C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumPrototype\obj\Debug\AddonItem.g.cs
 C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumPrototype\obj\Debug\AddonItem.baml
 C:\Users\macie\Documents\Visual Studio 2017\Projects\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumPrototype.exe.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumPrototype.exe
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumPrototype.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\AddonItem.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\Contribute.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\MainWindow.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\App.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype_MarkupCompile.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype_MarkupCompile.lref
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\AddonItem.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\Contribute.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\MainWindow.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.g.resources
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.Properties.Resources.resources
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csproj.GenerateResource.Cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.exe
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\Emails..g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\Emails..baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Auth\authorizer.json
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Auth.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Gmail.v1.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Core.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Newtonsoft.Json.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Auth.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Gmail.v1.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Core.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Newtonsoft.Json.xml
