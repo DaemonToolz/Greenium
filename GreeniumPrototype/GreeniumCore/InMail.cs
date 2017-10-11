@@ -20,7 +20,6 @@ namespace GreeniumCore{
         {
             var application = new Application();
 
-           
             Microsoft.Office.Interop.Outlook.NameSpace outlook = application.GetNamespace("MAPI");
 
             var defaultFolder = outlook.GetDefaultFolder(OlDefaultFolders.olFolderInbox);

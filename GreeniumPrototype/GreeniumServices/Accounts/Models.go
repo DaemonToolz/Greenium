@@ -1,19 +1,46 @@
 package main
 
-import "encoding/json"
-import "github.com/satori/go.uuid"
+import (
+	"bytes"
+	"encoding/json"
+	"strings"
+	"time"
+
+	"github.com/satori/go.uuid"
+)
+
+/*
+	--------------- CONSTANTS
+*/
+
+var ValidMailProvider = [...]string{
+	"outlook.com",
+	"outlook.fr",
+	"hotmail.fr",
+	"hotmail.com",
+	"gmail.com",
+}
+
+/*
+	--------------- MODELS
+*/
 
 type AccountModel struct {
-	ID       string `json:"ID"`
-	Name     string `json:"Name"`
-	FullName string `json:"FullName"`
-	XP       int    `json:"XP"`
-	Level    int    `json:"Level"`
+	ID       string    `json:"ID"`
+	Name     string    `json:"Name"`
+	FullName string    `json:"FullName"`
+	XP       int       `json:"XP"`
+	Level    int       `json:"Level"`
+	Creation time.Time `json:"Creation"`
+	Emails   []string  `json:"Emails"`
 }
 
 type AccountCreateRequest struct {
-	Name     string `json:"Name"`
-	FullName string `json:"FullName"`
+	ID       string   `json:"ID"`
+	Name     string   `json:"Name"`
+	FullName string   `json:"FullName"`
+	Emails   []string `json:"Emails"`
+	XpGain   int      `json:"XpGain"`
 }
 
 func Find(id string, channel chan AccountModel) {
@@ -27,9 +54,72 @@ func Find(id string, channel chan AccountModel) {
 
 }
 
-func Update(jsonAccount string, channel chan<- bool) {
-	account := AccountModel{}
-	json.Unmarshal([]byte(jsonAccount), &account)
+func UpdateModel(account AccountModel, channel chan<- bool) {
+	go redisConnector.Set(account.ID, account, channel)
+}
+
+func AddXP(ID string, xp int, channel chan<- bool) {
+	aChannel := make(chan AccountModel)
+	defer close(aChannel)
+	go Find(ID, aChannel)
+
+	account := <-aChannel
+
+	userXp := (account.XP + xp)
+	userLv := account.Level
+	LevelXp := (float64(userLv) * (0.25*float64(userLv) + 1.0)) * 500.0
+
+	if float64(userXp) >= LevelXp {
+		userXp = userXp - int(LevelXp)
+		userLv++
+		account.Level = userLv
+	}
+
+	account.XP = userXp
+
+	go redisConnector.Set(account.ID, account, channel)
+}
+
+func Private_ValidateEmails(emails []string) []string {
+
+	var buffer bytes.Buffer
+
+	valid := make([]string, 0)
+
+	for _, email := range emails {
+		contained := false
+		for _, provider := range ValidMailProvider {
+
+			buffer.WriteString("@")
+			buffer.WriteString(provider)
+
+			contained = strings.Contains(email, buffer.String())
+
+			buffer.Reset()
+			if contained {
+				break
+			}
+		}
+
+		if contained {
+			valid = append(valid, email)
+		}
+	}
+
+	return valid
+}
+
+func UpdateEmails(ID string, emails []string, channel chan<- bool) {
+	aChannel := make(chan AccountModel)
+
+	defer close(aChannel)
+	go Find(ID, aChannel)
+
+	valid := Private_ValidateEmails(emails)
+
+	account := <-aChannel
+	account.Emails = valid
+
 	go redisConnector.Set(account.ID, account, channel)
 }
 
@@ -37,16 +127,19 @@ func Remove(ID string, channel chan<- bool) {
 	go redisConnector.Remove(ID, channel)
 }
 
-func Create(name string, fullname string, channel chan AccountModel) {
+func Create(name string, fullname string, emails []string, channel chan AccountModel) {
 	bChannel := make(chan bool)
 	defer close(bChannel)
 	uid := uuid.NewV4().String()
+
 	account := AccountModel{
 		Name:     name,
 		FullName: fullname,
 		ID:       uid,
 		XP:       0,
 		Level:    0,
+		Emails:   Private_ValidateEmails(emails),
+		Creation: time.Now(),
 	}
 
 	go redisConnector.Set(uid, account, bChannel)
@@ -59,4 +152,5 @@ func Create(name string, fullname string, channel chan AccountModel) {
 
 func Reset() {
 	redisConnector.Flush()
+	redisConnector.Save()
 }

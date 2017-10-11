@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/go-redis/redis"
@@ -38,6 +39,7 @@ func NewConnection(Address string, Password string, DbIndex int) *RedisClientWra
 
 			select {
 			case <-client.Timer.C:
+				log.Println("Saving Redis database")
 				client.Save()
 			case <-client.Callback:
 				client.Save()
@@ -56,11 +58,22 @@ func CloseConnection(connection *RedisClientWrapper) {
 	connection.RedisClient.Close()
 }
 
+func (client *RedisClientWrapper) Exists(key string, channel chan<- bool) {
+	results, _ := client.RedisClient.Exists([]string{key}...).Result()
+	channel <- (results > 0)
+}
+
 func (client *RedisClientWrapper) Set(key string, value interface{}, channel chan<- bool) {
 	jValue, err := json.Marshal(value)
 	if err != nil {
 		fmt.Println(err)
 		return
+	}
+
+	transport := []string{key}
+	results, _ := client.RedisClient.Exists(transport...).Result()
+	if results > 0 {
+		client.RedisClient.Del(transport...).Result()
 	}
 
 	result, err := client.RedisClient.SetNX(key, jValue, 0).Result()
@@ -103,5 +116,6 @@ func (client *RedisClientWrapper) Save() {
 }
 
 func (client *RedisClientWrapper) Flush() {
-	client.RedisClient.FlushDB()
+	client.RedisClient.FlushAll()
+	client.Save()
 }

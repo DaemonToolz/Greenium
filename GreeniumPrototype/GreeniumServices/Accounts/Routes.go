@@ -17,7 +17,7 @@ var routes = Routes{
 	Route{
 		"LoadAccount",
 		"GET",
-		"/Account/{AccountId}",
+		"/Account/{ID}",
 		LoadAccount,
 	},
 	Route{
@@ -25,5 +25,17 @@ var routes = Routes{
 		"POST",
 		"/Account/Create",
 		CreateAccount,
+	},
+	Route{
+		"GainXP",
+		"POST",
+		"/Account/GainXP",
+		GainXP,
+	},
+	Route{
+		"SetEmails",
+		"POST",
+		"/Account/SetEmails",
+		SetEmails,
 	},
 }

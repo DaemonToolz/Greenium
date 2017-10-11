@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 
@@ -25,7 +26,9 @@ func LoadAccount(w http.ResponseWriter, r *http.Request) {
 	*/
 
 	vars := mux.Vars(r)
-	AccountID := vars["AccountID"]
+	AccountID := vars["ID"]
+
+	log.Printf("Accessing account %s ", AccountID)
 
 	aChannel := make(chan AccountModel)
 	defer close(aChannel)
@@ -53,8 +56,59 @@ func CreateAccount(w http.ResponseWriter, r *http.Request) {
 	}
 
 	cChannel := make(chan AccountModel)
+	defer close(cChannel)
 
-	go Create(post.Name, post.FullName, cChannel)
+	go Create(post.Name, post.FullName, post.Emails, cChannel)
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(<-cChannel); err != nil {
+		panic(err)
+	}
+
+}
+
+func GainXP(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	decoder := json.NewDecoder(r.Body)
+
+	var post AccountCreateRequest
+	err := decoder.Decode(&post)
+
+	if err != nil {
+		panic(err)
+	}
+
+	cChannel := make(chan bool)
+	defer close(cChannel)
+
+	go AddXP(post.ID, post.XpGain, cChannel)
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(<-cChannel); err != nil {
+		panic(err)
+	}
+
+}
+
+func SetEmails(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	decoder := json.NewDecoder(r.Body)
+
+	var post AccountCreateRequest
+	err := decoder.Decode(&post)
+
+	if err != nil {
+		panic(err)
+	}
+
+	cChannel := make(chan bool)
+	defer close(cChannel)
+
+	go UpdateEmails(post.ID, post.Emails, cChannel)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
