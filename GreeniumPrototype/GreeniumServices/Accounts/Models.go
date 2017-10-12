@@ -51,16 +51,22 @@ type LoginRequest struct {
 
 type LoginModel struct {
 	ID        string `json:"ID"`
-	AccountID string `json:"ID"`
+	AccountID string `json:"AccountID"`
 }
 
 func Find(id string, channel chan AccountModel) {
 	jchannel := make(chan string)
+
 	defer close(jchannel)
 	go redisConnector.Get(id, jchannel)
+
 	account := AccountModel{}
 
-	json.Unmarshal([]byte(<-jchannel), &account)
+	result := <-jchannel
+	log.Printf("Found data, %s", result)
+
+	json.Unmarshal([]byte(result), &account)
+
 	channel <- account
 
 }
@@ -167,7 +173,7 @@ func Create(name string, fullname string, emails []string, myUID string, channel
 	go redisConnector.Set(uid, account, bChannel)
 	if <-bChannel == false {
 		channel <- AccountModel{ID: "ERR_500INTEX"}
-		log.Println("Could not register user")
+		log.Println("CREATE: Could not register user")
 		return
 	}
 
@@ -176,8 +182,11 @@ func Create(name string, fullname string, emails []string, myUID string, channel
 		ID:        myUID,
 	}
 
-	go redisConnector.Set(uid, logModel, bChannel)
-	<-bChannel
+	log.Printf("CREATE: %s | %s", myUID, logModel)
+
+	go redisConnector.Set(myUID, logModel, bChannel)
+
+	log.Println("CREATE: ", <-bChannel)
 	channel <- account
 }
 

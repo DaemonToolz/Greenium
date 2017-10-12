@@ -35,7 +35,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Deb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.g.resources
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.Properties.Resources.resources
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csproj.GenerateResource.Cache
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csproj.CoreCompileInputs.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.exe
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\Emails..g.cs
@@ -48,7 +47,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Deb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Core.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Newtonsoft.Json.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.pdb
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.dll.config
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Auth.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Gmail.v1.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.xml

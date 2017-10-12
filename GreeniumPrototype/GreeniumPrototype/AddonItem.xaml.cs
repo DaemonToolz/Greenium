@@ -28,8 +28,8 @@ namespace GreeniumPrototype
 
         public String AddonTitle
         {
-            get => GetValue(TitleProperty)?.ToString();
-            set => SetValue(TitleProperty, value);
+            get { return GetValue(TitleProperty)?.ToString(); }
+            set { SetValue(TitleProperty, value); }
         }
 
 
@@ -37,26 +37,30 @@ namespace GreeniumPrototype
 
         public String ImageSource
         {
-            get => GetValue(ImageSourceProperty)?.ToString();
-            set => SetValue(ImageSourceProperty, value);
+            get { return GetValue(ImageSourceProperty)?.ToString(); }
+            set { SetValue(ImageSourceProperty, value); }
         }
+    
 
 
         public static readonly DependencyProperty RatingProperty = DependencyProperty.Register("Rating", typeof(Int32), typeof(AddonItem), new FrameworkPropertyMetadata(0));
 
-        public Int32 Rating
-        {
-            get => int.Parse(GetValue(RatingProperty)?.ToString());
-            set => SetValue(RatingProperty, value);
+        public Int32 Rating{
+            get{
+                return int.Parse(GetValue(RatingProperty)?.ToString());
+            }
+
+            set{
+                SetValue(RatingProperty, value);
+            }
         }
 
         public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register("Description", typeof(String), typeof(AddonItem), new FrameworkPropertyMetadata(string.Empty));
 
         public String Description
         {
-            get => GetValue(DescriptionProperty)?.ToString();
-            set => SetValue(DescriptionProperty, value);
+            get { return GetValue(DescriptionProperty)?.ToString(); }
+            set { SetValue(DescriptionProperty, value); }
         }
-
     }
 }

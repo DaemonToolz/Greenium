@@ -66,20 +66,23 @@ func (client *RedisClientWrapper) Exists(key string, channel chan<- bool) {
 func (client *RedisClientWrapper) Set(key string, value interface{}, channel chan<- bool) {
 	jValue, err := json.Marshal(value)
 	if err != nil {
-		fmt.Println(err)
+		log.Println("SET: ", err)
+		channel <- false
 		return
 	}
 
 	transport := []string{key}
 	results, _ := client.RedisClient.Exists(transport...).Result()
+	log.Println("SET | EXISTS: ", results)
 	if results > 0 {
 		client.RedisClient.Del(transport...).Result()
+
 	}
 
 	result, err := client.RedisClient.SetNX(key, jValue, 0).Result()
+	log.Println("SET: ", result)
 	if err != nil {
-		fmt.Printf("Error %s occured", err.Error())
-		fmt.Println("\n")
+		log.Printf("SET: Error %s occured", err.Error())
 		channel <- result
 		return
 	}
@@ -87,7 +90,7 @@ func (client *RedisClientWrapper) Set(key string, value interface{}, channel cha
 }
 
 func (client *RedisClientWrapper) Get(key string, channel chan<- string) {
-
+	log.Println(key)
 	value, err := client.RedisClient.Get(key).Result()
 
 	if err == redis.Nil {
@@ -95,6 +98,8 @@ func (client *RedisClientWrapper) Get(key string, channel chan<- string) {
 	} else if err != nil {
 		panic(err)
 	}
+
+	log.Println(err)
 
 	channel <- value
 }

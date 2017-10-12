@@ -28,6 +28,13 @@ namespace GreeniumPrototype.Models.CircularProgress
                 new FrameworkPropertyMetadata(10.0));
         }
 
+        private double _Range = -1;
+        public double Range
+        {
+            get { return _Range > 0 ? _Range : 100; }
+            set { _Range = value; }
+        }
+
         // Value (0-100)
         public double Value
         {
@@ -49,7 +56,7 @@ namespace GreeniumPrototype.Models.CircularProgress
         private static object CoerceValue(DependencyObject depObj, object baseVal)
         {
             double val = (double)baseVal;
-            val = Math.Min(val, 99.999);
+           
             val = Math.Max(val, 0.0);
             return val;
         }
@@ -59,7 +66,9 @@ namespace GreeniumPrototype.Models.CircularProgress
             get
             {
                 double startAngle = 90.0;
-                double endAngle = 90.0 - ((Value / 100.0) * 360.0);
+                var percentage = ((Value * 100) / Range) / 100;
+
+                double endAngle = 90.0 - ((percentage) * 360.0);
 
                 double maxWidth = Math.Max(0.0, RenderSize.Width - StrokeThickness);
                 double maxHeight = Math.Max(0.0, RenderSize.Height - StrokeThickness);
@@ -87,7 +96,7 @@ namespace GreeniumPrototype.Models.CircularProgress
                         SweepDirection.Clockwise,
                         true,    // isStroked
                         false);
-                    //    ctx.LineTo(new Point((RenderSize.Width / 2.0), (RenderSize.Height / 2.0)), true, true);
+                    
                 }
 
                 return geom;

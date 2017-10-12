@@ -2,5 +2,5 @@ projectKey=Greenium
 serverUrl=http://localhost:9000
 serverVersion=6.5.0.27846
 dashboardUrl=http://localhost:9000/dashboard/index/Greenium
-ceTaskId=AV7n7K3CxEwlyI6HiZyc
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AV7n7K3CxEwlyI6HiZyc
+ceTaskId=AV8Q6JDXg47H-BVZCkBm
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV8Q6JDXg47H-BVZCkBm

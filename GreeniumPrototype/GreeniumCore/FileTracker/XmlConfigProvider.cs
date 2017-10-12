@@ -61,7 +61,7 @@ namespace GreeniumCore.FileTracker.FileTracker
 
         public IEnumerable<string> ReadIdentifiers()
         {
-            return ReadNode("identifiers").Any() ? ReadNode("identifiers").Reverse().Select(comment => $"{comment.Attributes.Single(attr => attr.Name.ToString() == "id").Value};{comment.Children[0].Value.ToString()}") : new List<string>();
+            return ReadNode("identifiers").Any() ? ReadNode("identifiers").Reverse().Select(comment => $"{comment.Children[0].Value.ToString()};{comment.Children[1].Value.ToString()}") : new List<string>();
         }
 
     }

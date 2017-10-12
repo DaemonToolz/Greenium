@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>GreeniumCoreUnitTests</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>8464651a-61b5-44d8-a031-4dc80c3c29d9</ProjectGuid>
+  <FullPath>C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\GreeniumCoreUnitTests.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\.sonarqube\out\\GreeniumCoreUnitTests_6763\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\GreeniumCoreUnitTests.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

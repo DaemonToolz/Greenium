@@ -6,8 +6,8 @@ using System.Web;
 namespace GreeniumCore.FileTracker.FileTracker
 {
     public class XmlConcurrentList<T>{
-        private List<T> _list = new List<T>();
-        private object _sync = new object();
+        private readonly  List<T> _list = new List<T>();
+        private readonly object _sync = new object();
 
         public void Add(T value) {
             lock (_sync)

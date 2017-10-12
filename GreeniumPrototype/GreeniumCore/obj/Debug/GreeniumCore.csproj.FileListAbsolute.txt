@@ -50,6 +50,5 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Ne
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csprojResolveAssemblyReference.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.ResolveComReference.cache
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.CoreCompileInputs.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.pdb

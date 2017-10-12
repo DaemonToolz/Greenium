@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,6 +17,9 @@ using System.Windows.Shapes;
 using GreeniumCore.API;
 using GreeniumCore.FileTracker.FileTracker;
 using GreeniumCore.Security;
+using GreeniumPrototype.Models;
+using GreeniumPrototype.Models.CircularProgress;
+using Newtonsoft.Json.Linq;
 
 namespace GreeniumPrototype
 {
@@ -27,6 +31,30 @@ namespace GreeniumPrototype
         private static readonly Dictionary<string, Page> Pages = new Dictionary<string, Page>();
         private static readonly XmlConfigProvider xcp = new XmlConfigProvider(System.AppDomain.CurrentDomain.BaseDirectory, "conf");
         private static String UUID;
+        private static LogModel MySession;
+
+        //private Storyboard AccountStoryBoard { get; set; }
+
+        private static async Task RunPeriodicAsync(Action onTick,
+            TimeSpan dueTime,
+            TimeSpan interval,
+            CancellationToken token)
+        {
+            // Initial wait time before we begin the periodic loop.
+            if (dueTime > TimeSpan.Zero)
+                await Task.Delay(dueTime, token);
+
+            // Repeat this loop until cancelled.
+            while (!token.IsCancellationRequested)
+            {
+                // Call our onTick function.
+                onTick?.Invoke();
+
+                // Wait to repeat again.
+                if (interval > TimeSpan.Zero)
+                    await Task.Delay(interval, token);
+            }
+        }
 
         static MainWindow()
         {
@@ -35,15 +63,17 @@ namespace GreeniumPrototype
   
         }
 
-        public MainWindow() {
-            InitializeComponent();
-            UCID_Param.Text = UniqueSerial.GetVolumeSerial();
 
-            AutoRegister();
-    
-           // xcp.OpenFile();
-            //xcp.AddNode("54sq1sqf65f1sd6f51", "");
-          
+
+        public MainWindow() {
+            
+            InitializeComponent();
+            AccountGrid.DataContext = MySession;
+            RunPeriodicAsync(()=> { AutoRegister(); }, new TimeSpan(0,0,1), new TimeSpan(0,0,30),CancellationToken.None);
+           
+            
+            //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
+
         }
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
@@ -122,8 +152,8 @@ namespace GreeniumPrototype
 
         private void Browser_Navigated(object sender, NavigatingCancelEventArgs e)
         {
-            if (sender is WebBrowser browser)
-                txtUrl.Text = browser.Source.ToString();
+            var browser = (WebBrowser) sender;
+            txtUrl.Text = browser.Source.ToString();
 
         }
 
@@ -141,18 +171,36 @@ namespace GreeniumPrototype
             SideMenuFrame.Navigate(Pages["Emails"]);
         }
 
-        private void Login(){
-            
+        private void Login()
+        {
+            throw new NotImplementedException();
         }
 
-        private async void AutoRegister(){
+
+        private void AnimateProgress()
+        {
+            throw new NotImplementedException();
+        }
+
+        private async Task AutoRegister()
+        {
+            int from = 0, to = 0;
+            if (MySession == null)
+            {
+                MySession = new LogModel();
+            }
+            else
+            {
+                from = MySession.XP;
+            }
+
             if (!xcp.FileExists())
             {
                 try
                 {
                     var User = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
                     var TruncUser = User.Substring(User.LastIndexOf(@"\"));
-                    await RequestHandler.Call("http://localhost:10840/Account/Create", "POST", null, null,
+                    var result = JObject.Parse(await RequestHandler.Call("http://localhost:10840/Account/Create", "POST", null, null,
                         new
                         {
                             Name = User,
@@ -160,7 +208,19 @@ namespace GreeniumPrototype
                             Emails = new string[] {"nom.prenom@gmail.com"},
                             UID = (UUID = Guid.NewGuid().ToString()),
                         }
-                    );
+                    ));
+
+
+                    MySession.ID = result["ID"].ToString();
+                    MySession.Name = result["Name"].ToString();
+                    MySession.FullName = result["FullName"].ToString();
+                    MySession.XP = int.Parse(result["XP"].ToString());
+                    MySession.Level = int.Parse(result["Level"].ToString());
+                    MySession.Creation = result["Creation"].ToString();
+
+                    xcp.OpenFile();
+                    xcp.AddNode(UUID, MySession.ID);
+                    xcp.SaveFile();
                 }
                 catch (Exception e)
                 {
@@ -171,18 +231,45 @@ namespace GreeniumPrototype
             {
                 try
                 {
+                    xcp.OpenFile();
                     var Config = xcp.ReadIdentifiers().First();
 
                     var ConfigArray = Config.Split(';');
                     UUID = ConfigArray[0];
 
-                    await RequestHandler.Call($"http://localhost:10840/Account/{ConfigArray[1]}", "GET", null, null, null);
+                    var result = JObject.Parse(await RequestHandler.Call($"http://localhost:10840/Account/{ConfigArray[1]}", "GET", null, null, null));
+
+                    MySession.ID = result["ID"].ToString();
+                    MySession.Name = result["Name"].ToString();
+                    MySession.FullName = result["FullName"].ToString();
+                    MySession.XP = int.Parse(result["XP"].ToString());
+                    MySession.Level = int.Parse(result["Level"].ToString());
+                    MySession.Creation = result["Creation"].ToString();
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
                 }
             }
+
+            to = MySession.XP;
+            if (from == 0)
+                from = to;
+
+            Application.Current.Dispatcher.Invoke(()=>{
+                
+                UCID_Param.Text = UUID;
+                UCID_Param2.Text = MySession.ID;
+                var total = (((MySession.Level)) * (0.25 * (MySession.Level) + 1.0)) * 500.0;
+                TotalXP.Text = $"{total}";
+                CurrentXPTB.Text = $"{MySession.XP}";
+                LevelLabel.Text = $"{MySession.Level}";
+                AccountProgress.Value = MySession.XP;
+                AccountProgress.Range = total;
+ 
+            });
+
         }
+
     }
 }

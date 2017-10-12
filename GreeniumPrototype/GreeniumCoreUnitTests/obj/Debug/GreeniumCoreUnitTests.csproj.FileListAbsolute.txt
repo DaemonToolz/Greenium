@@ -56,7 +56,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.Primitives.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\System.Security.Cryptography.X509Certificates.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.pdb
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\GreeniumCore.dll.config
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Auth.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Google.Apis.Core.xml
@@ -65,6 +64,8 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csprojResolveAssemblyReference.cache
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csproj.CoreCompileInputs.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll

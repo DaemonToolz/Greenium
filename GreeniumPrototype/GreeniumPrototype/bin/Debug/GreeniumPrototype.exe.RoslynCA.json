@@ -12,327 +12,429 @@
       },
       "results": [
         {
-          "ruleId": "CS1043",
-          "level": "error",
-          "message": "{ ou ; attendu",
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel. Envisagez d'appliquer l'opérateur 'await' au résultat de l'appel.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
                 "region": {
-                  "startLine": 31,
-                  "startColumn": 17,
-                  "endLine": 31,
-                  "endColumn": 19
+                  "startLine": 72,
+                  "startColumn": 37,
+                  "endLine": 72,
+                  "endColumn": 51
                 }
               }
             }
-          ]
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
         },
         {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel. Envisagez d'appliquer l'opérateur 'await' au résultat de l'appel.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
                 "region": {
-                  "startLine": 31,
-                  "startColumn": 17,
-                  "endLine": 31,
-                  "endColumn": 19
+                  "startLine": 72,
+                  "startColumn": 13,
+                  "endLine": 72,
+                  "endColumn": 121
                 }
               }
             }
-          ]
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
         },
         {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Contribute.xaml.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Emails..xaml.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 9,
+                  "endLine": 36,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 9 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Models/CircularProgress/CircularProgress.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 18,
+                  "endLine": 12,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3241",
+          "level": "warning",
+          "message": "Change return type to 'void'; not a single caller uses the returned value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 30,
+                  "endLine": 38,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3241",
+          "level": "warning",
+          "message": "Change return type to 'void'; not a single caller uses the returned value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 23,
+                  "endLine": 185,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'Login'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 9,
+                  "endLine": 177,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'AnimateProgress'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 9,
+                  "endLine": 183,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 9 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 26,
+                  "endLine": 29,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1121",
+          "level": "warning",
+          "message": "Extract the assignment of 'UUID' from this expression.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 209,
+                  "startColumn": 41,
+                  "endLine": 209,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 17,
+                  "endLine": 190,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 33,
+                  "endLine": 34,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 209,
+                  "startColumn": 36,
+                  "endLine": 209,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
                 "region": {
                   "startLine": 33,
-                  "startColumn": 10,
+                  "startColumn": 31,
                   "endLine": 33,
-                  "endColumn": 10
+                  "endColumn": 35
                 }
               }
             }
-          ]
-        },
-        {
-          "ruleId": "CS1043",
-          "level": "error",
-          "message": "{ ou ; attendu",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 40,
-                  "startColumn": 17,
-                  "endLine": 40,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 40,
-                  "startColumn": 17,
-                  "endLine": 40,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 10,
-                  "endLine": 42,
-                  "endColumn": 10
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1043",
-          "level": "error",
-          "message": "{ ou ; attendu",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 49,
-                  "startColumn": 17,
-                  "endLine": 49,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 49,
-                  "startColumn": 17,
-                  "endLine": 49,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 51,
-                  "startColumn": 10,
-                  "endLine": 51,
-                  "endColumn": 10
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1043",
-          "level": "error",
-          "message": "{ ou ; attendu",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 57,
-                  "startColumn": 17,
-                  "endLine": 57,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 57,
-                  "startColumn": 17,
-                  "endLine": 57,
-                  "endColumn": 19
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
-                "region": {
-                  "startLine": 62,
-                  "startColumn": 2,
-                  "endLine": 62,
-                  "endColumn": 2
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1026",
-          "level": "error",
-          "message": ") attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
-                "region": {
-                  "startLine": 108,
-                  "startColumn": 38,
-                  "endLine": 108,
-                  "endColumn": 45
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1002",
-          "level": "error",
-          "message": "; attendu",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
-                "region": {
-                  "startLine": 108,
-                  "startColumn": 45,
-                  "endLine": 108,
-                  "endColumn": 46
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS1513",
-          "level": "error",
-          "message": "} attendue",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
-                "region": {
-                  "startLine": 108,
-                  "startColumn": 45,
-                  "endLine": 108,
-                  "endColumn": 46
-                }
-              }
-            }
-          ]
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
         }
       ],
       "rules": {
-        "CS1002": {
-          "id": "CS1002",
-          "defaultLevel": "error",
+        "CS4014": {
+          "id": "CS4014",
+          "shortDescription": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel",
+          "fullDescription": "La méthode actuelle appelle une méthode async qui retourne Task ou Task<TResult>. Par ailleurs, elle n'applique pas l'opérateur await au résultat. L'appel de la méthode async démarre une tâche asynchrone. Cependant, comme aucun opérateur await n'est appliqué, le programme continue sans attendre la fin de la tâche. Généralement, ce comportement n'est pas celui que vous attendez. La plupart du temps, les autres aspects de la méthode d'appel dépendent du résultat de l'appel ou, au minimum, la méthode appelée doit s'achever avant le retour de la méthode contenant l'appel.\u000d\u000a\u000d\u000aUn problème de même importance est ce qui arrive aux exceptions levées dans la méthode async appelée. Une exception levée dans une méthode qui retourne Task ou Task<TResult> est stockée dans la tâche retournée. Si vous n'attendez pas la tâche ou la vérification explicite d'exceptions, l'exception est perdue. Si vous attendez la tâche, son exception est à nouveau levée.\u000d\u000a\u000d\u000aNous vous recommandons de toujours attendre l'appel.\u000d\u000a\u000d\u000aSupprimez l'avertissement seulement si vous êtes sûr de ne pas vouloir attendre la fin de l'appel asynchrone, et que la méthode appelée ne lèvera aucune exception. Dans ce cas, vous pouvez supprimer l'avertissement en affectant le résultat de la tâche de l'appel à une variable.",
+          "defaultLevel": "warning",
           "properties": {
             "category": "Compiler",
             "isEnabledByDefault": true,
             "tags": [
               "Compiler",
-              "Telemetry",
-              "NotConfigurable"
+              "Telemetry"
             ]
           }
         },
-        "CS1026": {
-          "id": "CS1026",
-          "defaultLevel": "error",
+        "S110": {
+          "id": "S110",
+          "shortDescription": "Inheritance tree of classes should not be too deep",
+          "fullDescription": "Inheritance is certainly one of the most valuable concepts in object-oriented programming. It's a way to compartmentalize and reuse code by creating collections of attributes and behaviors called classes which can be based on previously created classes. But abusing this concept by creating a deep inheritance tree can lead to very complex and unmaintainable source code. Most of the time a too deep inheritance tree is due to bad object oriented design which has led to systematically use 'inheritance' when for instance 'composition' would suit better.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S110",
           "properties": {
-            "category": "Compiler",
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1121": {
+          "id": "S1121",
+          "shortDescription": "Assignments should not be made from within sub-expressions",
+          "fullDescription": "Assignments within sub-expressions are hard to spot and therefore make the code less readable. Ideally, sub-expressions should not have side-effects.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1121",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "Private, or internal, types or members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1144",
+          "properties": {
+            "category": "Sonar Code Smell",
             "isEnabledByDefault": true,
             "tags": [
-              "Compiler",
-              "Telemetry",
-              "NotConfigurable"
+              "Unnecessary"
             ]
           }
         },
-        "CS1043": {
-          "id": "CS1043",
-          "defaultLevel": "error",
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be \"commented out\"",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S125",
           "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry",
-              "NotConfigurable"
-            ]
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
           }
         },
-        "CS1513": {
-          "id": "CS1513",
-          "defaultLevel": "error",
+        "S2696": {
+          "id": "S2696",
+          "shortDescription": "Instance members should not write to \"static\" fields",
+          "fullDescription": "Correctly updating a static field from a non-static method is tricky to get right and could easily lead to bugs if there are multiple class instances and/or multiple threads in play. ",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S2696",
           "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry",
-              "NotConfigurable"
-            ]
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S3241": {
+          "id": "S3241",
+          "shortDescription": "Methods should not return values that are never used",
+          "fullDescription": "Private methods are clearly intended for use only within their own scope. When such methods return values that are never used by any of their callers, then clearly there is no need to actually make the return, and it should be removed in the interests of efficiency and clarity. ",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S3241",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
           }
         }
       }

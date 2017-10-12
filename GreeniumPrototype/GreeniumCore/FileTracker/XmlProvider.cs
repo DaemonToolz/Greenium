@@ -21,7 +21,6 @@ namespace GreeniumCore.FileTracker.FileTracker
         // REFERENCE https://lennilobel.wordpress.com/2009/09/02/streaming-into-linq-to-xml-using-c-custom-iterators-and-xmlreader/
         // Designed namings: _ft{file}.xml
         #region Reader
-        //protected XmlReader Reader { get; set; }
         public String SourcePath { get; protected set; }
         protected String FileParser { get; set; }
         protected String TrackedFile { get; set; }
@@ -72,7 +71,7 @@ namespace GreeniumCore.FileTracker.FileTracker
         {
             CloseFile(); // Force disposal here
 
-            if (trackedFile != null) //Reader = XmlReader.Create(SourcePath + String.Format(FileParser, trackedFile));
+            if (trackedFile != null) 
                 TrackedFile = trackedFile;
 
             if (!File.Exists(AbsoluteFile))
@@ -81,21 +80,10 @@ namespace GreeniumCore.FileTracker.FileTracker
                 AddNode(null);
                 return OpenedDocument;
             }
-            return OpenedDocument = XDocument.Load(AbsoluteFile);//OpenedDocument = XDocument.Load(Reader);    
+            return OpenedDocument = XDocument.Load(AbsoluteFile);
         }
-        /*
-        public XmlReader OpenFileNoMemory(String trackedFile)
-        {
-            CloseFile(); // Force disposal here
-          
-            return Reader = XmlReader.Create(SourcePath + String.Format(FileParser, trackedFile));
-        }
-        */
 
         public virtual void CloseFile() {
-            //Reader?.Close();
-            //Reader?.Dispose();
-
             OpenedDocument = Rollback = null;
         }
 
@@ -261,9 +249,8 @@ namespace GreeniumCore.FileTracker.FileTracker
 
         public virtual void CheckTag(String tag)
         {
-            if (!CachedTags.Contains(tag))
-                if (!KnownNodes.Values.Any(tagArr => tagArr.Contains(tag)))
-                    throw new UnsupportedTagException();
+            if (!CachedTags.Contains(tag) && !KnownNodes.Values.Any(tagArr => tagArr.Contains(tag)))
+                throw new UnsupportedTagException();
 
             CachedTags.Add(tag);
 
@@ -291,26 +278,15 @@ namespace GreeniumCore.FileTracker.FileTracker
                     FileParser = null;
                 }
 
-                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // TODO: set large fields to null.
 
                 disposedValue = true;
             }
         }
 
-        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        // ~XmlProvider() {
-        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-        //   Dispose(false);
-        // }
-
-        // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(true);
-            // TODO: uncomment the following line if the finalizer is overridden above.
-            // GC.SuppressFinalize(this);
+
         }
         #endregion
 
@@ -322,7 +298,7 @@ namespace GreeniumCore.FileTracker.FileTracker
             return DictionaryEqual(first, second, null);
         }
 
-        protected static bool DictionaryEqual<TKey, TValue>(
+        private static bool DictionaryEqual<TKey, TValue>(
             IDictionary<TKey, TValue> first, IDictionary<TKey, TValue> second,
             IEqualityComparer<TValue> valueComparer)
         {

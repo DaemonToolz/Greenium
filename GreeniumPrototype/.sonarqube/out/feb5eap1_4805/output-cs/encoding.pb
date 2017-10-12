@@ -1,0 +1,10 @@
+c
+ZC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\AddonItem.xaml.csutf-8]
+TC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\App.xaml.csutf-8d
+[C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Contribute.xaml.csutf-8a
+XC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Emails..xaml.csutf-8d
+[C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\MainWindow.xaml.csutf-8}
+tC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Models\CircularProgress\CircularProgress.csutf-8Å
+xC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Models\CircularProgress\DoubleToPctConverter.csutf-8d
+[C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Models\LogModel.csutf-8l
+cC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\Properties\AssemblyInfo.csutf-8

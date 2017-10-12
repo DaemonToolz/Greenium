@@ -1,0 +1,11 @@
+b
+YC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\API\RequestHandler.csutf-8b
+YC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\API\SessionWrapper.csutf-8}
+tC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\FileTracker\Exception\UnsupportedTagException.csutf-8m
+dC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\FileTracker\XmlConfigProvider.csutf-8m
+dC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\FileTracker\XmlConcurrentList.csutf-8n
+eC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\FileTracker\XmlElementProvider.csutf-8g
+^C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\FileTracker\XmlProvider.csutf-8V
+MC:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\InMail.csutf-8g
+^C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\Properties\AssemblyInfo.csutf-8e
+\C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\Security\UniqueSerial.csutf-8

@@ -17,7 +17,7 @@ namespace GreeniumCore.API
         public bool NotificationPooler { get; set; }
 
 
-        //private XmlCommentProvider CommentManager { get;set; }
+       
         public SessionWrapper()
         {
         }
@@ -27,8 +27,7 @@ namespace GreeniumCore.API
             ConnectionToken = Token;
             SavedUsername = Username;
 
-            //if (Autolog)
-            //    CurrentUser = WorkstationSession.LogIn(SavedUsername, ConnectionToken);
+
         }
 
         public async System.Threading.Tasks.Task<bool> LogInAsync()
@@ -41,7 +40,6 @@ namespace GreeniumCore.API
 
                 var userObj = JsonConvert.DeserializeObject<dynamic>(jsonUser);
                 jsonUser = JsonConvert.SerializeObject(userObj.LogInResult);
-                //CurrentUser = JsonConvert.DeserializeObject<UsersModel>(jsonUser);
 
                 return true;
             }

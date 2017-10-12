@@ -12,39 +12,109 @@
       },
       "results": [
         {
-          "ruleId": "CS0078",
+          "ruleId": "S3925",
           "level": "warning",
-          "message": "Le suffixe 'l' risque d'être facilement confondu avec le chiffre '1' -- utilisez plutôt 'L'",
+          "message": "Update this implementation of 'ISerializable' to conform to the recommended serialization pattern.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumCore/InMail.cs",
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/FileTracker/Exception/UnsupportedTagException.cs",
                 "region": {
-                  "startLine": 13,
-                  "startColumn": 27,
-                  "endLine": 13,
-                  "endColumn": 28
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/FileTracker/Exception/UnsupportedTagException.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 12,
+                  "endLine": 7,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/FileTracker/Exception/UnsupportedTagException.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 12,
+                  "endLine": 7,
+                  "endColumn": 17
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 4
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Add 'System.SerializableAttribute' attribute on 'UnsupportedTagException' because it implements 'ISerializable'.",
+              "1": "Add a 'protected' constructor 'UnsupportedTagException(SerializationInfo, StreamingContext)'."
+            }
           }
         },
         {
-          "ruleId": "S818",
+          "ruleId": "S107",
           "level": "warning",
-          "message": "Upper case this literal suffix.",
+          "message": "Method has 8 parameters, which is greater than the 7 authorized.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/macie/Documents/Visual%20Studio%202017/Projects/GreeniumPrototype/GreeniumCore/InMail.cs",
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Security/UniqueSerial.cs",
                 "region": {
-                  "startLine": 13,
-                  "startColumn": 27,
-                  "endLine": 13,
-                  "endColumn": 28
+                  "startLine": 12,
+                  "startColumn": 56,
+                  "endLine": 12,
+                  "endColumn": 285
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove this unused 'Ret' local variable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Security/UniqueSerial.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 18,
+                  "endLine": 24,
+                  "endColumn": 21
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1121",
+          "level": "warning",
+          "message": "Extract the assignment of 'Rollback' from this expression.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/FileTracker/XmlProvider.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 39,
+                  "endLine": 87,
+                  "endColumn": 40
                 }
               }
             }
@@ -55,28 +125,48 @@
         }
       ],
       "rules": {
-        "CS0078": {
-          "id": "CS0078",
-          "shortDescription": "Le suffixe 'l' risque d'être facilement confondu avec le chiffre '1'",
+        "S107": {
+          "id": "S107",
+          "shortDescription": "Methods should not have too many parameters",
+          "fullDescription": "A long parameter list can indicate that a new structure should be created to wrap the numerous parameters or that the function is doing too many things.",
           "defaultLevel": "warning",
-          "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry"
-            ]
-          }
-        },
-        "S818": {
-          "id": "S818",
-          "shortDescription": "Literal suffixes should be upper case",
-          "fullDescription": "Using upper case literal suffixes removes the potential ambiguity between \"1\" (digit 1) and \"l\" (letter el) for declaring literals.",
-          "defaultLevel": "warning",
-          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S818",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S107",
           "properties": {
             "category": "Sonar Code Smell",
             "isEnabledByDefault": false
+          }
+        },
+        "S1121": {
+          "id": "S1121",
+          "shortDescription": "Assignments should not be made from within sub-expressions",
+          "fullDescription": "Assignments within sub-expressions are hard to spot and therefore make the code less readable. Ideally, sub-expressions should not have side-effects.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1121",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "If a local variable is declared but not used, it is dead code and should be removed. Doing so will improve maintainability because developers will not wonder what the variable is used for.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1481",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S3925": {
+          "id": "S3925",
+          "shortDescription": "\"ISerializable\" should be implemented correctly",
+          "fullDescription": "The ISerializable interface is the mechanism to control the type serialization process. If not implemented correctly this could result in an invalid serialization and hard to detect bugs.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S3925",
+          "properties": {
+            "category": "Sonar Bug",
+            "isEnabledByDefault": true
           }
         }
       }
