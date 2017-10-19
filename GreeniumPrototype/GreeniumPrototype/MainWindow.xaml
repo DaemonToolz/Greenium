@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GreeniumPrototype"
         xmlns:circularProgress="clr-namespace:GreeniumPrototype.Models.CircularProgress"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="Greenium" Height="600" Width="808.2">
 
+    <!--
     <Window.CommandBindings>
         <CommandBinding Command="NavigationCommands.BrowseBack" CanExecute="BrowseBack_CanExecute" Executed="BrowseBack_Executed" />
         <CommandBinding Command="NavigationCommands.BrowseForward" CanExecute="BrowseForward_CanExecute" Executed="BrowseForward_Executed" />
         <CommandBinding Command="NavigationCommands.GoToPage" CanExecute="GoToPage_CanExecute" Executed="GoToPage_Executed" />
     </Window.CommandBindings>
-
+    -->
 
     <Window.Resources>
         <Storyboard x:Key="sbShowRightMenu" >
@@ -58,12 +60,33 @@
 
     <Grid Background="DarkGray">
         <TabControl x:Name="MainControl" HorizontalAlignment="Left" Height="570" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
-            <TabItem Margin="-2,-2,-31.8,-0.4" >
-                <TabItem.Header>
-                    <Grid Width="120">
-                        <Image Source="pack://application:,,,/Assets/Dashboard-icon.png" Height="30px" Width="50px" Margin="0,0,70,0.4"/>
-                        <Label Margin="50,2,0,-0.6" FontWeight="Bold">Dashboard</Label>
+            <TabControl.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Hidden" >
+                            <TabPanel x:Name="HeaderPanel"
+                                      Panel.ZIndex ="1" 
+                                      KeyboardNavigation.TabIndex="1"
+                                      Grid.Column="0"
+                                      Grid.Row="0"
+                                      Margin="2,2,2,0"
+                                      IsItemsHost="true"/>
+                        </ScrollViewer>
+                        <ContentPresenter x:Name="PART_SelectedContentHost"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          Margin="{TemplateBinding Padding}"
+                                          ContentSource="SelectedContent" Grid.Row="1"/>
                     </Grid>
+                </ControlTemplate>
+            </TabControl.Template>
+
+            <TabItem Width="75px">
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/Dashboard-icon.png" Height="40px" Width="50px" />
                 </TabItem.Header>
                 <Grid Background="#FFE5E5E5">
                     <GroupBox x:Name="AccountGrp" Header="Compte" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="370" Background="White" Margin="10,0,0,0">
@@ -83,9 +106,9 @@
 
                             <Label Margin="143,9,-194.6,-33" FontWeight="Bold"  Content="Compte"/>
                             <TextBlock Margin="331,43,-224.6,-66" />
-                            
+
                             <TextBlock Margin="176,38,-84.6,-61" Name="CurrentXPTB"  Text="{Binding XP}"  />
-                            
+
                             <TextBlock Margin="143,115,-175.6,-138"  Text="Prochaine récompense"  />
                             <Label Margin="41,156,75.4,-180" FontWeight="Bold"  Content="Niveau"/>
                             <TextBlock Margin="143,38,-4.6,-61"  ><Run Text="XP"/></TextBlock>
@@ -148,48 +171,82 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Navigation" Margin="33,-2,-40.6,-0.6">
+            <TabItem Width="75px">
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/browser.png" Height="40px" Width="50px"/>
+                </TabItem.Header>
                 <Grid Background="#FFE5E5E5">
-                    <StackPanel Panel.ZIndex="5" Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
+                    <DockPanel DockPanel.Dock="Top">
+                        <ToolBar DockPanel.Dock="Top">
+                            <Button Command="NavigationCommands.BrowseBack">
+                                <Image Source="Assets/navigationback.png" Width="16" Height="16" />
+                            </Button>
+                            <Button Command="NavigationCommands.BrowseForward">
+                                <Image Source="Assets/navigationforward.png" Width="16" Height="16" />
+                            </Button>
+                            <Separator />
+                            <TextBox Name="txtUrl" Width="300" KeyUp="txtUrl_KeyUp" />
+                            <Button Command="NavigationCommands.GoToPage">
+                                <Image Source="Assets/refresh.png" Width="16" Height="16" />
+                            </Button>
+
+                            <Button x:Name="PinBtn" Click="PinBtn_Click">
+                                <Image Source="Assets/pin.png" Width="16" Height="16" />
+                            </Button>
+                            <Button x:Name="BookmarkBtn" Click="BookmarkBtn_Click" >
+                                <Image  Source="Assets/bookmark.png" Width="16" Height="16" />
+                            </Button>
+                        </ToolBar>
+
+
+                        <cefSharp:ChromiumWebBrowser x:Name="Browser" Panel.ZIndex="99" HorizontalAlignment="Left" Height="495" Margin="0,2.8,0,0" VerticalAlignment="Top" Width="722" RenderTransformOrigin="0.5,0.5" Address="https://www.ecosia.org/" Loaded="Browser_Loaded"/>
+
+                    </DockPanel>
+                    <StackPanel Panel.ZIndex="5" x:Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
                         <Grid Background="ForestGreen" Margin="0,0,0,0.2" Width="54">
-                            <Button Name="btn" Margin="0,85,1,389" Foreground="Red" BorderBrush="{x:Null}">
+                            <Button x:Name="btn" Margin="4,53,3,420.4" Foreground="Red" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/configure.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button Name="btnRightMenuHide" Width="48" Height="48" Margin="0,0,0,479.2" Click="btnRightMenuHide_Click"  Visibility="Hidden" BorderBrush="{x:Null}">
+                            <Button x:Name="btnRightMenuHide" Width="48" Height="48" Margin="0,0,0,479.2" Click="btnRightMenuHide_Click"  Visibility="Hidden" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/hide.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button Name="btnRightMenuShow" Click="btnRightMenuShow_Click" Margin="0,0,-1,472" BorderBrush="{x:Null}" >
+                            <Button x:Name="btnRightMenuShow" Click="btnRightMenuShow_Click" Margin="3,2,3,469.4" BorderBrush="{x:Null}" >
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/show.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy" Margin="0,138,1,336" BorderBrush="{x:Null}">
+                            <Button x:Name="btn_Copy" Margin="4,102,3,371.4" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/history.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy1" Margin="0,191,0,282" BorderBrush="{x:Null}">
+                            <Button x:Name="btn_Copy1" Margin="4,151,3,321.4" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/comment.png"/>
                                 </Button.Background>
 
                             </Button>
 
-                            <Button x:Name="btnMails" Margin="0,245,0,228" BorderBrush="{x:Null}" Click="btnMails_Click">
+                            <Button x:Name="btnMails" Margin="4,196,3,276.4" BorderBrush="{x:Null}" Click="btnMails_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/mails.png"/>
                                 </Button.Background>
-
                             </Button>
-                            <Button x:Name="ContributeBtn" Width="48" Height="48" Margin="0,469,6,10" BorderBrush="{x:Null}" Click="ContributeBtn_Click">
+
+                            <Button x:Name="btnBookmarks" Margin="4,243,3,229" BorderBrush="{x:Null}" Click="btnBookmarks_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Assets/bookmark.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="ContributeBtn" Margin="4,460,3,10.4" BorderBrush="{x:Null}" Click="ContributeBtn_Click">
                                 <Button.Background>
 
                                     <ImageBrush ImageSource="Assets/contribute.png"/>
@@ -206,34 +263,15 @@
 
                         </Border>
                     </StackPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <ToolBar DockPanel.Dock="Top">
-                            <Button Command="NavigationCommands.BrowseBack">
-                                <Image Source="Assets/navigationback.png" Width="16" Height="16" />
-                            </Button>
-                            <Button Command="NavigationCommands.BrowseForward">
-                                <Image Source="Assets/right.png" Width="16" Height="16" />
-                            </Button>
-                            <Separator />
-                            <TextBox Name="txtUrl" Width="300" KeyUp="txtUrl_KeyUp" />
-                            <Button Command="NavigationCommands.GoToPage">
-                                <Image Source="Assets/refresh.png" Width="16" Height="16" />
-                            </Button>
-                        </ToolBar>
-
-
-                        <WebBrowser x:Name="Browser" Panel.ZIndex="99" HorizontalAlignment="Left" Height="495" Margin="0,2.8,0,0" VerticalAlignment="Top" Width="722" RenderTransformOrigin="0.5,0.5">
-                            <WebBrowser.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform AngleX="0.424"/>
-                                    <RotateTransform/>
-                                    <TranslateTransform X="1.593"/>
-                                </TransformGroup>
-                            </WebBrowser.RenderTransform>
-                        </WebBrowser>
-                    </DockPanel>
                 </Grid>
+
+            </TabItem>
+
+            <TabItem Width="75px">
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/appicon.png" Height="40px" Width="50px"/>
+                </TabItem.Header>
+                <Grid Background="#FFE5E5E5"></Grid>
             </TabItem>
         </TabControl>
 

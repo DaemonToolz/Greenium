@@ -84,6 +84,7 @@
     <Compile Include="API\RequestHandler.cs" />
     <Compile Include="API\SessionWrapper.cs" />
     <Compile Include="FileTracker\Exception\UnsupportedTagException.cs" />
+    <Compile Include="FileTracker\XmlBookProvider.cs" />
     <Compile Include="FileTracker\XmlConfigProvider.cs" />
     <Compile Include="FileTracker\XmlConcurrentList.cs" />
     <Compile Include="FileTracker\XmlElementProvider.cs" />

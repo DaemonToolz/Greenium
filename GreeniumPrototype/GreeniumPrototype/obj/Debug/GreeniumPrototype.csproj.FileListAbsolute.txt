@@ -52,3 +52,5 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Deb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Google.Apis.Core.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\Newtonsoft.Json.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\Debug\GreeniumCore.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\Debug\GreeniumPrototype.csproj.CoreCompileInputs.cache

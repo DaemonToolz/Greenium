@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using CefSharp.Wpf;
 using GreeniumCore.API;
 using GreeniumCore.FileTracker.FileTracker;
-using GreeniumCore.Security;
 using GreeniumPrototype.Models;
-using GreeniumPrototype.Models.CircularProgress;
 using Newtonsoft.Json.Linq;
 
 namespace GreeniumPrototype
@@ -30,6 +23,7 @@ namespace GreeniumPrototype
     {
         private static readonly Dictionary<string, Page> Pages = new Dictionary<string, Page>();
         private static readonly XmlConfigProvider xcp = new XmlConfigProvider(System.AppDomain.CurrentDomain.BaseDirectory, "conf");
+        private static readonly XmlBookProvider bookmarks = new XmlBookProvider(System.AppDomain.CurrentDomain.BaseDirectory, "main");
         private static String UUID;
         private static LogModel MySession;
 
@@ -60,7 +54,8 @@ namespace GreeniumPrototype
         {
             Pages.Add("Contribute", new Contribute());
             Pages.Add("Emails", new Emails());
-  
+            Pages.Add("Bookmarks", new BookmarksPage());
+
         }
 
 
@@ -70,8 +65,8 @@ namespace GreeniumPrototype
             InitializeComponent();
             AccountGrid.DataContext = MySession;
             RunPeriodicAsync(()=> { AutoRegister(); }, new TimeSpan(0,0,1), new TimeSpan(0,0,30),CancellationToken.None);
-           
-            
+            bookmarks.OpenFile();
+
             //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
 
         }
@@ -109,11 +104,11 @@ namespace GreeniumPrototype
         }
 
 
-        private void txtUrl_KeyUp(object sender, KeyEventArgs e)
-            {
+        private void txtUrl_KeyUp(object sender, KeyEventArgs e){
                 if (e.Key == Key.Enter)
-                    Browser.Navigate(txtUrl.Text);
-            }
+                    Browser.Load(txtUrl.Text);
+            //Browser.Navigate(txtUrl.Text);
+        }
 
             private void wbSample_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
             {
@@ -127,7 +122,11 @@ namespace GreeniumPrototype
 
             private void BrowseBack_Executed(object sender, ExecutedRoutedEventArgs e)
             {
-                Browser.GoBack();
+                if (Browser.CanGoBack)
+                {
+                    
+                }
+                //Browser.GoBack();
             }
 
             private void BrowseForward_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -137,7 +136,11 @@ namespace GreeniumPrototype
 
             private void BrowseForward_Executed(object sender, ExecutedRoutedEventArgs e)
             {
-                Browser.GoForward();
+                if (Browser.CanGoForward)
+                {
+                    
+                }
+                //Browser.GoForward();
             }
 
             private void GoToPage_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -147,15 +150,11 @@ namespace GreeniumPrototype
 
             private void GoToPage_Executed(object sender, ExecutedRoutedEventArgs e)
             {
-                Browser.Navigate(txtUrl.Text);
+                Browser.Load(txtUrl.Text);
+                //Browser.Navigate(txtUrl.Text);
             }
 
-        private void Browser_Navigated(object sender, NavigatingCancelEventArgs e)
-        {
-            var browser = (WebBrowser) sender;
-            txtUrl.Text = browser.Source.ToString();
-
-        }
+    
 
         private void ContributeBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -271,5 +270,73 @@ namespace GreeniumPrototype
 
         }
 
+        private void Browser_Loaded(object sender, RoutedEventArgs e)
+        {
+            var browser = (ChromiumWebBrowser)sender;
+            txtUrl.Text = browser.Address.ToString();
+
+        }
+
+   
+        private void PinURL()
+        {
+            var CommonUID = Guid.NewGuid().ToString().Replace("-","");
+            var generatedGrid = new Grid() {Name = $"TH{CommonUID}", Width = 75};
+            generatedGrid.Children.Add(new Label() {Content = Browser.Address, HorizontalAlignment = HorizontalAlignment.Left});
+            var interaction = new Button() {Name=$"BTN{CommonUID}", Content = "X", Width = 20, Height = 20, VerticalAlignment= VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right};
+
+            interaction.Click += (object sender, RoutedEventArgs e) =>{
+                var btn = sender as Button;
+
+                foreach (TabItem item in MainControl.Items)
+                {
+                    if (item.Name.Trim().Equals("") || !item.Name.StartsWith("TBC"))
+                        continue;
+
+                    if (item.Name.Substring(3).Equals(btn.Name.Substring(3)))
+                    {
+                        ((ChromiumWebBrowser) ((Grid) item.Content).Children[0]).Dispose();
+                        MainControl.Items.Remove(item);
+                        break;
+                    }
+                }
+            };
+
+            generatedGrid.Children.Add(interaction);
+
+            Grid innerGrid = new Grid();
+            innerGrid.Children.Add(new ChromiumWebBrowser() {Address = Browser.Address});
+
+            MainControl.Items.Add(new TabItem()
+            {
+                Name=$"TBC{CommonUID}",
+                Header = generatedGrid,
+                Content = innerGrid,
+                
+            });
+        }
+
+        private void PinBtn_Click(object sender, RoutedEventArgs e){
+            PinURL();
+        }
+
+        private void BookmarkBtn_Click(object sender, RoutedEventArgs e)
+        {
+            bookmarks.AddNode(Guid.NewGuid().ToString(),Browser.Address);
+        }
+
+        public static List<String> GetBookmarks()
+        {
+            return bookmarks.ReadBookmarks().ToList();
+        }
+
+        private void btnBookmarks_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnRightMenuHide.Visibility != Visibility.Visible)
+                btnRightMenuShow_Click(null, null);
+
+            ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
+            SideMenuFrame.Navigate(Pages["Bookmarks"]);
+        }
     }
 }
