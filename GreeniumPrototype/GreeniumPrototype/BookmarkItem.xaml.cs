@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,10 +22,13 @@ namespace GreeniumPrototype
     /// </summary>
     public partial class BookmarkItem : UserControl
     {
+
         public BookmarkItem()
         {
             InitializeComponent();
         }
+
+        internal string Name { get; set; }
 
         public static readonly DependencyProperty LinkDependency = DependencyProperty.Register("Link", typeof(String), typeof(AddonItem), new FrameworkPropertyMetadata(string.Empty));
 
@@ -32,5 +37,11 @@ namespace GreeniumPrototype
             get { return GetValue(LinkDependency)?.ToString(); }
             set { SetValue(LinkDependency, value); }
         }
+
+        private void RemoveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BookmarksPage.BookmarksRemove(Name);
+        }
+
     }
 }

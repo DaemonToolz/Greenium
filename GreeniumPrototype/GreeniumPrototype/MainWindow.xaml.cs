@@ -29,7 +29,7 @@ namespace GreeniumPrototype
 
         //private Storyboard AccountStoryBoard { get; set; }
 
-        private static async Task RunPeriodicAsync(Action onTick,
+        internal static async Task RunPeriodicAsync(Action onTick,
             TimeSpan dueTime,
             TimeSpan interval,
             CancellationToken token)
@@ -66,6 +66,7 @@ namespace GreeniumPrototype
             AccountGrid.DataContext = MySession;
             RunPeriodicAsync(()=> { AutoRegister(); }, new TimeSpan(0,0,1), new TimeSpan(0,0,30),CancellationToken.None);
             bookmarks.OpenFile();
+            ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
 
             //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
 
@@ -322,7 +323,12 @@ namespace GreeniumPrototype
 
         private void BookmarkBtn_Click(object sender, RoutedEventArgs e)
         {
-            bookmarks.AddNode(Guid.NewGuid().ToString(),Browser.Address);
+            var guid = Guid.NewGuid().ToString();
+            var result = bookmarks.AddNode(guid, Browser.Address);
+            if (result != null)
+                BookmarksPage.BookmarkAdd(new BookmarkItem() {Link = Browser.Address, Name = result });
+
+
         }
 
         public static List<String> GetBookmarks()
@@ -335,8 +341,14 @@ namespace GreeniumPrototype
             if (btnRightMenuHide.Visibility != Visibility.Visible)
                 btnRightMenuShow_Click(null, null);
 
-            ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
+            
             SideMenuFrame.Navigate(Pages["Bookmarks"]);
         }
+
+        public static bool DeleteBookmark(string ID)
+        {
+            return bookmarks.DeleteBookmark(ID);
+        }
+     
     }
 }

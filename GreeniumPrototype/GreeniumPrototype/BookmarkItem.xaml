@@ -8,7 +8,7 @@
              d:DesignHeight="30" d:DesignWidth="180">
     <Grid Background="White">
         <Label x:Name="LinkLabel" Content="{Binding Path=Link}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontFamily="Arial" FontSize="10" Margin="0,5,0,0"/>
-        <Button x:Name="RemoveBtn" Content="X" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" Width="20" Height="30" Background="White"/>
+        <Button x:Name="RemoveBtn" Content="X" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" Width="20" Height="30" Background="White" Click="RemoveBtn_Click"/>
 
     </Grid>
 </UserControl>

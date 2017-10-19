@@ -9,7 +9,7 @@
       Title="BookmarksPage">
 
     <Grid Background="White">
-        <ListBox x:Name="bookmarksList" HorizontalAlignment="Left" Height="527" VerticalAlignment="Top" Width="200"/>
+        <ListBox x:Name="bookmarksList" ItemsSource="{Binding bookmarks}" HorizontalAlignment="Left" Height="527" VerticalAlignment="Top" Width="200"/>
 
     </Grid>
 </Page>

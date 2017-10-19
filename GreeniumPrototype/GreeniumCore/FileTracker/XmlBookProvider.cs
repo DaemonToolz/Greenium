@@ -26,13 +26,14 @@ namespace GreeniumCore.FileTracker.FileTracker
         }
 
       
-        public bool AddNode(String name, String url)
+        public String AddNode(String name, String url)
         {
 
+            var bookmarkGUID = Guid.NewGuid().ToString();
             var newComment = new XmlElementProvider(){
                 Key = "bookmark",
                 Value = "",
-                Attributes = new List<XAttribute>() {new XAttribute("bookmark", Guid.NewGuid().ToString())},
+                Attributes = new List<XAttribute>() {new XAttribute("bookmark", bookmarkGUID) },
 
                 Children = new List<XmlElementProvider>()
                 {
@@ -51,17 +52,21 @@ namespace GreeniumCore.FileTracker.FileTracker
 
             };
 
-            return AddNode("bookmarks", newComment);
+            return AddNode("bookmarks", newComment) ? bookmarkGUID : null;
         }
 
         public bool DeleteBookmark(String name)
         {
-            return DeleteNode(name, "bookmark");
+            return DeleteNode(name, "bookmark","bookmark");
         }
 
         public IEnumerable<string> ReadBookmarks()
         {
-            return ReadNode("bookmarks").Any() ? ReadNode("bookmarks").Reverse().Select(comment => comment.Children[1].Value.ToString()) : new List<string>();
+            return ReadNode("bookmarks").Any() ? 
+                ReadNode("bookmarks").Reverse().Select(
+                    comment => 
+                        $"{ comment.Attributes.Single(attr => attr.Name.ToString() == "bookmark").ToString()};{comment.Children[1].Value.ToString()}") 
+                    : new List<string>();
         }
 
     }

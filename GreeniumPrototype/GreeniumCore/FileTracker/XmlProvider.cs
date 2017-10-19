@@ -80,7 +80,7 @@ namespace GreeniumCore.FileTracker.FileTracker
                 AddNode(null);
                 return OpenedDocument;
             }
-            return OpenedDocument = XDocument.Load(AbsoluteFile);
+            return Rollback = OpenedDocument = XDocument.Load(AbsoluteFile);
         }
 
         public virtual void CloseFile() {
@@ -94,7 +94,7 @@ namespace GreeniumCore.FileTracker.FileTracker
             Rollback = OpenedDocument;
         }
 
-        public virtual bool DeleteNode(String key, String tag, String value)
+        public virtual bool DeleteNodeByTag(String key, String tag, String value)
         {
             try
             {
@@ -232,12 +232,17 @@ namespace GreeniumCore.FileTracker.FileTracker
             }
         }
 
-        public virtual bool DeleteNode(String Id, String Key)
+        public virtual bool DeleteNode(String Id, String Key, String AttribName = "id")
         {
             try
             {
-                (OpenedDocument.Descendants(Key)).Where(idAttr => ((String)idAttr.Attribute("id")).Equals(Id)).Remove();
+                
+                (OpenedDocument.Descendants(Key))
+                    .Where(idAttr => ((String)idAttr.Attribute(AttribName)).Equals(Id))
+                    .Remove();
+                 
 
+                
                 SaveFile();
                 return true;
             }

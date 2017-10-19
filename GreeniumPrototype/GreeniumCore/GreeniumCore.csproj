@@ -35,6 +35,9 @@
     <CodeAnalysisRuleSet>GreeniumCore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EAGetMail45, Version=4.6.3.2, Culture=neutral, PublicKeyToken=e10a0812eb29cf94, processorArchitecture=MSIL">
+      <HintPath>..\packages\EAGetMail.4.6.3.2\lib\net45\EAGetMail45.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.29.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.29.2\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -90,6 +93,10 @@
     <Compile Include="FileTracker\XmlElementProvider.cs" />
     <Compile Include="FileTracker\XmlProvider.cs" />
     <Compile Include="InMail.cs" />
+    <Compile Include="Mail\Exchange.cs" />
+    <Compile Include="Mail\IGenericMailConnector.cs" />
+    <Compile Include="Mail\Gmail.cs" />
+    <Compile Include="Mail\Outlook..cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\UniqueSerial.cs" />
   </ItemGroup>
