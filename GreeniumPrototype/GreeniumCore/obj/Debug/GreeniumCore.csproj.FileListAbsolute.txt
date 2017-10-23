@@ -53,3 +53,4 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\Gr
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\EAGetMail45.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\obj\Debug\GreeniumCore.csproj.CoreCompileInputs.cache

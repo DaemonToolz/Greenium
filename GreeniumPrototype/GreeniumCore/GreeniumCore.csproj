@@ -84,6 +84,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addons\Addons.cs" />
+    <Compile Include="Addons\DllReader.cs" />
     <Compile Include="API\RequestHandler.cs" />
     <Compile Include="API\SessionWrapper.cs" />
     <Compile Include="FileTracker\Exception\UnsupportedTagException.cs" />
@@ -140,7 +142,10 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Addons\" />
+    <ProjectReference Include="..\GreeniumCommon\GreeniumCommon.csproj">
+      <Project>{5a714b9a-4158-4127-bbf3-423694a9b7c2}</Project>
+      <Name>GreeniumCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
