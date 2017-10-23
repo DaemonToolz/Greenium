@@ -12,7 +12,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\Google.Apis.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\Google.Apis.Core.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCore.pdb
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCore.dll.config
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\CefSharp.Wpf.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\CefSharp.Wpf.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\CefSharp.pdb
@@ -40,7 +39,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.g.resources
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.Properties.Resources.resources
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.csproj.GenerateResource.Cache
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.csproj.CoreCompileInputs.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.exe
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\BookmarksPage.g.cs

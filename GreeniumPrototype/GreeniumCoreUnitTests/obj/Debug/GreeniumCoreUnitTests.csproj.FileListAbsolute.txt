@@ -66,6 +66,7 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.csprojResolveAssemblyReference.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\obj\Debug\GreeniumCoreUnitTests.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\EAGetMail45.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreUnitTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll

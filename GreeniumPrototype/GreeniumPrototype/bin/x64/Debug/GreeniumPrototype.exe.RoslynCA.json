@@ -1,0 +1,700 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilateur Microsoft (R) Visual C#",
+        "version": "1.3.1.0",
+        "fileVersion": "1.3.1.60616",
+        "semanticVersion": "1.3.1",
+        "language": "fr-FR"
+      },
+      "results": [
+        {
+          "ruleId": "CS0108",
+          "level": "warning",
+          "message": "'BookmarkItem.Name' masque le membre hérité 'FrameworkElement.Name'. Utilisez le mot clé new si le masquage est intentionnel.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/BookmarkItem.xaml.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 25,
+                  "endLine": 31,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel. Envisagez d'appliquer l'opérateur 'await' au résultat de l'appel.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 37,
+                  "endLine": 67,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel. Envisagez d'appliquer l'opérateur 'await' au résultat de l'appel.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 13,
+                  "endLine": 67,
+                  "endColumn": 121
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Contribute.xaml.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/BookmarksPage.xaml.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 26,
+                  "endLine": 23,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 9,
+                  "endLine": 30,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 13,
+                  "endLine": 111,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 130,
+                  "startColumn": 17,
+                  "endLine": 130,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 17,
+                  "endLine": 144,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 155,
+                  "startColumn": 17,
+                  "endLine": 155,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Emails..xaml.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 26,
+                  "endLine": 23,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 9 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/AddonItem.xaml.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 7 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Models/CircularProgress/CircularProgress.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 18,
+                  "endLine": 12,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 9 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/BookmarkItem.xaml.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 26,
+                  "endLine": 23,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3241",
+          "level": "warning",
+          "message": "Change return type to 'void'; not a single caller uses the returned value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 23,
+                  "endLine": 185,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'Login'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 9,
+                  "endLine": 177,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'AnimateProgress'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 9,
+                  "endLine": 183,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S110",
+          "level": "warning",
+          "message": "This class has 9 parents which is greater than 5 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 26,
+                  "endLine": 22,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/Emails..xaml.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 22,
+                  "endLine": 71,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 17,
+                  "endLine": 129,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 17,
+                  "endLine": 143,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1121",
+          "level": "warning",
+          "message": "Extract the assignment of 'UUID' from this expression.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 209,
+                  "startColumn": 41,
+                  "endLine": 209,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 17,
+                  "endLine": 190,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 33,
+                  "endLine": 28,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 209,
+                  "startColumn": 36,
+                  "endLine": 209,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 31,
+                  "endLine": 27,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1117",
+          "level": "warning",
+          "message": "Rename 'btn' which hides the field with the same name.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumPrototype/MainWindow.xaml.cs",
+                "region": {
+                  "startLine": 290,
+                  "startColumn": 21,
+                  "endLine": 290,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS0108": {
+          "id": "CS0108",
+          "shortDescription": "Un membre masque un membre hérité ; le mot clé new est manquant",
+          "fullDescription": "Une variable a été déclarée avec le même nom qu'une variable dans la classe de base. Cependant, le mot clé new n'a pas été utilisé. Cet avertissement vous informe que vous devez utiliser new ; la variable est déclarée comme si new avait été utilisé dans la déclaration.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS4014": {
+          "id": "CS4014",
+          "shortDescription": "Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel",
+          "fullDescription": "La méthode actuelle appelle une méthode async qui retourne Task ou Task<TResult>. Par ailleurs, elle n'applique pas l'opérateur await au résultat. L'appel de la méthode async démarre une tâche asynchrone. Cependant, comme aucun opérateur await n'est appliqué, le programme continue sans attendre la fin de la tâche. Généralement, ce comportement n'est pas celui que vous attendez. La plupart du temps, les autres aspects de la méthode d'appel dépendent du résultat de l'appel ou, au minimum, la méthode appelée doit s'achever avant le retour de la méthode contenant l'appel.\u000d\u000a\u000d\u000aUn problème de même importance est ce qui arrive aux exceptions levées dans la méthode async appelée. Une exception levée dans une méthode qui retourne Task ou Task<TResult> est stockée dans la tâche retournée. Si vous n'attendez pas la tâche ou la vérification explicite d'exceptions, l'exception est perdue. Si vous attendez la tâche, son exception est à nouveau levée.\u000d\u000a\u000d\u000aNous vous recommandons de toujours attendre l'appel.\u000d\u000a\u000d\u000aSupprimez l'avertissement seulement si vous êtes sûr de ne pas vouloir attendre la fin de l'appel asynchrone, et que la méthode appelée ne lèvera aucune exception. Dans ce cas, vous pouvez supprimer l'avertissement en affectant le résultat de la tâche de l'appel à une variable.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S108": {
+          "id": "S108",
+          "shortDescription": "Nested blocks of code should not be left empty",
+          "fullDescription": "Most of the time a block of code is empty when a piece of code is really missing. So such empty block must be either filled or removed.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S108",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S110": {
+          "id": "S110",
+          "shortDescription": "Inheritance tree of classes should not be too deep",
+          "fullDescription": "Inheritance is certainly one of the most valuable concepts in object-oriented programming. It's a way to compartmentalize and reuse code by creating collections of attributes and behaviors called classes which can be based on previously created classes. But abusing this concept by creating a deep inheritance tree can lead to very complex and unmaintainable source code. Most of the time a too deep inheritance tree is due to bad object oriented design which has led to systematically use 'inheritance' when for instance 'composition' would suit better.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S110",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1117": {
+          "id": "S1117",
+          "shortDescription": "Local variables should not shadow class fields",
+          "fullDescription": "Shadowing fields with a local variable is a bad practice that reduces code readability: it makes it confusing to know whether the field or the variable is being used.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1117",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1121": {
+          "id": "S1121",
+          "shortDescription": "Assignments should not be made from within sub-expressions",
+          "fullDescription": "Assignments within sub-expressions are hard to spot and therefore make the code less readable. Ideally, sub-expressions should not have side-effects.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1121",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "Private, or internal, types or members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1144",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Unnecessary"
+            ]
+          }
+        },
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "There are several reasons for a method not to have a method body:",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1186",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be \"commented out\"",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S125",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S2696": {
+          "id": "S2696",
+          "shortDescription": "Instance members should not write to \"static\" fields",
+          "fullDescription": "Correctly updating a static field from a non-static method is tricky to get right and could easily lead to bugs if there are multiple class instances and/or multiple threads in play. ",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S2696",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S3241": {
+          "id": "S3241",
+          "shortDescription": "Methods should not return values that are never used",
+          "fullDescription": "Private methods are clearly intended for use only within their own scope. When such methods return values that are never used by any of their callers, then clearly there is no need to actually make the return, and it should be removed in the interests of efficiency and clarity. ",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S3241",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

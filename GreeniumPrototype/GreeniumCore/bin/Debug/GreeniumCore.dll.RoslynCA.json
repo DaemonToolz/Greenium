@@ -61,6 +61,216 @@
           }
         },
         {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'myAccount' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 28,
+                  "endLine": 16,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'imapServer' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 28,
+                  "endLine": 17,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'OAuth'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 9,
+                  "endLine": 22,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'outlook' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 29,
+                  "endLine": 14,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'namespace' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 29,
+                  "endLine": 15,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'folder' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 29,
+                  "endLine": 16,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'email' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 24,
+                  "endLine": 18,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'password' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 31,
+                  "endLine": 18,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 13,
+                  "endLine": 34,
+                  "endColumn": 100
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 26,
+                  "endLine": 49,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S107",
           "level": "warning",
           "message": "Method has 8 parameters, which is greater than the 7 authorized.",
@@ -73,6 +283,27 @@
                   "startColumn": 56,
                   "endLine": 12,
                   "endColumn": 285
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1450",
+          "level": "warning",
+          "message": "Remove the 'outlook' field and declare it as a local variable in the relevant methods.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Outlook..cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 29,
+                  "endLine": 14,
+                  "endColumn": 36
                 }
               }
             }
@@ -103,6 +334,27 @@
           }
         },
         {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/Mail/Gmail.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 22,
+                  "endLine": 19,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S1121",
           "level": "warning",
           "message": "Extract the assignment of 'Rollback' from this expression.",
@@ -115,6 +367,27 @@
                   "startColumn": 39,
                   "endLine": 87,
                   "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1121",
+          "level": "warning",
+          "message": "Extract the assignment of 'OpenedDocument' from this expression.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/macie/Source/Repos/Greenium/GreeniumPrototype/GreeniumCore/FileTracker/XmlProvider.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 46,
+                  "endLine": 83,
+                  "endColumn": 47
                 }
               }
             }
@@ -147,12 +420,73 @@
             "isEnabledByDefault": true
           }
         },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "Private, or internal, types or members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1144",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Unnecessary"
+            ]
+          }
+        },
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "There are several reasons for a method not to have a method body:",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1186",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be \"commented out\"",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S125",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S1450": {
+          "id": "S1450",
+          "shortDescription": "Private fields only used as local variables in methods should become local variables",
+          "fullDescription": "When the value of a private field is always assigned to in a class' methods before being read, then it is not being used to store class information. Therefore, it should become a local variable in the relevant methods to prevent any misunderstanding.",
+          "defaultLevel": "note",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1450",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Unnecessary"
+            ]
+          }
+        },
         "S1481": {
           "id": "S1481",
           "shortDescription": "Unused local variables should be removed",
           "fullDescription": "If a local variable is declared but not used, it is dead code and should be removed. Doing so will improve maintainability because developers will not wonder what the variable is used for.",
           "defaultLevel": "warning",
           "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S1481",
+          "properties": {
+            "category": "Sonar Code Smell",
+            "isEnabledByDefault": true
+          }
+        },
+        "S2933": {
+          "id": "S2933",
+          "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
+          "fullDescription": "readonly fields can only be assigned in a class constructor. If a class has a field that's not marked readonly but is only set in the constructor, it could cause confusion about the field's intended use. To avoid confusion, such fields should be marked readonly to make their intended use explicit, and to prevent future maintainers from inadvertently changing their use.",
+          "defaultLevel": "warning",
+          "helpUri": "http://vs.sonarlint.org/rules/index.html#version=5.10.1.1411&ruleId=S2933",
           "properties": {
             "category": "Sonar Code Smell",
             "isEnabledByDefault": true

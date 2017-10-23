@@ -1,0 +1,4 @@
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\bin\Debug\GreeniumDll.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\bin\Debug\GreeniumDll.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.pdb

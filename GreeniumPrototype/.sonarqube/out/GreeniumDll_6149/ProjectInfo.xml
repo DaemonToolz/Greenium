@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>GreeniumDll</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>5fda3756-094c-4b90-9f6a-f6a3a77f7504</ProjectGuid>
+  <FullPath>C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\GreeniumDll.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\.sonarqube\out\\GreeniumDll_6149\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\bin\Debug\GreeniumDll.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\.sonarqube\out\\GreeniumDll_6149</Property>
+    <Property Name="sonar.stylecop.projectFilePath">C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\GreeniumDll.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>
