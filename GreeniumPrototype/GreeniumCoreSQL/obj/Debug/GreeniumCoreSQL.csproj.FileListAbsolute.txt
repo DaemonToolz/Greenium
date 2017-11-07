@@ -1,0 +1,16 @@
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\GreeniumCoreSQL.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\GreeniumCoreSQL.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\GreeniumCoreSQL.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\EntityFramework.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\System.Data.SQLite.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\EntityFramework.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\System.Data.SQLite.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\obj\Debug\GreeniumCoreSQL.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\obj\Debug\GreeniumCoreSQL.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\obj\Debug\GreeniumCoreSQL.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCoreSQL\obj\Debug\GreeniumCoreSQL.pdb

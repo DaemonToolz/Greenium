@@ -99,6 +99,8 @@
     <Compile Include="Mail\IGenericMailConnector.cs" />
     <Compile Include="Mail\Gmail.cs" />
     <Compile Include="Mail\Outlook..cs" />
+    <Compile Include="Network\P2PClient.cs" />
+    <Compile Include="Network\P2PResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\UniqueSerial.cs" />
   </ItemGroup>
