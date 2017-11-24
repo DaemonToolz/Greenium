@@ -13,5 +13,8 @@ namespace GreeniumPrototype.Models {
         public int Level { get; set; }
         public string Creation { get; set; }
         public string[] Emails { get; set; }
+
+        public bool Online { get; set; }
+
     }
 }

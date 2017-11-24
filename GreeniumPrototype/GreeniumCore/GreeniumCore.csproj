@@ -94,12 +94,14 @@
     <Compile Include="FileTracker\XmlConcurrentList.cs" />
     <Compile Include="FileTracker\XmlElementProvider.cs" />
     <Compile Include="FileTracker\XmlProvider.cs" />
+    <Compile Include="FileTracker\XmlUserSettingsProvider.cs" />
     <Compile Include="InMail.cs" />
     <Compile Include="Mail\Exchange.cs" />
     <Compile Include="Mail\IGenericMailConnector.cs" />
     <Compile Include="Mail\Gmail.cs" />
     <Compile Include="Mail\Outlook..cs" />
     <Compile Include="Network\P2PClient.cs" />
+    <Compile Include="Network\P2PHost.cs" />
     <Compile Include="Network\P2PResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\UniqueSerial.cs" />

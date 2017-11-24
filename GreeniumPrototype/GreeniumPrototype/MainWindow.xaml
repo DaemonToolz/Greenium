@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GreeniumPrototype"
         xmlns:circularProgress="clr-namespace:GreeniumPrototype.Models.CircularProgress"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:switch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="Greenium" Height="600" Width="808.2">
@@ -18,7 +19,9 @@
     </Window.CommandBindings>
     -->
 
+
     <Window.Resources>
+
         <Storyboard x:Key="sbShowRightMenu" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,-150,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
         </Storyboard>
@@ -33,7 +36,6 @@
 
             <DoubleAnimation Storyboard.TargetProperty="Width" From="522" To="722" AccelerationRatio="0.9" Duration="0:0:1" />
         </Storyboard>
-
 
         <circularProgress:DoubleToPctConverter x:Key="dblToPct"/>
         <Style x:Key="pbarCircularStyle" TargetType="{x:Type ProgressBar}">
@@ -56,6 +58,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
+
     </Window.Resources>
 
     <Grid Background="DarkGray">
@@ -168,6 +173,8 @@
                     <Label x:Name="UCID_Name" Content="ID Ordinateur" HorizontalAlignment="Left" Margin="17,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <Label x:Name="UCID_Usr" Content="ID Unique" HorizontalAlignment="Left" Margin="17,256,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBlock x:Name="UCID_Param2" HorizontalAlignment="Left" Margin="118,261,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
+                    <Label x:Name="UCID_Cnt" Content="Online" HorizontalAlignment="Left" Margin="17,282,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="UCID_Cnt_Param" HorizontalAlignment="Left" Margin="118,287,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
 
                 </Grid>
             </TabItem>
@@ -271,7 +278,70 @@
                 <TabItem.Header>
                     <Image Source="pack://application:,,,/Assets/appicon.png" Height="40px" Width="50px"/>
                 </TabItem.Header>
-                <Grid Background="#FFE5E5E5"></Grid>
+                <Grid Background="#FFE5E5E5">
+                    <TabControl x:Name="SettingsTabItem" TabStripPlacement="Left" HorizontalAlignment="Left" Height="519" VerticalAlignment="Top" Width="790" Margin="0,0,-0.4,0">
+
+                        <TabItem >
+                            <TabItem.Header>
+                                <Grid Background="DarkGreen" Width="250" Height="50">
+                                    <Image  Source="pack://application:,,,/Assets/GeneralSettingsIcon.png" Width="50px" HorizontalAlignment="Left" Margin="10,0,0,0"></Image>
+                                    <Label Foreground="white" Content="Général" Width="90" VerticalContentAlignment="Center" FontSize="20">
+
+                                    </Label>
+                                </Grid>
+                            </TabItem.Header>
+                            <Grid Background="White">
+                                <switch:HorizontalToggleSwitch 
+                                    CheckedContent="Autologging" UncheckedContent="Manual Logging"
+                                    x:Name="AutologSwitch" Width="150px" Height="30px" Margin="10,23,360.8,459.8" Checked="AutologSwitch_Checked" Unchecked="AutologSwitch_Unchecked" />
+
+                                <switch:HorizontalToggleSwitch 
+                                    CheckedContent="Enable Hosting" UncheckedContent="Disable Hosting"
+                                    x:Name="HostSwitch" Width="150px" Height="30px" Margin="10,58,360.8,424.8" Checked="HostSwitch_Checked" Unchecked="HostSwitch_Unchecked"/>
+
+                                <switch:HorizontalToggleSwitch 
+                                    CheckedContent="Full Privacy" UncheckedContent="Partial Privacy"
+                                    x:Name="AnonymousSwitch" Width="150px" Height="30px" Margin="185,23,185.8,459.8" Checked="AnonymousSwitch_Checked" Unchecked="AnonymousSwitch_Unchecked"/>
+
+                                <Button x:Name="HistoryClearBtn" Content="Clear History" HorizontalAlignment="Left" Margin="361,23,0,0" VerticalAlignment="Top" Width="150" Height="30" BorderThickness="0"/>
+                                <Button x:Name="CookieClearBtn" Content="Clear Cookies" HorizontalAlignment="Left" Margin="361,58,0,0" VerticalAlignment="Top" Width="150" Height="30" BorderThickness="0"/>
+                                <ComboBox x:Name="SearchEngineCbox" Margin="340,146,10,336.8" SelectionChanged="SearchEngineCbox_SelectionChanged">
+                                    <ComboBoxItem IsSelected="True" Content="Ecosia" />
+                                    <ComboBoxItem Content="Google"/>
+                                    <ComboBoxItem Content="Yahoo"/>
+                                    <ComboBoxItem Content="DuckDuckGo"/>
+                                    <ComboBoxItem Content="Bing"/>
+                                </ComboBox>
+                                <Label x:Name="DefaultBrowserLabel" Content="Moteur de recherche par défaut" HorizontalAlignment="Left" Margin="7,146,0,0" VerticalAlignment="Top" Height="30" Width="328"/>
+                                <switch:HorizontalToggleSwitch 
+                                    CheckedContent="Save Ids" UncheckedContent="No Save"
+                                    x:Name="PasswordSaveSwitch" Width="150px" Height="30px" Margin="10,91,360.8,391.8" Checked="PasswordSaveSwitch_Checked" Unchecked="PasswordSaveSwitch_Unchecked"/>
+                            </Grid>
+
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <Grid Background="DarkGreen" Width="250" Height="50">
+                                    <Image  Source="pack://application:,,,/Assets/ModuleSettingsIcon.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
+                                    <Label Foreground="white" Width="90"  Content="Modules" VerticalContentAlignment="Center" FontSize="20">
+
+                                    </Label>
+                                </Grid>
+                            </TabItem.Header>
+                            <Grid Background="White"/>
+                        </TabItem>
+                    </TabControl>
+
+                    <!--
+                    <GroupBox x:Name="SettingsGroup" Header="Configuration Rapide" Background="White" HorizontalAlignment="Left" Height="499" Margin="10,10,0,0" VerticalAlignment="Top" Width="770">
+                        
+                        <Grid>
+                            
+                        
+
+                    </GroupBox>-->
+                </Grid>
+
             </TabItem>
         </TabControl>
 

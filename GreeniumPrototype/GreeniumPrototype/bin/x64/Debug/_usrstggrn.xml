@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <settings>
+    <setting id="e305df97-7765-4b3f-8aec-7a64ec745b91">
+      <username>TBA</username>
+      <emails>["nom.prenom@gmail.com","username@gmail.com"]</emails>
+      <autolog>True</autolog>
+      <idsave>False</idsave>
+      <privacy>full</privacy>
+      <defaultbrowser>Ecosia</defaultbrowser>
+      <ishost>False</ishost>
+      <isfixedseed>True</isfixedseed>
+      <seed>7691347fa70242d08270fa33eb67474e</seed>
+      <p2pstatus>offline</p2pstatus>
+      <p2presolver>offline</p2presolver>
+      <p2pprotocol>Grn</p2pprotocol>
+    </setting>
+  </settings>
+</root>

@@ -75,6 +75,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="ToggleSwitch, Version=1.1.2.0, Culture=neutral, PublicKeyToken=8637099990568f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToggleSwitch.1.1.2\lib\net40-client\ToggleSwitch.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -131,6 +134,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\ToggleSwitch..xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CircularProgress\CircularProgress.cs" />
@@ -216,6 +223,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\GeneralSettingsIcon.png" />
+    <Resource Include="Assets\ModuleSettingsIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets')" />

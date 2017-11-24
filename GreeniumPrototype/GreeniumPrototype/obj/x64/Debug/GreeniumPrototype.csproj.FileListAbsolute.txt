@@ -50,3 +50,5 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.csproj.CoreCompileInputs.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCommon.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCommon.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\ToggleSwitch.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Resources\ToggleSwitch..baml

@@ -8,5 +8,6 @@ namespace GreeniumCore.Network
 {
     public class P2PClient
     {
+
     }
 }

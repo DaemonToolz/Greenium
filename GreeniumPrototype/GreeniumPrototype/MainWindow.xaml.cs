@@ -10,9 +10,13 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using CefSharp.Wpf;
 using GreeniumCore.API;
+using GreeniumCore.FileTracker;
 using GreeniumCore.FileTracker.FileTracker;
 using GreeniumPrototype.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Linq;
+using CefSharp;
 
 namespace GreeniumPrototype
 {
@@ -22,8 +26,13 @@ namespace GreeniumPrototype
     public partial class MainWindow : Window
     {
         private static readonly Dictionary<string, Page> Pages = new Dictionary<string, Page>();
-        private static readonly XmlConfigProvider xcp = new XmlConfigProvider(System.AppDomain.CurrentDomain.BaseDirectory, "conf");
-        private static readonly XmlBookProvider bookmarks = new XmlBookProvider(System.AppDomain.CurrentDomain.BaseDirectory, "main");
+        
+        private static readonly XmlUserSettingsProvider configuration
+            = new XmlUserSettingsProvider(System.AppDomain.CurrentDomain.BaseDirectory, "grn");
+        private static readonly XmlConfigProvider xcp 
+            = new XmlConfigProvider(System.AppDomain.CurrentDomain.BaseDirectory, "conf");
+        private static readonly XmlBookProvider bookmarks 
+            = new XmlBookProvider(System.AppDomain.CurrentDomain.BaseDirectory, "main");
         private static String UUID;
         private static LogModel MySession;
 
@@ -58,12 +67,22 @@ namespace GreeniumPrototype
 
         }
 
+        private bool Init = false;
+        private bool ChangeOnLoad = false;
 
+        public MainWindow()
+        {
 
-        public MainWindow() {
-            
+           
             InitializeComponent();
+            
             AccountGrid.DataContext = MySession;
+
+            ChangeOnLoad = true;
+            Init = true;
+
+            InitializeSettings();
+            
             RunPeriodicAsync(()=> { AutoRegister(); }, new TimeSpan(0,0,1), new TimeSpan(0,0,30),CancellationToken.None);
             bookmarks.OpenFile();
             ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
@@ -71,6 +90,14 @@ namespace GreeniumPrototype
             //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
 
         }
+
+        private void InitializeBrowser()
+        {
+            var BrowserSettings = new CefSettings();
+            BrowserSettings.CachePath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\cache";
+            Cef.Initialize(BrowserSettings);
+        }
+
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
         {
@@ -211,20 +238,14 @@ namespace GreeniumPrototype
                     ));
 
 
-                    MySession.ID = result["ID"].ToString();
-                    MySession.Name = result["Name"].ToString();
-                    MySession.FullName = result["FullName"].ToString();
-                    MySession.XP = int.Parse(result["XP"].ToString());
-                    MySession.Level = int.Parse(result["Level"].ToString());
-                    MySession.Creation = result["Creation"].ToString();
-
+                    LoadFromResult(result);
                     xcp.OpenFile();
                     xcp.AddNode(UUID, MySession.ID);
                     xcp.SaveFile();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    SetOffline();
                 }
             }
             else
@@ -238,17 +259,12 @@ namespace GreeniumPrototype
                     UUID = ConfigArray[0];
 
                     var result = JObject.Parse(await RequestHandler.Call($"http://localhost:10840/Account/{ConfigArray[1]}", "GET", null, null, null));
+                    LoadFromResult(result);
 
-                    MySession.ID = result["ID"].ToString();
-                    MySession.Name = result["Name"].ToString();
-                    MySession.FullName = result["FullName"].ToString();
-                    MySession.XP = int.Parse(result["XP"].ToString());
-                    MySession.Level = int.Parse(result["Level"].ToString());
-                    MySession.Creation = result["Creation"].ToString();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    SetOffline();
                 }
             }
 
@@ -266,9 +282,32 @@ namespace GreeniumPrototype
                 LevelLabel.Text = $"{MySession.Level}";
                 AccountProgress.Value = MySession.XP;
                 AccountProgress.Range = total;
- 
+                UCID_Cnt_Param.Text = MySession.Online ? "Online mode" : "Offline mode";
             });
 
+        }
+
+        private void LoadFromResult(JObject result)
+        {
+
+            MySession.ID = result["ID"].ToString();
+            MySession.Name = result["Name"].ToString();
+            MySession.FullName = result["FullName"].ToString();
+            MySession.XP = int.Parse(result["XP"].ToString());
+            MySession.Level = int.Parse(result["Level"].ToString());
+            MySession.Creation = result["Creation"].ToString();
+            MySession.Online = true;
+        }
+
+        private void SetOffline()
+        {
+            MySession.Online = false;
+            MySession.ID = Guid.NewGuid().ToString();
+            MySession.Name = "Offline";
+            MySession.FullName = "Offline";
+            MySession.XP = 0;
+            MySession.Level = 0;
+            MySession.Creation = DateTime.Now.ToString();
         }
 
         private void Browser_Loaded(object sender, RoutedEventArgs e)
@@ -349,6 +388,138 @@ namespace GreeniumPrototype
         {
             return bookmarks.DeleteBookmark(ID);
         }
-     
+
+
+        public bool LoadSettings(){
+            try
+            {
+                if(configuration.OpenedDocument == null) configuration.OpenFile();
+                var mySettings = configuration.ReadConfig();
+                if (!mySettings.Any()) return false;
+
+                foreach (var currentSetting in mySettings){
+                    var stringSetting = currentSetting.Split(';');
+
+                    var selection = stringSetting.First(kv => kv.StartsWith("autolog")).Split(':')[1];
+                    AutologSwitch.IsChecked = bool.Parse(selection);
+
+                    selection = stringSetting.First(kv => kv.StartsWith("idsave")).Split(':')[1];
+                    PasswordSaveSwitch.IsChecked = bool.Parse(selection);
+
+                    selection = stringSetting.First(kv => kv.StartsWith("privacy")).Split(':')[1];
+                    AnonymousSwitch.IsChecked = selection.ToLower().Equals("full");
+
+                    selection = stringSetting.First(kv => kv.StartsWith("ishost")).Split(':')[1];
+                    HostSwitch.IsChecked = bool.Parse(selection);
+
+                    selection = stringSetting.First(kv => kv.StartsWith("defaultbrowser")).Split(':')[1];
+                    SearchEngineCbox.Text = selection;
+                }
+                ChangeOnLoad = false;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+ 
+        public bool InitializeSettings(bool ForceUpdate = false){
+            try
+            {
+                if (configuration.OpenedDocument == null)
+                    configuration.OpenFile();
+                if (LoadSettings() && !ForceUpdate) return true;
+                var result = configuration.InsertOrUpdateConfig(
+                    new Dictionary<string, string>() {
+                        { "username",""},
+                        { "emails", ""},
+                        {"autolog","false" },
+                        {"idsave","false" },
+                        {"defaultbrowser","Google" },
+                        {"ishost","false" },
+                        {"privacy","partial" },
+                        {"isfixedseed","true" },
+                        {"seed", Guid.NewGuid().ToString().Replace("-","")},
+                        {"p2pstatus","offline" },
+                        {"p2presolver","offline" },
+                        {"p2pprotocol","Grn" }
+                    });
+                configuration.SaveFile();
+                return result;
+            }
+            catch
+            {
+                return false;    
+            }
+
+        }
+
+        //
+
+        private async void UpdateSettings()
+        {
+            if (configuration.OpenedDocument == null)
+                configuration.OpenFile();
+
+            var result = configuration.InsertOrUpdateConfig(
+                new Dictionary<string, string>() {
+                    { "username","TBA"},
+                    { "emails", JsonConvert.SerializeObject(new string[]{"nom.prenom@gmail.com","username@gmail.com"})},
+                    {"autolog", AutologSwitch.IsChecked.ToString() },
+                    {"idsave", PasswordSaveSwitch.IsChecked.ToString() },
+                    {"defaultbrowser", ((ComboBoxItem)SearchEngineCbox.SelectedValue).Content.ToString() },
+                    {"ishost",HostSwitch.IsChecked.ToString() },
+                    {"isfixedseed","True" },
+                    {"privacy",AnonymousSwitch.IsChecked ? "full" : "partial" },
+                    {"seed", Guid.NewGuid().ToString().Replace("-","")},
+                    {"p2pstatus","offline" },
+                    {"p2presolver","offline" },
+                    {"p2pprotocol","Grn" }
+                });
+            configuration.SaveFile();
+        }
+
+        private void AutologSwitch_Checked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void HostSwitch_Checked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void PasswordSaveSwitch_Checked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void AnonymousSwitch_Checked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void AnonymousSwitch_Unchecked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void PasswordSaveSwitch_Unchecked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void HostSwitch_Unchecked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void AutologSwitch_Unchecked(object sender, RoutedEventArgs e) {
+            UpdateSettings();
+        }
+
+        private void SearchEngineCbox_SelectionChanged(object sender, SelectionChangedEventArgs e){
+            if (Init)
+                if (ChangeOnLoad)
+                    UpdateSettings();
+            
+        }
+
+        //
     }
 }
