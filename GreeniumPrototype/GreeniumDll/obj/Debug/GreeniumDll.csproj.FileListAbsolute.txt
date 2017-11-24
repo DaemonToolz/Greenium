@@ -2,3 +2,5 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\bin\Debug\Gre
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\bin\Debug\GreeniumDll.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumDll\obj\Debug\GreeniumDll.csproj.CoreCompileInputs.cache
