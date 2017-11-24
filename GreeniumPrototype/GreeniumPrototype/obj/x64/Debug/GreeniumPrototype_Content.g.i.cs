@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/generalsettingsicon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/modulesettingsicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("appicon.ico")]
 
 

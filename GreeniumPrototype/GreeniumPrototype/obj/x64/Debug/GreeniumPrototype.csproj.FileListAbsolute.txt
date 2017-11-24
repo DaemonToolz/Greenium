@@ -26,7 +26,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.csprojResolveAssemblyReference.cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\AddonItem.g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Contribute.g.cs
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails..g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\MainWindow.g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\App.g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
@@ -34,10 +33,8 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype_MarkupCompile.lref
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\AddonItem.baml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Contribute.baml
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails..baml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\MainWindow.baml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.g.resources
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.Properties.Resources.resources
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.csproj.GenerateResource.Cache
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.exe
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.pdb
@@ -52,3 +49,6 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCommon.pdb
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\ToggleSwitch.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Resources\ToggleSwitch..baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.Properties.FR_LangInfo.resources
