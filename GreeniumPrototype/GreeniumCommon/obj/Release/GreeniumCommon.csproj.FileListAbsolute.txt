@@ -1,0 +1,5 @@
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCommon\bin\Release\GreeniumCommon.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCommon\bin\Release\GreeniumCommon.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCommon\obj\Release\GreeniumCommon.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCommon\obj\Release\GreeniumCommon.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCommon\obj\Release\GreeniumCommon.pdb

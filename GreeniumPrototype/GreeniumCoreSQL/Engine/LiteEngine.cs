@@ -32,8 +32,7 @@ namespace GreeniumCoreSQL.Engine
             MyConnection.Open();
 
             var CreateCmdStr = "CREATE TABLE History( url varchar(1024) not null, datebig integer not null, datesmall integer not null  )";
-            using (var Command = new SQLiteCommand(CreateCmdStr, MyConnection))
-            {
+            using (var Command = new SQLiteCommand(CreateCmdStr, MyConnection)){
                 Command.ExecuteNonQuery();
             }
         }
@@ -79,14 +78,55 @@ namespace GreeniumCoreSQL.Engine
             }
         }
 
+        public int Count() {
+            try
+            {
+                int result = 0;
+                using (var Command = new SQLiteCommand($"Select Count(*) FROM History", MyConnection))
+                    using (var reader = Command.ExecuteReader())
+                        while (reader.Read())
+                            result = (reader.GetInt32(0));
+                return result;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return -1;
+            }
+        }
+
+        public void Clear(){
+            try{
+                using (var Command = new SQLiteCommand($"DELETE FROM History", MyConnection)) 
+                    Command.ExecuteNonQuery();
+                
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
         public IEnumerable<HistoryCommand> Read(String cls)
         {
             using (var Command = new SQLiteCommand($"SELECT * FROM {cls}", MyConnection)) {
                 using (var reader = Command.ExecuteReader()) {
                     while (reader.Read())
                     {
-                        var thisBigDate = reader.GetInt32(1).ToString().SplitInParts(2).ToList();
-                        var thisSmallDate = reader.GetInt32(2).ToString().SplitInParts(2).ToList();
+                        var bigDateTemporary = reader.GetInt32(1);
+                        var bigDateString = bigDateTemporary.ToString();
+                        if ((bigDateTemporary / 10000) < 10)
+                            bigDateString = "0" + bigDateString;
+                        var thisBigDate = bigDateString.SplitInParts(2).ToArray();
+
+
+                        var smallDateTemporary = reader.GetInt32(2);
+                        var smmallDateString = smallDateTemporary.ToString();
+                        if ((smallDateTemporary / 10000) < 10)
+                            smmallDateString = "0" + smmallDateString;
+                        var thisSmallDate = smmallDateString.SplitInParts(2).ToArray();
+
                         yield return new HistoryCommand(){
                             URL = reader.GetString(0),
                             Time = new DateTime(

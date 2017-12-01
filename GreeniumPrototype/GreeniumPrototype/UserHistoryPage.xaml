@@ -1,0 +1,14 @@
+﻿<Page x:Class="GreeniumPrototype.UserHistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GreeniumPrototype"
+      mc:Ignorable="d" 
+      d:DesignHeight="527" d:DesignWidth="200"
+      Title="UserHistoryPage">
+
+    <Grid Background="White">
+        <TreeView x:Name="HistoryTree" ItemsSource="{Binding HistoryLinks}" HorizontalAlignment="Left" Height="527" VerticalAlignment="Top" Width="200"/>
+    </Grid>
+</Page>

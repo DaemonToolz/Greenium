@@ -43,5 +43,17 @@ namespace GreeniumPrototype.Properties {
                 return ((string)(this["MSAccountLink"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public uint BackupXP {
+            get {
+                return ((uint)(this["BackupXP"]));
+            }
+            set {
+                this["BackupXP"] = value;
+            }
+        }
     }
 }

@@ -100,6 +100,7 @@
     <Compile Include="Mail\IGenericMailConnector.cs" />
     <Compile Include="Mail\Gmail.cs" />
     <Compile Include="Mail\Outlook..cs" />
+    <Compile Include="Network\Discovery\SiteDiscovery.cs" />
     <Compile Include="Network\P2PClient.cs" />
     <Compile Include="Network\P2PHost.cs" />
     <Compile Include="Network\P2PResolver.cs" />
@@ -150,6 +151,9 @@
       <Project>{5a714b9a-4158-4127-bbf3-423694a9b7c2}</Project>
       <Name>GreeniumCommon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Network\P2P\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,13 +30,23 @@ namespace GreeniumPrototype
 
         internal string Name { get; set; }
 
-        public static readonly DependencyProperty LinkDependency = DependencyProperty.Register("Link", typeof(String), typeof(AddonItem), new FrameworkPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty LinkDependency = 
+            DependencyProperty.Register("Link", typeof(String), typeof(BookmarkItem), new FrameworkPropertyMetadata(string.Empty));
 
         public String Link
         {
             get { return GetValue(LinkDependency)?.ToString(); }
             set { SetValue(LinkDependency, value); }
         }
+
+        public String Favicon
+        {
+            get { return GetValue(FaviconDependancy)?.ToString(); }
+            set { SetValue(FaviconDependancy, value); }
+        }
+
+        public static readonly DependencyProperty FaviconDependancy = 
+            DependencyProperty.Register("Favicon", typeof(String), typeof(BookmarkItem), new FrameworkPropertyMetadata(string.Empty));
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {

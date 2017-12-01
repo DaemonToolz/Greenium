@@ -52,3 +52,17 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails.g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Emails.baml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\GreeniumPrototype.Properties.FR_LangInfo.resources
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCoreSQL.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\System.Data.SQLite.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCoreSQL.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\GreeniumCoreSQL.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\System.Data.SQLite.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\System.Data.SQLite.dll.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\EntityFramework.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\System.Data.SQLite.EF6.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\System.Data.SQLite.Linq.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\EntityFramework.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\bin\x64\Debug\EntityFramework.SqlServer.xml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\UserHistoryPage.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\UserHistoryPage.baml

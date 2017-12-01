@@ -8,7 +8,7 @@
       d:DesignHeight="527" d:DesignWidth="200"
       Title="BookmarksPage">
 
-    <Grid Background="White">
+    <Grid Background="White" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
         <ListBox x:Name="bookmarksList" ItemsSource="{Binding bookmarks}" HorizontalAlignment="Left" Height="527" VerticalAlignment="Top" Width="200"/>
 
     </Grid>

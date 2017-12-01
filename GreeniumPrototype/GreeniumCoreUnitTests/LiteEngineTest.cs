@@ -32,6 +32,7 @@ namespace GreeniumCoreUnitTests
 
             foreach (var history in content)
             {
+
                 Console.WriteLine($"{history.Time:dd/MM/yyyy} - { history.URL}");
                 Engine.Remove(history);
             }

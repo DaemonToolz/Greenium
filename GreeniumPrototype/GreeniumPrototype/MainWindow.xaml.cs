@@ -16,7 +16,11 @@ using GreeniumPrototype.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 using CefSharp;
+using GreeniumCore.Network.Discovery;
+using GreeniumCoreSQL.Engine;
 
 namespace GreeniumPrototype
 {
@@ -35,6 +39,20 @@ namespace GreeniumPrototype
             = new XmlBookProvider(System.AppDomain.CurrentDomain.BaseDirectory, "main");
         private static String UUID;
         private static LogModel MySession;
+
+        public static LiteEngine HistoryEngine;
+
+
+        private static String GreeniumDefaultURL => Properties.GeneralSettings.Default.MSAccountLink;
+
+        private static uint BackupXP
+        {
+            get { return Properties.GeneralSettings.Default.BackupXP; }
+            set {
+                Properties.GeneralSettings.Default.BackupXP = value;
+                Properties.GeneralSettings.Default.Save();
+            }
+        }
 
         //private Storyboard AccountStoryBoard { get; set; }
 
@@ -62,9 +80,10 @@ namespace GreeniumPrototype
         static MainWindow()
         {
             Pages.Add("Contribute", new Contribute());
-            Pages.Add("Emails", new Emails());
             Pages.Add("Bookmarks", new BookmarksPage());
+            Pages.Add("History", new UserHistoryPage());
 
+            HistoryEngine = new LiteEngine();
         }
 
         private bool Init = false;
@@ -78,14 +97,33 @@ namespace GreeniumPrototype
             
             AccountGrid.DataContext = MySession;
 
-            ChangeOnLoad = true;
+         
             Init = true;
 
             InitializeSettings();
-            
+            ChangeOnLoad = true;
+
             RunPeriodicAsync(()=> { AutoRegister(); }, new TimeSpan(0,0,1), new TimeSpan(0,0,30),CancellationToken.None);
             bookmarks.OpenFile();
             ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
+            ((BookmarksPage)Pages["Bookmarks"]).Owner = this;
+            ((UserHistoryPage)Pages["History"]).Owner = this;
+            ((UserHistoryPage) Pages["History"]).UpdateHistory();
+
+            HistoryCountParam.Content = HistoryEngine.Count();
+            UCID_BXP_Param.Text = BackupXP + "";
+
+            // -------------------------- EMAIL TEMPLATE TEST
+
+            var emails = new List<Object>();
+            for (int i = 0; i < 10; ++i)
+                emails.Add(new {Nom = $"Email {i}", Color=$"#{7+((i*4)%2)}{5+((i * 4) % 6)}{(i) % 9}{2+((i * 6) % 7)}{5+((i) % 4)}{3+((i * 5) % 6)}"});
+
+            EmailListbox.ItemsSource = emails ;
+
+
+            // --------------------------
+
 
             //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
 
@@ -176,9 +214,15 @@ namespace GreeniumPrototype
                 e.CanExecute = true;
             }
 
-            private void GoToPage_Executed(object sender, ExecutedRoutedEventArgs e)
+            public void GoToPage_Executed(object sender, ExecutedRoutedEventArgs e)
             {
                 Browser.Load(txtUrl.Text);
+                HistoryEngine.Add(txtUrl.Text);
+
+                if (!MySession.Online){
+                    BackupXP = BackupXP + 50; // Exemple
+                    UCID_BXP_Param.Text = BackupXP.ToString();
+                }
                 //Browser.Navigate(txtUrl.Text);
             }
 
@@ -191,12 +235,7 @@ namespace GreeniumPrototype
             SideMenuFrame.Navigate(Pages["Contribute"]);
         }
 
-        private void btnMails_Click(object sender, RoutedEventArgs e)
-        {
-            if (btnRightMenuHide.Visibility != Visibility.Visible)
-                btnRightMenuShow_Click(null, null);
-            SideMenuFrame.Navigate(Pages["Emails"]);
-        }
+   
 
         private void Login()
         {
@@ -227,7 +266,8 @@ namespace GreeniumPrototype
                 {
                     var User = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
                     var TruncUser = User.Substring(User.LastIndexOf(@"\"));
-                    var result = JObject.Parse(await RequestHandler.Call("http://localhost:10840/Account/Create", "POST", null, null,
+                      
+                    var result = JObject.Parse(await RequestHandler.Call($"{GreeniumDefaultURL}/Create", "POST", null, null,
                         new
                         {
                             Name = User,
@@ -258,7 +298,7 @@ namespace GreeniumPrototype
                     var ConfigArray = Config.Split(';');
                     UUID = ConfigArray[0];
 
-                    var result = JObject.Parse(await RequestHandler.Call($"http://localhost:10840/Account/{ConfigArray[1]}", "GET", null, null, null));
+                    var result = JObject.Parse(await RequestHandler.Call($"{GreeniumDefaultURL}/{ConfigArray[1]}", "GET", null, null, null));
                     LoadFromResult(result);
 
                 }
@@ -285,6 +325,10 @@ namespace GreeniumPrototype
                 UCID_Cnt_Param.Text = MySession.Online ? "Online mode" : "Offline mode";
             });
 
+            if (!MySession.Online)
+                OfflineModeGrid.Visibility = Visibility.Visible;
+            else
+                OfflineModeGrid.Visibility = Visibility.Hidden;
         }
 
         private void LoadFromResult(JObject result)
@@ -313,6 +357,8 @@ namespace GreeniumPrototype
         private void Browser_Loaded(object sender, RoutedEventArgs e)
         {
             var browser = (ChromiumWebBrowser)sender;
+            if (browser.Address == null)
+                txtUrl.Text = "https://www.ecosia.org/";
             txtUrl.Text = browser.Address.ToString();
 
         }
@@ -321,9 +367,51 @@ namespace GreeniumPrototype
         private void PinURL()
         {
             var CommonUID = Guid.NewGuid().ToString().Replace("-","");
-            var generatedGrid = new Grid() {Name = $"TH{CommonUID}", Width = 75};
-            generatedGrid.Children.Add(new Label() {Content = Browser.Address, HorizontalAlignment = HorizontalAlignment.Left});
-            var interaction = new Button() {Name=$"BTN{CommonUID}", Content = "X", Width = 20, Height = 20, VerticalAlignment= VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right};
+            var generatedGrid = new Grid()
+            {
+                Name = $"TH{CommonUID}", Width = 150
+            };
+
+            Func<string, string> QuickDiscovery = (url) => {
+                SiteDiscovery.Discover(url);
+                return $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Data\Site\Cache\{SiteDiscovery.FindDomain(url)}.ico";
+            };
+
+            BitmapImage logo = new BitmapImage();
+            logo.BeginInit();
+            logo.UriSource = new Uri(QuickDiscovery(Browser.Address));
+            logo.EndInit();
+
+            generatedGrid.Children.Add(
+                new Image() {
+                    Width = 20,
+                    Height = 20,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    Source = logo
+                }
+            );
+
+
+            generatedGrid.Children.Add(
+                new Label()
+                {
+                    Margin = new Thickness(25,0,0,0),
+                    Content = Browser.Address,
+                    FontSize = 9.0,
+                    HorizontalAlignment = HorizontalAlignment.Left
+                });
+
+            var interaction = new Button()
+            {
+                Name=$"BTN{CommonUID}",
+                Content = "X",
+                Width = 20,
+                VerticalContentAlignment = VerticalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Right
+            };
+
 
             interaction.Click += (object sender, RoutedEventArgs e) =>{
                 var btn = sender as Button;
@@ -414,6 +502,8 @@ namespace GreeniumPrototype
 
                     selection = stringSetting.First(kv => kv.StartsWith("defaultbrowser")).Split(':')[1];
                     SearchEngineCbox.Text = selection;
+
+                    Browser.Address = $"https://www.{selection.ToLower()}.{(selection.ToLower().Equals("ecosia")?"org":"com")}/";
                 }
                 ChangeOnLoad = false;
 
@@ -513,11 +603,75 @@ namespace GreeniumPrototype
             UpdateSettings();
         }
 
-        private void SearchEngineCbox_SelectionChanged(object sender, SelectionChangedEventArgs e){
-            if (Init)
-                if (ChangeOnLoad)
-                    UpdateSettings();
-            
+        private void SearchEngineCbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Init && ChangeOnLoad) UpdateSettings();
+        }
+
+
+
+        private void HostSwitchInfoBtn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            HostSwitchDescriptor.Visibility = Visibility.Visible;
+        }
+
+        private void HostSwitchInfoBtn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            HostSwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
+        private void IdSaveSwitchBtnInfo_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PwdSwitchDescriptor.Visibility = Visibility.Visible;
+        }
+
+        private void IdSaveSwitchBtnInfo_MouseLeave(object sender, MouseEventArgs e)
+        {
+            PwdSwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
+        private void AutologSwitchInfoBtn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            AutologSwitchDescriptor.Visibility = Visibility.Visible;
+        }
+
+        private void AutologSwitchInfoBtn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            AutologSwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
+        private void PrivacySwitchInfoBtn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PrivacySwitchDescriptor.Visibility = Visibility.Visible;
+        }
+
+        private void PrivacySwitchInfoBtn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            PrivacySwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
+        private void HistoryClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            HistoryEngine.Clear();
+        }
+
+        private void btn_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void History_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnRightMenuHide.Visibility != Visibility.Visible)
+                btnRightMenuShow_Click(null, null);
+
+
+            SideMenuFrame.Navigate(Pages["History"]);
+        }
+
+        private void GoToBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GoToPage_Executed(this, null);
         }
 
         //

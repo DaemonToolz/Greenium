@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GreeniumCore.Network.Discovery;
 
 namespace GreeniumPrototype
 {
@@ -24,6 +26,8 @@ namespace GreeniumPrototype
     {
 
         private static ObservableCollection<BookmarkItem> bookmarks = new ObservableCollection<BookmarkItem>();
+        public MainWindow Owner { get; set; }
+
         public BookmarksPage(){
             InitializeComponent();
             UpdateBookmarks();
@@ -31,6 +35,13 @@ namespace GreeniumPrototype
 
         public void UpdateBookmarks()
         {
+
+            
+            Func<string,string> QuickDiscovery = (url) => {
+                SiteDiscovery.Discover(url);
+                return $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Data\Site\Cache\{SiteDiscovery.FindDomain(url)}.ico";
+            };
+            
             bookmarks.Clear();
             var tmp = MainWindow.GetBookmarks().Select(
                 item => 
@@ -38,7 +49,8 @@ namespace GreeniumPrototype
                 {
                     Link = item.Split(';')[1],
                     Name = item.Split(';')[0].Replace("\\","").Replace("\"", "").Replace("bookmark","").Replace("=",""),
-                }).ToList();
+                    Favicon = QuickDiscovery(item.Split(';')[1])
+            }).ToList();
 
             foreach (var t in tmp)
                 bookmarks.Add(t);
@@ -54,6 +66,17 @@ namespace GreeniumPrototype
 
         internal static void BookmarkAdd(BookmarkItem @new){
             bookmarks.Add(@new);
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = ItemsControl.ContainerFromElement(bookmarksList, e.OriginalSource as DependencyObject) as ListBoxItem;
+            if (item != null)
+            {
+                Owner.txtUrl.Text = ((BookmarkItem)item.Content).Link.ToString();
+                Owner.GoToPage_Executed(this, null);
+            }
+ 
         }
     }
 }

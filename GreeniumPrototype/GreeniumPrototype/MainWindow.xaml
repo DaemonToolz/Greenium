@@ -21,6 +21,15 @@
 
 
     <Window.Resources>
+        <!-- Ellipse resources -->
+        <Style x:Key="InfoStyleButton" TargetType="{x:Type Ellipse}">
+            <Setter Property="Fill" Value="LightGray" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Fill" Value="MidnightBlue" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
         <Storyboard x:Key="sbShowRightMenu" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,-150,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
@@ -175,7 +184,10 @@
                     <TextBlock x:Name="UCID_Param2" HorizontalAlignment="Left" Margin="118,261,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
                     <Label x:Name="UCID_Cnt" Content="Online" HorizontalAlignment="Left" Margin="17,282,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBlock x:Name="UCID_Cnt_Param" HorizontalAlignment="Left" Margin="118,287,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
-
+                    <Grid Visibility="Hidden" x:Name="OfflineModeGrid" Width="200" Height="100" Margin="17,313,572.6,106.2">
+                        <Label x:Name="UCID_BXP_Label" Content="Saved XP" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Width="82" Height="21" FontSize="10"/>
+                        <TextBlock x:Name="UCID_BXP_Param" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Width="75px">
@@ -193,10 +205,25 @@
                             </Button>
                             <Separator />
                             <TextBox Name="txtUrl" Width="300" KeyUp="txtUrl_KeyUp" />
+
+                            <Button x:Name="GoToBtn" Click="GoToBtn_Click" >
+                                <Image Source="Assets/navigationgoto.png" Width="16" Height="16" />
+                            </Button>
+                            
                             <Button Command="NavigationCommands.GoToPage">
                                 <Image Source="Assets/refresh.png" Width="16" Height="16" />
-                            </Button>
 
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#FFB9D7FC" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                     
                             <Button x:Name="PinBtn" Click="PinBtn_Click">
                                 <Image Source="Assets/pin.png" Width="16" Height="16" />
                             </Button>
@@ -206,17 +233,11 @@
                         </ToolBar>
 
 
-                        <cefSharp:ChromiumWebBrowser x:Name="Browser" Panel.ZIndex="99" HorizontalAlignment="Left" Height="495" Margin="0,2.8,0,0" VerticalAlignment="Top" Width="722" RenderTransformOrigin="0.5,0.5" Address="https://www.ecosia.org/" Loaded="Browser_Loaded"/>
+                        <cefSharp:ChromiumWebBrowser x:Name="Browser" Panel.ZIndex="99" HorizontalAlignment="Left" Height="495" Margin="0,2.8,0,0" VerticalAlignment="Top" Width="722" RenderTransformOrigin="0.5,0.5" Loaded="Browser_Loaded"/>
 
                     </DockPanel>
                     <StackPanel Panel.ZIndex="5" x:Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
                         <Grid Background="ForestGreen" Margin="0,0,0,0.2" Width="54">
-                            <Button x:Name="btn" Margin="4,53,3,420.4" Foreground="Red" BorderBrush="{x:Null}">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="Assets/configure.png"/>
-                                </Button.Background>
-
-                            </Button>
                             <Button x:Name="btnRightMenuHide" Width="48" Height="48" Margin="0,0,0,479.2" Click="btnRightMenuHide_Click"  Visibility="Hidden" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/hide.png"/>
@@ -229,26 +250,20 @@
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy" Margin="4,102,3,371.4" BorderBrush="{x:Null}">
+                            <Button x:Name="History_btn" Margin="4,55,3,418" BorderBrush="{x:Null}" Click="History_btn_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/history.png"/>
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy1" Margin="4,151,3,321.4" BorderBrush="{x:Null}">
+                            <Button x:Name="btn_Copy1" Margin="3,408,4,64" BorderBrush="{x:Null}" >
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/comment.png"/>
                                 </Button.Background>
 
                             </Button>
 
-                            <Button x:Name="btnMails" Margin="4,196,3,276.4" BorderBrush="{x:Null}" Click="btnMails_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="Assets/mails.png"/>
-                                </Button.Background>
-                            </Button>
-
-                            <Button x:Name="btnBookmarks" Margin="4,243,3,229" BorderBrush="{x:Null}" Click="btnBookmarks_Click">
+                            <Button x:Name="btnBookmarks" Margin="4,99,3,373" BorderBrush="{x:Null}" Click="btnBookmarks_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/bookmark.png"/>
                                 </Button.Background>
@@ -281,7 +296,7 @@
                 <Grid Background="#FFE5E5E5">
                     <TabControl x:Name="SettingsTabItem" TabStripPlacement="Left" HorizontalAlignment="Left" Height="519" VerticalAlignment="Top" Width="790" Margin="0,0,-0.4,0">
 
-                        <TabItem >
+                        <TabItem Margin="-3,-2,1.4,-2.4" >
                             <TabItem.Header>
                                 <Grid Background="DarkGreen" Width="250" Height="50">
                                     <Image  Source="pack://application:,,,/Assets/GeneralSettingsIcon.png" Width="50px" HorizontalAlignment="Left" Margin="10,0,0,0"></Image>
@@ -290,34 +305,115 @@
                                     </Label>
                                 </Grid>
                             </TabItem.Header>
-                            <Grid Background="White">
-                                <switch:HorizontalToggleSwitch 
-                                    CheckedContent="Autologging" UncheckedContent="Manual Logging"
-                                    x:Name="AutologSwitch" Width="150px" Height="30px" Margin="10,23,360.8,459.8" Checked="AutologSwitch_Checked" Unchecked="AutologSwitch_Unchecked" />
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
 
-                                <switch:HorizontalToggleSwitch 
-                                    CheckedContent="Enable Hosting" UncheckedContent="Disable Hosting"
-                                    x:Name="HostSwitch" Width="150px" Height="30px" Margin="10,58,360.8,424.8" Checked="HostSwitch_Checked" Unchecked="HostSwitch_Unchecked"/>
+                                <Grid Background="White" Height="659">
+                                    <switch:HorizontalToggleSwitch 
+                                        CheckedContent="Autologging" UncheckedContent="Manual Logging"
+                                        x:Name="AutologSwitch" Width="150px" Height="30px" Margin="7,122,347,507" Checked="AutologSwitch_Checked" Unchecked="AutologSwitch_Unchecked" />
 
-                                <switch:HorizontalToggleSwitch 
-                                    CheckedContent="Full Privacy" UncheckedContent="Partial Privacy"
-                                    x:Name="AnonymousSwitch" Width="150px" Height="30px" Margin="185,23,185.8,459.8" Checked="AnonymousSwitch_Checked" Unchecked="AnonymousSwitch_Unchecked"/>
+                                    <switch:HorizontalToggleSwitch 
+                                        CheckedContent="Enable Hosting" UncheckedContent="Disable Hosting"
+                                        x:Name="HostSwitch" Width="150px" Height="30px" Margin="10,19,344,610" Checked="HostSwitch_Checked" Unchecked="HostSwitch_Unchecked"/>
 
-                                <Button x:Name="HistoryClearBtn" Content="Clear History" HorizontalAlignment="Left" Margin="361,23,0,0" VerticalAlignment="Top" Width="150" Height="30" BorderThickness="0"/>
-                                <Button x:Name="CookieClearBtn" Content="Clear Cookies" HorizontalAlignment="Left" Margin="361,58,0,0" VerticalAlignment="Top" Width="150" Height="30" BorderThickness="0"/>
-                                <ComboBox x:Name="SearchEngineCbox" Margin="340,146,10,336.8" SelectionChanged="SearchEngineCbox_SelectionChanged">
-                                    <ComboBoxItem IsSelected="True" Content="Ecosia" />
-                                    <ComboBoxItem Content="Google"/>
-                                    <ComboBoxItem Content="Yahoo"/>
-                                    <ComboBoxItem Content="DuckDuckGo"/>
-                                    <ComboBoxItem Content="Bing"/>
-                                </ComboBox>
-                                <Label x:Name="DefaultBrowserLabel" Content="Moteur de recherche par défaut" HorizontalAlignment="Left" Margin="7,146,0,0" VerticalAlignment="Top" Height="30" Width="328"/>
-                                <switch:HorizontalToggleSwitch 
-                                    CheckedContent="Save Ids" UncheckedContent="No Save"
-                                    x:Name="PasswordSaveSwitch" Width="150px" Height="30px" Margin="10,91,360.8,391.8" Checked="PasswordSaveSwitch_Checked" Unchecked="PasswordSaveSwitch_Unchecked"/>
-                            </Grid>
+                                    <switch:HorizontalToggleSwitch 
+                                        CheckedContent="Full Privacy" UncheckedContent="Partial Privacy"
+                                        x:Name="AnonymousSwitch" Width="150px" Height="30px" Margin="7,174,347,455" Checked="AnonymousSwitch_Checked" Unchecked="AnonymousSwitch_Unchecked"/>
 
+                                    <Button x:Name="HistoryClearBtn" Content="Clear History" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Width="96" Height="30" BorderThickness="0" Click="HistoryClearBtn_Click"/>
+                                    <Button x:Name="CookieClearBtn" Content="Clear Cookies" HorizontalAlignment="Left" Margin="131,254,0,0" VerticalAlignment="Top" Width="96" Height="30" BorderThickness="0"/>
+                                    <ComboBox x:Name="SearchEngineCbox" Margin="216,319,10,310" SelectionChanged="SearchEngineCbox_SelectionChanged">
+                                        <ComboBoxItem IsSelected="True" Content="Ecosia" />
+                                        <ComboBoxItem Content="Google"/>
+                                        <ComboBoxItem Content="Yahoo"/>
+                                        <ComboBoxItem Content="DuckDuckGo"/>
+                                        <ComboBoxItem Content="Bing"/>
+                                    </ComboBox>
+                                    <Label x:Name="DefaultBrowserLabel" Content="Moteur de recherche par défaut" HorizontalAlignment="Left" Margin="7,319,0,0" VerticalAlignment="Top" Height="30" Width="204"/>
+                                    <switch:HorizontalToggleSwitch 
+                                        CheckedContent="Save Ids" UncheckedContent="No Save"
+                                        x:Name="PasswordSaveSwitch" Width="150px" Height="30px" Margin="10,69,344,560" Checked="PasswordSaveSwitch_Checked" Unchecked="PasswordSaveSwitch_Unchecked"/>
+
+                                    <Button x:Name="PrivacySwitchInfoBtn" Content="i" Margin="177,174,297,455" FontStyle="Italic" FontWeight="Bold" FontFamily="Script MT Bold" FontSize="20" Foreground="White" MouseEnter="PrivacySwitchInfoBtn_MouseEnter" MouseLeave="PrivacySwitchInfoBtn_MouseLeave">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid>
+                                                    <Ellipse Stroke="Black"  
+                                                             StrokeThickness="0">
+
+                                                        <Ellipse.Style>
+                                                            <Style TargetType="{x:Type Ellipse}" BasedOn="{StaticResource InfoStyleButton}"></Style>
+                                                        </Ellipse.Style>
+                                                    </Ellipse>
+                                                    <ContentPresenter HorizontalAlignment="Center"  
+                                                                      VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="AutologSwitchInfoBtn" Content="i" Margin="177,122,297,507" FontStyle="Italic" FontWeight="Bold" FontFamily="Script MT Bold" FontSize="20" Foreground="White" MouseEnter="AutologSwitchInfoBtn_MouseEnter" MouseLeave="AutologSwitchInfoBtn_MouseLeave">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Ellipse Stroke="Black"  
+                                                        StrokeThickness="0" >
+                                                        <Ellipse.Style>
+                                                            <Style TargetType="{x:Type Ellipse}" BasedOn="{StaticResource InfoStyleButton}"></Style>
+                                                        </Ellipse.Style>
+                                                    </Ellipse>
+                                                    <ContentPresenter HorizontalAlignment="Center"  
+                                                        VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="IdSaveSwitchBtnInfo" Content="i" Margin="177,68,297,560" FontStyle="Italic" FontWeight="Bold" FontFamily="Script MT Bold" FontSize="20" Foreground="White" MouseEnter="IdSaveSwitchBtnInfo_MouseEnter" MouseLeave="IdSaveSwitchBtnInfo_MouseLeave">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Ellipse Stroke="Black"  
+                                                        StrokeThickness="0" >
+                                                        <Ellipse.Style>
+                                                            <Style TargetType="{x:Type Ellipse}" BasedOn="{StaticResource InfoStyleButton}"></Style>
+                                                        </Ellipse.Style>
+                                                    </Ellipse>
+                                                    <ContentPresenter HorizontalAlignment="Center"  
+                                                        VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="HostSwitchInfoBtn" Content="i" Margin="177,17,297,610" FontStyle="Italic" FontWeight="Bold" FontFamily="Script MT Bold" FontSize="20" Foreground="White" MouseEnter="HostSwitchInfoBtn_MouseEnter" MouseLeave="HostSwitchInfoBtn_MouseLeave">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Ellipse Stroke="Black"  
+                                                        StrokeThickness="0" >
+                                                        <Ellipse.Style>
+                                                            <Style TargetType="{x:Type Ellipse}" BasedOn="{StaticResource InfoStyleButton}"></Style>
+                                                        </Ellipse.Style>
+
+                                                    </Ellipse>
+
+                                                    <ContentPresenter HorizontalAlignment="Center"  
+                                                        VerticalAlignment="Center"/>
+                                                </Grid>
+
+                                            </ControlTemplate>
+                                        </Button.Template>
+
+                                    </Button>
+
+                                    <TextBlock Visibility="Hidden" x:Name="HostSwitchDescriptor" HorizontalAlignment="Left" Margin="236,17,0,0" TextWrapping="Wrap" Text="Vous permez d'héberger des sites webs " VerticalAlignment="Top" Height="32" Width="258"/>
+                                    <TextBlock Visibility="Hidden" x:Name="PwdSwitchDescriptor" HorizontalAlignment="Left" Margin="236,67,0,0" TextWrapping="Wrap" Text="Stock par défaut identifiants et mots de passe" VerticalAlignment="Top" Height="32" Width="258"/>
+                                    <TextBlock Visibility="Hidden" x:Name="AutologSwitchDescriptor" HorizontalAlignment="Left" Margin="236,120,0,0" TextWrapping="Wrap" Text="Permet de vous connecter à vos emails automatiquement" VerticalAlignment="Top" Height="32" Width="258"/>
+                                    <TextBlock Visibility="Hidden" x:Name="PrivacySwitchDescriptor" HorizontalAlignment="Left" Margin="236,174,0,0" TextWrapping="Wrap" Text="Naviguez en limitant la sauvegarde et l'envoi d'informations" VerticalAlignment="Top" Height="32" Width="258"/>
+                                    <Label x:Name="HistoryCountLabel" Content="Liens en historique" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="121"/>
+                                    <Label x:Name="HistoryCountParam" Content="%param%" HorizontalAlignment="Left" Margin="136,289,0,0" VerticalAlignment="Top" Width="121"/>
+
+                                </Grid>
+
+                            </ScrollViewer>
                         </TabItem>
                         <TabItem>
                             <TabItem.Header>
@@ -343,6 +439,43 @@
                 </Grid>
 
             </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/mails.png" Height="40px" Width="50px"/>
+
+                </TabItem.Header>
+                <Grid Background="White" >
+                    <Grid Margin="0,0,551.6,362.2">
+                        <Label Content="Type" Margin="0,0,180,130"></Label>
+                        <ComboBox Margin="63,0,0,130"></ComboBox>
+                        <Label Content="Email" Margin="0,32,180,98"></Label>
+                        <TextBox Margin="63,32,0,98" Text="nom d'utilisateur"></TextBox>
+                        <ComboBox Margin="158,64,0,67"/>
+                        <Label Content="@operateur" Margin="0,64,85,66"/>
+                        <Button Margin="0,126,0,0" Content="Ajouter" BorderThickness="0" BorderBrush="{x:Null}" Background="White"></Button>
+                    </Grid>
+                    <ListBox x:Name="EmailListbox" Margin="0,157,551.6,0.2" Background="#FFECFFEB" BorderBrush="{x:Null}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="200"  Height="50"  >
+                                    <Grid Width="20" Height="50" Background="{Binding Color}" HorizontalAlignment="Left"/>
+                                    <Label Margin="25,0,0,0" Foreground="Black" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Nom}" FontWeight="Bold" FontSize="16"></Label>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid Margin="238,0,-0.4,0.2">
+                        
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/plussign.png" Height="30px" Width="50px"/>
+
+                </TabItem.Header>
+            </TabItem>
+
         </TabControl>
 
     </Grid>

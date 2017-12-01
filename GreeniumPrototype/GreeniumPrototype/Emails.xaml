@@ -12,7 +12,7 @@
         <TabControl x:Name="MailControls" HorizontalAlignment="Left" Height="527" VerticalAlignment="Top" Width="200">
             <TabItem>
                 <TabItem.Header>
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Height="30">+</Label>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Height="30" Content="+" Cursor="Help" FontWeight="Bold"/>
 
                 </TabItem.Header>
 
@@ -21,7 +21,7 @@
                         <PasswordBox x:Name="MailPassword" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="174" Height="17"/>
                         <TextBox x:Name="MailUsername" HorizontalAlignment="Left" Height="18" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" TextChanged="textBox_TextChanged"/>
                         <ComboBox x:Name="EngineComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Margin="10,10,0,0" SelectionChanged="EngineComboBox_SelectionChanged"/>
-                        <Button x:Name="AddMailBtn" Content="Add" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="174" Click="AddMail_Click"/>
+                        <Button x:Name="AddMailBtn" Content="Ajouter" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="174" Click="AddMail_Click" BorderThickness="0"/>
                         <Label x:Name="EngineLabel" Content="" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Height="28" Width="107"/>
                         <ComboBox x:Name="ExtensionSelector" HorizontalAlignment="Left" VerticalAlignment="Top" Width="67" Margin="117,63,0,0" Height="28"/>
                         <CheckBox x:Name="RemindPasswordCbx" Content="Remind " HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Height="16" Width="87"/>
