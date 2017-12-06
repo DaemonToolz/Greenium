@@ -674,6 +674,16 @@ namespace GreeniumPrototype
             GoToPage_Executed(this, null);
         }
 
+        private void MailCleanerInfoBtn_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CleanerSwitchDescriptor.Visibility = Visibility.Visible;
+        }
+
+        private void MailCleanerInfoBtn_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CleanerSwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
         //
     }
 }

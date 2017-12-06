@@ -209,7 +209,7 @@
                             <Button x:Name="GoToBtn" Click="GoToBtn_Click" >
                                 <Image Source="Assets/navigationgoto.png" Width="16" Height="16" />
                             </Button>
-                            
+
                             <Button Command="NavigationCommands.GoToPage">
                                 <Image Source="Assets/refresh.png" Width="16" Height="16" />
 
@@ -223,7 +223,7 @@
                                     </Style>
                                 </Button.Style>
                             </Button>
-                     
+
                             <Button x:Name="PinBtn" Click="PinBtn_Click">
                                 <Image Source="Assets/pin.png" Width="16" Height="16" />
                             </Button>
@@ -300,7 +300,7 @@
                             <TabItem.Header>
                                 <Grid Background="DarkGreen" Width="250" Height="50">
                                     <Image  Source="pack://application:,,,/Assets/GeneralSettingsIcon.png" Width="50px" HorizontalAlignment="Left" Margin="10,0,0,0"></Image>
-                                    <Label Foreground="white" Content="Général" Width="90" VerticalContentAlignment="Center" FontSize="20">
+                                    <Label Foreground="white" Content="Général" Width="120" VerticalContentAlignment="Center" FontSize="20">
 
                                     </Label>
                                 </Grid>
@@ -419,7 +419,18 @@
                             <TabItem.Header>
                                 <Grid Background="DarkGreen" Width="250" Height="50">
                                     <Image  Source="pack://application:,,,/Assets/ModuleSettingsIcon.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
-                                    <Label Foreground="white" Width="90"  Content="Modules" VerticalContentAlignment="Center" FontSize="20">
+                                    <Label Foreground="white" Width="120"  Content="Modules" VerticalContentAlignment="Center" FontSize="20">
+
+                                    </Label>
+                                </Grid>
+                            </TabItem.Header>
+                            <Grid Background="White"/>
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <Grid Background="DarkGreen" Width="250" Height="50">
+                                    <Image  Source="pack://application:,,,/Assets/browser.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
+                                    <Label Foreground="white" Width="120"  Content="Apparence" VerticalContentAlignment="Center" FontSize="20">
 
                                     </Label>
                                 </Grid>
@@ -457,16 +468,95 @@
                     <ListBox x:Name="EmailListbox" Margin="0,157,551.6,0.2" Background="#FFECFFEB" BorderBrush="{x:Null}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Width="200"  Height="50"  >
+                                <Grid Width="200"  Height="50" x:Name="SubGrid" >
                                     <Grid Width="20" Height="50" Background="{Binding Color}" HorizontalAlignment="Left"/>
-                                    <Label Margin="25,0,0,0" Foreground="Black" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Nom}" FontWeight="Bold" FontSize="16"></Label>
+                                    <Label x:Name="Nom" Margin="25,0,0,0" Foreground="Black" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Nom}" FontWeight="Bold" FontSize="16"></Label>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Grid Margin="238,0,-0.4,0.2">
-                        
+                        <Label x:Name="EmailNameUniformGrid" Content="Nom Email" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
+                        <TextBox x:Name="EmailNameParam" HorizontalAlignment="Left" Height="26" Margin="160,10,0,0" TextWrapping="Wrap" Text="{Binding ElementName=EmailListbox, Path=SelectedItem}" VerticalAlignment="Top" Width="382"/>
+
+                        <Label x:Name="CDioxydeProductionTitle" Content="CO2 Généré" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="150"/>
+                        <Label x:Name="CDioxydeProductionParam" Content="300g" HorizontalAlignment="Left" Margin="160,36,0,0" VerticalAlignment="Top" Width="150"/>
+                        <switch:HorizontalToggleSwitch 
+                            CheckedContent="Automatique" UncheckedContent="Manuel"
+                            x:Name="MailCleanerSwitch" Width="150px" Height="30px" Margin="10,62,392,427" />
+
+                        <Button x:Name="MailCleanerInfoBtn" Content="i" Width="30px" Height="30px" FontStyle="Italic" FontWeight="Bold" FontFamily="Script MT Bold" FontSize="20" Foreground="White" Margin="165,62,357,427" MouseEnter="MailCleanerInfoBtn_MouseEnter" MouseLeave="MailCleanerInfoBtn_MouseLeave">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Grid>
+                                        <Ellipse Stroke="Black"  
+                                                 StrokeThickness="0" >
+                                            <Ellipse.Style>
+                                                <Style TargetType="{x:Type Ellipse}" BasedOn="{StaticResource InfoStyleButton}"/>
+                                            </Ellipse.Style>
+
+                                        </Ellipse>
+
+                                        <ContentPresenter HorizontalAlignment="Center"  
+                                                          VerticalAlignment="Center"/>
+                                    </Grid>
+
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                        <TextBlock Visibility="Hidden" x:Name="CleanerSwitchDescriptor" HorizontalAlignment="Left" Margin="210,62,0,0" TextWrapping="Wrap" Text="Nettoyeur automatique de boîte mail" VerticalAlignment="Top" Height="32" Width="258"/>
+
+                        <TabControl TabStripPlacement="Left"  x:Name="EmailTabControl" HorizontalAlignment="Left" Height="397" Margin="10,112,0,0" VerticalAlignment="Top" Width="532">
+                            <TabControl.Template>
+                                <ControlTemplate TargetType="TabControl">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <ScrollViewer HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto" >
+                                            <TabPanel x:Name="HeaderPanel"
+                                                      Panel.ZIndex ="1" 
+                                                      KeyboardNavigation.TabIndex="1"
+                                                      Grid.Column="0"
+                                                      Grid.Row="0"
+                                                      Margin="2,2,2,0"
+                                                      IsItemsHost="true"/>
+                                        </ScrollViewer>
+                                        <ContentPresenter x:Name="PART_SelectedContentHost"
+                                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                          Margin="{TemplateBinding Padding}"
+                                                          ContentSource="SelectedContent" Grid.Column="1"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </TabControl.Template>
+
+
+                            <TabItem Header="Boîte de réception" Height="50px" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            <TabItem Height="50px" Header="Boîte d'envoi" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            <TabItem Height="50px" Header="Répertoire" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            <TabItem Height="50px" Header="Répertoire" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            <TabItem Height="50px" Header="Répertoire" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            <TabItem Height="50px" Header="Répertoire" Background="PaleGreen">
+                                <Grid Background="#FFE5E5E5"/>
+                            </TabItem>
+                            
+                        </TabControl>
+        
                     </Grid>
+                    
                 </Grid>
             </TabItem>
             <TabItem>
