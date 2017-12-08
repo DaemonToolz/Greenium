@@ -515,7 +515,7 @@
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
-                                        
+
                                         <ScrollViewer HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto" >
                                             <TabPanel x:Name="HeaderPanel"
                                                       Panel.ZIndex ="1" 
@@ -552,13 +552,106 @@
                             <TabItem Height="50px" Header="Répertoire" Background="PaleGreen">
                                 <Grid Background="#FFE5E5E5"/>
                             </TabItem>
-                            
+
                         </TabControl>
-        
+
                     </Grid>
-                    
+
                 </Grid>
             </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Assets/gamemode.png" Height="30px" Width="50px"/>
+
+                </TabItem.Header>
+                <Grid Background="White">
+                   
+                    <Grid Width="375" Height="225" Margin="10,10,404.6,259.2">
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="White"></Setter>
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7FFF8F8F"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Border BorderBrush="#FFBFBFBF" BorderThickness="1"/>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/notreselection.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+                        <Label Content="Notre Sélection" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="215" FontSize="28" Margin="84,119,76,50"/>
+
+                    </Grid>
+                    <Grid  Width="375" Height="225" Margin="405,10,9.6,259.2">
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="White"></Setter>
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7F97B6FF"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Border BorderBrush="#FFC2C2C2" BorderThickness="1">
+
+                        </Border>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/configure.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+
+                        <Label  Content="Configuration" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="205" FontSize="32" Margin="89,119,81,50"/>
+                    </Grid>
+                    <Grid  Width="375" Height="225" Margin="10,262,404.6,32.2">
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="White"></Setter>
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7FFBFF9C"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Border BorderBrush="#FFABABAB" BorderThickness="1"/>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/downloadapp.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+
+                        <Label Content="Téléchargez l'application" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="316" FontSize="28" Margin="28,119,31,50"/>
+                        <Label Content="Greenium Gaming" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="235" FontSize="28" Margin="74,169,66,0"/>
+                    </Grid>
+                    <Grid  Width="375" Height="225" Margin="405,262,9.6,32.2">
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="White"></Setter>
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7FCEFF78"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Border BorderBrush="#FFCECECE" BorderThickness="1"/>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/library.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+                        <Label Content="Bibliothèque" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="171" FontSize="28" Margin="104,119,100,50"/>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+
             <TabItem>
                 <TabItem.Header>
                     <Image Source="pack://application:,,,/Assets/plussign.png" Height="30px" Width="50px"/>

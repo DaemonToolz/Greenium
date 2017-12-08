@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/plussign.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/notreselection.png")]
 
 
