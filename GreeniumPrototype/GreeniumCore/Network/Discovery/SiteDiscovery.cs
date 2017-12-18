@@ -27,9 +27,12 @@ namespace GreeniumCore.Network.Discovery
 
                 // Temporary Solution
                 // Not GREEN at all
-                using (var client = new System.Net.WebClient())
-                    client.DownloadFile($@"http://www.google.com/s2/favicons?domain={url}",
-                        $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Data\Site\Cache\{url}.ico");
+                var Path = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\Data\Site\Cache\{url}.ico";
+
+                if(!File.Exists(Path))
+                    using (var client = new System.Net.WebClient())
+                        client.DownloadFile($@"http://www.google.com/s2/favicons?domain={url}",
+                            Path);
 
                 return true;
             }

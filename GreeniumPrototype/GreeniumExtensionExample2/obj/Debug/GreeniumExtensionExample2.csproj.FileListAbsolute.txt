@@ -1,0 +1,8 @@
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\bin\Debug\GreeniumExtensionExample2.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\bin\Debug\GreeniumExtensionExample2.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\bin\Debug\GreeniumCommon.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\bin\Debug\GreeniumCommon.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\obj\Debug\GreeniumExtensionExample2.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\obj\Debug\GreeniumExtensionExample2.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\obj\Debug\GreeniumExtensionExample2.dll
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumExtensionExample2\obj\Debug\GreeniumExtensionExample2.pdb

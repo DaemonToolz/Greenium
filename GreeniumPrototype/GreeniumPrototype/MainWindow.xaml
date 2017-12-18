@@ -100,7 +100,7 @@
 
             <TabItem Width="75px">
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/Dashboard-icon.png" Height="40px" Width="50px" />
+                    <Image  ToolTip="Résumé du compte" Source="pack://application:,,,/Assets/Dashboard-icon.png" Height="40px" Width="50px" />
                 </TabItem.Header>
                 <Grid Background="#FFE5E5E5">
                     <GroupBox x:Name="AccountGrp" Header="Compte" HorizontalAlignment="Left" Height="205" VerticalAlignment="Top" Width="370" Background="White" Margin="10,0,0,0">
@@ -184,15 +184,20 @@
                     <TextBlock x:Name="UCID_Param2" HorizontalAlignment="Left" Margin="118,261,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
                     <Label x:Name="UCID_Cnt" Content="Online" HorizontalAlignment="Left" Margin="17,282,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBlock x:Name="UCID_Cnt_Param" HorizontalAlignment="Left" Margin="118,287,0,0" TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
-                    <Grid Visibility="Hidden" x:Name="OfflineModeGrid" Width="200" Height="100" Margin="17,313,572.6,106.2">
-                        <Label x:Name="UCID_BXP_Label" Content="Saved XP" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Width="82" Height="21" FontSize="10"/>
+
+                    <Grid Visibility="Visible" x:Name="OfflineModeGrid" Width="200" Height="100" Margin="17,313,572.6,106.2">
+                        <Label x:Name="UCID_BXP_Label" Content="Saved XP" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Width="122" Height="21" FontSize="10"/>
                         <TextBlock x:Name="UCID_BXP_Param" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21"/>
+
+                        <Label x:Name="UCID_BLV_Label" Content="Possible Upgrades" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Width="122" Height="23" FontSize="10" Margin="0,22,0,0"/>
+                        <TextBlock x:Name="UCID_BLV_Param" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="%param%" VerticalAlignment="Top" Height="21" Margin="0,23,0,0"/>
+
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Width="75px">
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/browser.png" Height="40px" Width="50px"/>
+                    <Image  ToolTip="Onglet de navigation principal" Source="pack://application:,,,/Assets/browser.png" Height="40px" Width="50px"/>
                 </TabItem.Header>
                 <Grid Background="#FFE5E5E5">
                     <DockPanel DockPanel.Dock="Top">
@@ -291,7 +296,7 @@
 
             <TabItem Width="75px">
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/appicon.png" Height="40px" Width="50px"/>
+                    <Image  ToolTip="Configuration" Source="pack://application:,,,/Assets/appicon.png" Height="40px" Width="50px"/>
                 </TabItem.Header>
                 <Grid Background="#FFE5E5E5">
                     <TabControl x:Name="SettingsTabItem" TabStripPlacement="Left" HorizontalAlignment="Left" Height="519" VerticalAlignment="Top" Width="790" Margin="0,0,-0.4,0">
@@ -416,15 +421,24 @@
                             </ScrollViewer>
                         </TabItem>
                         <TabItem>
-                            <TabItem.Header>
-                                <Grid Background="DarkGreen" Width="250" Height="50">
+                            <TabItem.Header >
+                                <Grid x:Name="ModuleSettingsTabHeader" Background="DarkGreen" Width="250" Height="50" MouseLeftButtonDown="ModuleSettingsTabHeader_MouseLeftButtonDown">
                                     <Image  Source="pack://application:,,,/Assets/ModuleSettingsIcon.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
                                     <Label Foreground="white" Width="120"  Content="Modules" VerticalContentAlignment="Center" FontSize="20">
 
                                     </Label>
                                 </Grid>
                             </TabItem.Header>
-                            <Grid Background="White"/>
+                            <Grid Background="White">
+                                <Button x:Name="SearchModuleBtn" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="56" Background="{x:Null}" Height="19" BorderThickness="0">
+                                    <Image HorizontalAlignment="Center" VerticalAlignment="Center"  Source="pack://application:,,,/Assets/searchicon.png" />
+
+                                </Button>
+                                <TextBox x:Name="SearchModuleTextBox" HorizontalAlignment="Left" Height="19" Margin="71,10,0,0" TextWrapping="Wrap" Text="Rechercher..." VerticalAlignment="Top" Width="440" BorderBrush="{x:Null}"/>
+                                <ListBox x:Name="ModuleListBox" HorizontalAlignment="Left" Height="381" Margin="10,38,0,0" VerticalAlignment="Top" Width="501">
+
+                                </ListBox>
+                            </Grid>
                         </TabItem>
                         <TabItem>
                             <TabItem.Header>
@@ -452,7 +466,7 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/mails.png" Height="40px" Width="50px"/>
+                    <Image  ToolTip="Nettoyeur de mail" Source="pack://application:,,,/Assets/mails.png" Height="40px" Width="50px"/>
 
                 </TabItem.Header>
                 <Grid Background="White" >
@@ -559,13 +573,13 @@
 
                 </Grid>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="GamingModuleExample">
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/gamemode.png" Height="30px" Width="50px"/>
+                    <Image  ToolTip="Greenium Gaming Module" Source="pack://application:,,,/Assets/gamemode.png" Height="30px" Width="50px"/>
 
                 </TabItem.Header>
                 <Grid Background="White">
-                   
+
                     <Grid Width="375" Height="225" Margin="10,10,404.6,259.2">
                         <Grid.Style>
                             <Style TargetType="{x:Type Grid}">
@@ -652,9 +666,51 @@
                 </Grid>
             </TabItem>
 
+
+            <TabItem>
+                <TabItem.Header >
+                    <Image ToolTip="Greenium Movies Module" Source="pack://application:,,,/Assets/greeniummovies.png" Height="30px" Width="50px"/>
+                </TabItem.Header>
+                <Grid Background="White">
+                    <Grid Height="225" Margin="10,10,9.6,284.2">
+                        <Grid.Style>
+                            <Style TargetType="{x:Type Grid}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="White"></Setter>
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7FCEFF78"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <Border BorderBrush="#FFCECECE" BorderThickness="1"/>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/account.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+                        <Label Content="Utilisateur #14AZS53D" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="305" FontSize="28" Margin="229,119,236,50"/>
+                        <Border BorderBrush="#FFCECECE" BorderThickness="1" Margin="0,0,0.4,0.2"/>
+
+                    </Grid>
+
+                    <Grid Height="225" Background="#FFCECECE" Margin="10,267,9.6,27.2">
+
+                        <Border BorderBrush="#FFCECECE" BorderThickness="1"/>
+                        <Image Width="90" Height="90" Source="pack://application:,,,/Assets/notreselection.png" VerticalAlignment="Top" Margin="141.2,29.2,141.6,0">
+                        </Image>
+                        <Image Width="25" Height="25" Source="pack://application:,,,/Assets/lockeditem.png" VerticalAlignment="Top" Margin="414,105,331,0">
+                        </Image>
+                        <Label Content="Sélection HD (Verrouillé)" HorizontalAlignment="Center" VerticalAlignment="Center" Height="56" Width="325" FontSize="28" Margin="224,119,221,50"/>
+                        <Border BorderBrush="#FFCECECE" BorderThickness="1" Margin="0,0,0.4,0.2"/>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+
             <TabItem>
                 <TabItem.Header>
-                    <Image Source="pack://application:,,,/Assets/plussign.png" Height="30px" Width="50px"/>
+                    <Image ToolTip="Ouvrir un nouvel onglet" Source="pack://application:,,,/Assets/plussign.png" Height="30px" Width="50px"/>
 
                 </TabItem.Header>
             </TabItem>

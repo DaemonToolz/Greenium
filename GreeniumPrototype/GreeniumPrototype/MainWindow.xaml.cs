@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using CefSharp;
+using GreeniumCore.Addons;
 using GreeniumCore.Network.Discovery;
 using GreeniumCoreSQL.Engine;
 
@@ -42,9 +44,9 @@ namespace GreeniumPrototype
 
         public static LiteEngine HistoryEngine;
 
-
         private static String GreeniumDefaultURL => Properties.GeneralSettings.Default.MSAccountLink;
-
+        private static Modules MyModules = new Modules() {MyModules = new List<DllReader>()};
+        
         private static uint BackupXP
         {
             get { return Properties.GeneralSettings.Default.BackupXP; }
@@ -83,6 +85,9 @@ namespace GreeniumPrototype
             Pages.Add("Bookmarks", new BookmarksPage());
             Pages.Add("History", new UserHistoryPage());
 
+            foreach (var module in Directory.GetFiles($"{System.AppDomain.CurrentDomain.BaseDirectory}/Extensions/"))
+                MyModules.MyModules.Add(new DllReader(module, true));
+   
             HistoryEngine = new LiteEngine();
         }
 
@@ -325,8 +330,10 @@ namespace GreeniumPrototype
                 UCID_Cnt_Param.Text = MySession.Online ? "Online mode" : "Offline mode";
             });
 
-            if (!MySession.Online)
+            if (!MySession.Online){
                 OfflineModeGrid.Visibility = Visibility.Visible;
+                //UCID_BLV_Param.Text = $"{(MySession.Level + ((MySession.XP + BackupXP) % ((((MySession.Level)) * (0.25 * (MySession.Level) + 1.0)) * 500.0)))}";
+            }
             else
                 OfflineModeGrid.Visibility = Visibility.Hidden;
         }
@@ -453,8 +460,10 @@ namespace GreeniumPrototype
             var guid = Guid.NewGuid().ToString();
             var result = bookmarks.AddNode(guid, Browser.Address);
             if (result != null)
-                BookmarksPage.BookmarkAdd(new BookmarkItem() {Link = Browser.Address, Name = result });
-
+            {
+                BookmarksPage.BookmarkAdd(new BookmarkItem() {Link = Browser.Address, Name = result});
+                ((BookmarksPage)Pages["Bookmarks"]).UpdateBookmarks();
+            }
 
         }
 
@@ -682,6 +691,22 @@ namespace GreeniumPrototype
         private void MailCleanerInfoBtn_MouseLeave(object sender, MouseEventArgs e)
         {
             CleanerSwitchDescriptor.Visibility = Visibility.Hidden;
+        }
+
+        private void ModuleSettingsTabHeader_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            var LoadedModules = new List<ModuleItem>();
+            foreach (var item in MyModules.MyModules){
+                item.Init();
+                LoadedModules.Add(new ModuleItem()
+                {
+                    AddonTitle = item.ModuleName,
+                    ImageSource = item.ModuleImage,
+                    Description = item.ModuleDescriptor
+                });
+            }
+            ModuleListBox.ItemsSource = LoadedModules;
         }
 
         //

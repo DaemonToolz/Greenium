@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GreeniumCore.Addons {
-    public class Addons {
-        public List<DllReader> MyAddons { get; set; }
+    public class Modules {
+        public List<DllReader> MyModules { get; set; }
     }
 }

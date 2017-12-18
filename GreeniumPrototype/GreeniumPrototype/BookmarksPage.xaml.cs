@@ -66,6 +66,7 @@ namespace GreeniumPrototype
 
         internal static void BookmarkAdd(BookmarkItem @new){
             bookmarks.Add(@new);
+
         }
 
         private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -84,8 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Addons\Addons.cs" />
+    <Compile Include="Addons\Modules.cs" />
     <Compile Include="Addons\DllReader.cs" />
+    <Compile Include="Addons\ModuleModel.cs" />
     <Compile Include="API\RequestHandler.cs" />
     <Compile Include="API\SessionWrapper.cs" />
     <Compile Include="FileTracker\Exception\UnsupportedTagException.cs" />

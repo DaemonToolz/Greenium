@@ -98,12 +98,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LiteEngineTest.cs" />
     <Compile Include="SiteDiscoveryTest.cs" />
+    <Compile Include="DllReaderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GreeniumCommon\GreeniumCommon.csproj">
+      <Project>{5A714B9A-4158-4127-BBF3-423694A9B7C2}</Project>
+      <Name>GreeniumCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GreeniumCoreSQL\GreeniumCoreSQL.csproj">
       <Project>{774c4851-5d4c-423c-844a-233998d786b9}</Project>
       <Name>GreeniumCoreSQL</Name>
