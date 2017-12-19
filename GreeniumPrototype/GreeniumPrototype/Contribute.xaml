@@ -11,23 +11,15 @@
     <Grid Background="White">
         <Label x:Name="label" Content="Contribute" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontWeight="Bold" Background="#FFDFDFDF"/>
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="4" Margin="0,26,0,0" VerticalAlignment="Top" Width="200" Background="#FF8C8C8C"/>
-        <ListBox x:Name="Addons" HorizontalAlignment="Left" Height="189" Margin="0,31,0,0" VerticalAlignment="Top" Width="200">
-          
-        </ListBox>
-
-
-        <GridSplitter x:Name="gridSplitter_Copy" HorizontalAlignment="Left" Height="4" Margin="0,220,0,0" VerticalAlignment="Top" Width="200" Background="#FF8C8C8C"/>
-        <Button x:Name="button" Content="Donner" HorizontalAlignment="Left" Margin="0,224,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="button_Copy" Content="Télécharger" HorizontalAlignment="Left" Margin="0,243,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button x:Name="button_Copy1" Content="Upload" HorizontalAlignment="Left" Margin="105,243,0,0" VerticalAlignment="Top" Width="95"/>
-        <GridSplitter x:Name="gridSplitter_Copy1" HorizontalAlignment="Left" Height="4" Margin="0,262,0,0" VerticalAlignment="Top" Width="200" Background="#FF8C8C8C"/>
-        <Label x:Name="label_Copy" Content="Contributions totales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontWeight="Bold" Background="#FFDFDFDF" Margin="0,267,0,0"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="0,293,0,0" TextWrapping="Wrap" Text="Donations" VerticalAlignment="Top" Width="140"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="140,292,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
-        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="0,309,0,0" TextWrapping="Wrap" Text="Addons" VerticalAlignment="Top" Width="140"/>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="140,308,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="0,394,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="140"/>
-        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="140,394,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
+        <Button x:Name="button" Content="Donner" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Width="200"/>
+        <GridSplitter x:Name="gridSplitter_Copy1" HorizontalAlignment="Left" Height="4" Margin="0,59,0,0" VerticalAlignment="Top" Width="200" Background="#FF8C8C8C"/>
+        <Label x:Name="label_Copy" Content="Contributions totales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontWeight="Bold" Background="#FFDFDFDF" Margin="0,70,0,0"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="0,96,0,0" TextWrapping="Wrap" Text="Donations" VerticalAlignment="Top" Width="140"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="140,95,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="0,112,0,0" TextWrapping="Wrap" Text="Addons" VerticalAlignment="Top" Width="140"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="140,112,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="0,144,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="140"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="140,144,0,0" TextWrapping="Wrap" Text="0€" VerticalAlignment="Top" Width="60"/>
 
     </Grid>
 </Page>

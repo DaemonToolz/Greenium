@@ -17,7 +17,7 @@ namespace GreeniumCommon {
 
         public MyPluginDescriptor()
         {
-            Image = "./Assets/gamemode.png";
+            Image = $"{System.AppDomain.CurrentDomain.BaseDirectory}/Extensions/Assets/gamemode.png";
             Name = "Greenium Gaming";
             Descriptor = "Plateforme de distribution de jeux en P2P";
             Details = "Développé par Greenium Group";

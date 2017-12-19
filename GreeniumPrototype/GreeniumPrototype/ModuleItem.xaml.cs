@@ -50,5 +50,20 @@ namespace GreeniumPrototype
             get { return GetValue(DescriptionProperty)?.ToString(); }
             set { SetValue(DescriptionProperty, value); }
         }
+
+        public static readonly DependencyProperty DetailsProperty = DependencyProperty.Register("Details", typeof(String), typeof(ModuleItem), new FrameworkPropertyMetadata(string.Empty));
+
+        public String Details
+        {
+            get { return GetValue(DetailsProperty)?.ToString(); }
+            set { SetValue(DetailsProperty, value); }
+        }
+        public static readonly DependencyProperty TargetProperty = DependencyProperty.Register("Target", typeof(String), typeof(ModuleItem), new FrameworkPropertyMetadata(string.Empty));
+
+        public String Target
+        {
+            get { return GetValue(TargetProperty)?.ToString(); }
+            set { SetValue(TargetProperty, value); }
+        }
     }
 }

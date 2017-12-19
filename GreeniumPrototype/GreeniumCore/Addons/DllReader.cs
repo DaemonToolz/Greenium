@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using GreeniumCommon;
@@ -17,7 +18,7 @@ namespace GreeniumCore.Addons {
         public MethodInfo ExecutionMethod { get; private set; }
         public Type[] PluginTypes { get; private set; }
 
-        private Boolean IsLoaded { get; set; } = false;
+        private Boolean IsLoaded => (LoadedAssembly != null);
         
         public Object GeneratedObject { get; private set; }
 
@@ -32,13 +33,45 @@ namespace GreeniumCore.Addons {
             
         }
 
+        public bool AssemblySecured(){
+            if (!IsLoaded) return false;
+            try{
+                var computedHash = "";
+                var myAttribute = LoadedAssembly.CustomAttributes.Single(attr => attr.AttributeType.Name.ToLower().Contains("assemblysecurity"));
+                computedHash = ((String)myAttribute.ConstructorArguments[0].Value);
+
+                var myAttributes = LoadedAssembly.CustomAttributes.Where(attr => attr.AttributeType.Name.ToLower().Contains("company") || attr.AttributeType.Name.ToLower().Contains("guid")).ToList();
+                var name = (string)myAttributes[0].ConstructorArguments[0].Value;
+                var uid = (string)myAttributes[1].ConstructorArguments[0].Value;
+                var hkey = "";
+
+                for (var i = 0; i < uid.Count(); ++i)
+                    hkey += ((uid[i % uid.Count()] ^ name[i % name.Count()])).ToString("X2");
+                hkey = hkey.ToLower();
+
+                byte[] result;
+                using (var shaM = new HMACSHA256(Encoding.ASCII.GetBytes(hkey)))
+                    result = shaM.ComputeHash(Encoding.ASCII.GetBytes(uid));
+               
+                var sb = new StringBuilder();
+                foreach (var t in result){
+                    sb.Append(t.ToString("X2"));
+                }
+
+                return sb.ToString().ToLower().Equals(computedHash);
+            }
+            catch{
+                return false;
+            }
+        }
+
         public bool Load(){
             if (IsLoaded) return IsLoaded;
             try {
                 Name = AssemblyName.GetAssemblyName(Path);
                 LoadedAssembly = Assembly.Load(Name);
                 PType = typeof(IPlugin);
-                IsLoaded = (LoadedAssembly != null);
+   
             } catch {}
 
             return IsLoaded;

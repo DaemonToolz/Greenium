@@ -242,7 +242,7 @@
 
                     </DockPanel>
                     <StackPanel Panel.ZIndex="5" x:Name="pnlRightMenu" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,-200,0.2">
-                        <Grid Background="ForestGreen" Margin="0,0,0,0.2" Width="54">
+                        <Grid Background="#FF50BA50" Margin="0,0,0,0.2" Width="54">
                             <Button x:Name="btnRightMenuHide" Width="48" Height="48" Margin="0,0,0,479.2" Click="btnRightMenuHide_Click"  Visibility="Hidden" BorderBrush="{x:Null}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/hide.png"/>
@@ -261,7 +261,7 @@
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy1" Margin="3,408,4,64" BorderBrush="{x:Null}" >
+                            <Button x:Name="btn_Copy1" Margin="4,472,3,0" BorderBrush="{x:Null}" >
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/comment.png"/>
                                 </Button.Background>
@@ -273,16 +273,6 @@
                                     <ImageBrush ImageSource="Assets/bookmark.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button x:Name="ContributeBtn" Margin="4,460,3,10.4" BorderBrush="{x:Null}" Click="ContributeBtn_Click">
-                                <Button.Background>
-
-                                    <ImageBrush ImageSource="Assets/contribute.png"/>
-                                </Button.Background>
-
-
-                            </Button>
-
-
 
                         </Grid>
                         <Border BorderBrush="#AF1719" BorderThickness="1" Width="200" Background="#4C808080" Margin="0,0,0,0.2" >
@@ -438,6 +428,8 @@
                                 <ListBox x:Name="ModuleListBox" HorizontalAlignment="Left" Height="381" Margin="10,38,0,0" VerticalAlignment="Top" Width="501">
 
                                 </ListBox>
+                                <Button x:Name="ApplyModuleChangesBtn" Content="Appliquer" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" Width="121" Height="25" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Bold"/>
+                                <Button x:Name="ApplyModuleChangesBtn_Copy" Content="Appliquer" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" Width="121" Height="25" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Bold"/>
                             </Grid>
                         </TabItem>
                         <TabItem>
@@ -449,7 +441,87 @@
                                     </Label>
                                 </Grid>
                             </TabItem.Header>
-                            <Grid Background="White"/>
+                            <Grid Background="White">
+                                <ComboBox x:Name="ThemeCombobox" HorizontalAlignment="Left" Margin="131,10,0,0" VerticalAlignment="Top" Width="380">
+                                    <ComboBoxItem>Normal</ComboBoxItem>
+                                    <ComboBoxItem IsSelected="True">Greenium Classic</ComboBoxItem>
+                                    <ComboBoxItem>Sombre</ComboBoxItem>
+                                </ComboBox>
+                                <Label x:Name="ThemeLabel" Content="Thème" HorizontalAlignment="Left" Margin="6,8,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold"/>
+
+                                <Label x:Name="AvatarLabel" Content="Avatar de compte" HorizontalAlignment="Left" Margin="6,94,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold"/>
+                                <Ellipse x:Name="AvatarEllipse" Height="100" Width="100" Margin="210,53,210.8,359.8">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets/account.png"/>
+                                    </Ellipse.Fill>
+                                    <Ellipse.Style>
+                                        <Style TargetType="Ellipse">
+                                            <Setter Property="Stroke" Value="#00000000"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Stroke" Value="#000000"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <Rectangle  HorizontalAlignment="Left" Height="6" Margin="10,178,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="501" Fill="#34000000" RenderTransformOrigin="0.5,0.5">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="-1"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                                <Label x:Name="TextColorLabel" Content="Couleur du texte" HorizontalAlignment="Left" Margin="6,198,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold"/>
+                                <Label x:Name="TextSizeLabel" Content="Taille du texte" HorizontalAlignment="Left" Margin="6,224,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold"/>
+                                <switch:HorizontalToggleSwitch 
+                                    CheckedContent="Daltonien" UncheckedContent="Classique"
+                                    x:Name="UITypeCheckbox" Width="150px" Height="30px" Margin="10,255,360.8,228.6" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem>
+
+                            <TabItem.Header >
+                                <Grid Background="DarkGreen" Width="250" Height="50">
+                                    <Image  Source="pack://application:,,,/Assets/contribute.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
+                                    <Label Foreground="white" Width="120"  Content="Contribuer" VerticalContentAlignment="Center" FontSize="20">
+
+                                    </Label>
+                                </Grid>
+                            </TabItem.Header>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+
+                                <Grid Background="White">
+                                    <StackPanel Margin="0,114,-0.2,-0.2">
+                                        <Expander ExpandDirection="Down" VerticalAlignment="Top" IsExpanded="false" x:Name="UserInformations" Header="Informations générales" HorizontalAlignment="Left" Width="521" Foreground="Black" >
+                                            <Grid  Height="175">
+                                                <Label Content="Account Information" Margin="0,0,369.4,147" FontWeight="Bold"/>
+                                                <Button x:Name="ModifyGeneralInfoBtn" Content="Modifier" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Width="518" Height="27" Background="{x:Null}" FontSize="16" FontWeight="Bold" BorderBrush="{x:Null}" BorderThickness="0"/>
+                                                <Label Content="*****-******-*****-46" Margin="154,0,0.4,147" />
+                                                <Label Content="Total de contribution" Margin="0,28,369.4,118" FontWeight="Bold"/>
+                                                <Label Content="0€" Margin="154,28,0.4,119" />
+                                            </Grid>
+                                        </Expander>
+                                        <Expander ExpandDirection="Down" VerticalAlignment="Top" IsExpanded="false" x:Name="GeneralContributions" Header="Vos Contributions" HorizontalAlignment="Left" Width="521" >
+                                            <Grid  Height="150">
+                                                <ListBox x:Name="ContributionListbox" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="518"/>
+                                            </Grid>
+                                        </Expander>
+                                        <Expander ExpandDirection="Down" IsExpanded="false" x:Name="ModulesContribution" Header="Vos Modules" HorizontalAlignment="Left" VerticalAlignment="Top" Width="521" Margin="0,0,-0.2,0" >
+                                            <Grid Height="150"/>
+                                        </Expander>
+                                        <Expander ExpandDirection="Down" IsExpanded="false" x:Name="DashboardContribution" Header="Tableau de bord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="521" Margin="0,0,-0.2,0" >
+                                            <Grid Height="150"/>
+                                        </Expander>
+
+                                    </StackPanel>
+                                    <Button x:Name="ContributeToBtn" Content="Contribuer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="29" Background="{x:Null}" FontWeight="Bold" FontSize="14" Margin="5,5,0,0" BorderThickness="0"/>
+                                </Grid>
+                            </ScrollViewer>
                         </TabItem>
                     </TabControl>
 
@@ -573,6 +645,8 @@
 
                 </Grid>
             </TabItem>
+            <TabItem Background="#FF5C5C5C" IsEnabled="False"/>
+
             <TabItem x:Name="GamingModuleExample">
                 <TabItem.Header>
                     <Image  ToolTip="Greenium Gaming Module" Source="pack://application:,,,/Assets/gamemode.png" Height="30px" Width="50px"/>
@@ -707,7 +781,7 @@
                     </Grid>
                 </Grid>
             </TabItem>
-
+            <TabItem Background="#FF5C5C5C" IsEnabled="False"/>
             <TabItem>
                 <TabItem.Header>
                     <Image ToolTip="Ouvrir un nouvel onglet" Source="pack://application:,,,/Assets/plussign.png" Height="30px" Width="50px"/>

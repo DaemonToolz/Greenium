@@ -22,5 +22,18 @@ namespace GreeniumCommon {
         Object Register();
         Object Execute(Object[] Parameters);
     }
+
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = false)]
+    public sealed class AssemblySecurityAttribute : Attribute {
+
+        // Methods
+        public AssemblySecurityAttribute(string SecurityInfo) {
+            this.SecurityInfo = SecurityInfo;
+        }
+        // Properties
+        public string SecurityInfo { get; private set; }
+        // Fields
+    }
     
+
 }

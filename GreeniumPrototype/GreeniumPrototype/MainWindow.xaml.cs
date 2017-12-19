@@ -81,7 +81,6 @@ namespace GreeniumPrototype
 
         static MainWindow()
         {
-            Pages.Add("Contribute", new Contribute());
             Pages.Add("Bookmarks", new BookmarksPage());
             Pages.Add("History", new UserHistoryPage());
 
@@ -229,18 +228,7 @@ namespace GreeniumPrototype
                     UCID_BXP_Param.Text = BackupXP.ToString();
                 }
                 //Browser.Navigate(txtUrl.Text);
-            }
-
-    
-
-        private void ContributeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if(btnRightMenuHide.Visibility != Visibility.Visible )
-                btnRightMenuShow_Click(null, null);
-            SideMenuFrame.Navigate(Pages["Contribute"]);
-        }
-
-   
+            }   
 
         private void Login()
         {
@@ -695,7 +683,6 @@ namespace GreeniumPrototype
 
         private void ModuleSettingsTabHeader_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
             var LoadedModules = new List<ModuleItem>();
             foreach (var item in MyModules.MyModules){
                 item.Init();
@@ -703,8 +690,11 @@ namespace GreeniumPrototype
                 {
                     AddonTitle = item.ModuleName,
                     ImageSource = item.ModuleImage,
-                    Description = item.ModuleDescriptor
+                    Description = item.ModuleDescriptor,
+                    Target = $"Modificateur de type {item.TargetType.ToString()} ",
+                    Details = item.ModuleDetails
                 });
+                
             }
             ModuleListBox.ItemsSource = LoadedModules;
         }

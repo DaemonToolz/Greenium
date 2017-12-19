@@ -24,19 +24,6 @@ namespace GreeniumPrototype
         {
             InitializeComponent();
 
-            List<AddonItem> addons = new List<AddonItem>();
-            for (int i = 0; i < 20; ++i)
-            {
-                addons.Add(new AddonItem()
-                {
-                    Description = "No description",
-                    ImageSource = "./Assets/refresh.png",
-                    AddonTitle = $"Title {i}",
-                    Rating = (i % 10)
-                });
-            }
-
-            Addons.ItemsSource = addons;
         }
 
     }

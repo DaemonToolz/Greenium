@@ -19,7 +19,7 @@ namespace GreeniumCoreUnitTests {
                         Console.WriteLine(type);
                 reader.Execute(new object[]{new Object[0]{}});
             Console.WriteLine(reader.TargetType);
-
+            Assert.IsTrue(reader.AssemblySecured());
 
         }
     }

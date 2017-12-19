@@ -17,7 +17,7 @@ namespace GreeniumCommon {
 
         public MyPluginDescriptor()
         {
-            Image = "./Assets/greeniummovies.png";
+            Image = $"{System.AppDomain.CurrentDomain.BaseDirectory}/Extensions/Assets/greeniummovies.png";
             Name = "Greenium Movies";
             Descriptor = "Plateforme de critique Greenium";
             Details = "Développé par Greenium Group";
