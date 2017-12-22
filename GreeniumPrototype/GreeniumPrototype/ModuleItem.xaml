@@ -9,9 +9,9 @@
     <Grid Background="White">
         <Image x:Name="Icon" Source="{Binding ImageSource}" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="0,10,0,0"/>
         <Label VerticalContentAlignment="Center" x:Name="Title" Content="{Binding Path=AddonTitle}" HorizontalAlignment="Left" Margin="65,0,0,0" VerticalAlignment="Top" Height="75" Width="175" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="DescBox" Text="{Binding Path=Description}" HorizontalAlignment="Left" Margin="245,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="195" FontSize="10"/>
-        <TextBlock x:Name="DetaBox" Text="{Binding Path=Details}" HorizontalAlignment="Left" Margin="245,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="195" FontSize="10"/>
-        <TextBlock x:Name="TargBox" Text="{Binding Path=Target}" HorizontalAlignment="Left" Margin="245,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="195" FontSize="10"/>
+        <TextBlock x:Name="DescBox" Text="{Binding Path=Description}" HorizontalAlignment="Left" Margin="245,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" FontSize="10"/>
+        <TextBlock x:Name="DetaBox" Text="{Binding Path=Details}" HorizontalAlignment="Left" Margin="245,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="170" FontSize="10"/>
+        <TextBlock x:Name="TargBox" Text="{Binding Path=Target}" HorizontalAlignment="Left" Margin="245,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="170" FontSize="10"/>
 
         <Button x:Name="EditModuleBtn"  HorizontalAlignment="Left" Margin="445,25,0,0" VerticalAlignment="Top" Width="30" Height="25" BorderThickness="0" Background="{x:Null}">
             <Image ToolTip="Gérer"  Source="pack://application:,,,/Assets/configure.png"></Image>
@@ -21,8 +21,11 @@
             <Image ToolTip="Supprimer"  Source="pack://application:,,,/Assets/delete.png"></Image>
 
         </Button>
-        <Button x:Name="ActivateModuleBtn"  HorizontalAlignment="Left" Margin="445,0,0,0" VerticalAlignment="Top" Width="30" Height="25" BorderThickness="0" Background="{x:Null}">
+        <Button x:Name="ActivateModuleBtn"  HorizontalAlignment="Left" Margin="415,0,0,0" VerticalAlignment="Top" Width="30" Height="25" BorderThickness="0" Background="{x:Null}">
             <Image ToolTip="Activer" Source="Assets/notreselection.png"/>
+        </Button>
+        <Button x:Name="UnlockModuleBtn"  HorizontalAlignment="Left" Margin="445,0,0,0" VerticalAlignment="Top" Width="30" Height="25" BorderThickness="0" Background="{x:Null}">
+            <Image ToolTip="Activer" Source="Assets/unlock.png"/>
         </Button>
 
     </Grid>

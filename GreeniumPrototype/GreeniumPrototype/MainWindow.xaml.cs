@@ -23,6 +23,7 @@ using CefSharp;
 using GreeniumCore.Addons;
 using GreeniumCore.Network.Discovery;
 using GreeniumCoreSQL.Engine;
+using Microsoft.Win32;
 
 namespace GreeniumPrototype
 {
@@ -83,6 +84,7 @@ namespace GreeniumPrototype
         {
             Pages.Add("Bookmarks", new BookmarksPage());
             Pages.Add("History", new UserHistoryPage());
+            Pages.Add("Feedback", new Feedback());
 
             foreach (var module in Directory.GetFiles($"{System.AppDomain.CurrentDomain.BaseDirectory}/Extensions/"))
                 MyModules.MyModules.Add(new DllReader(module, true));
@@ -666,6 +668,16 @@ namespace GreeniumPrototype
             SideMenuFrame.Navigate(Pages["History"]);
         }
 
+
+        private void FeedbackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnRightMenuHide.Visibility != Visibility.Visible)
+                btnRightMenuShow_Click(null, null);
+
+
+            SideMenuFrame.Navigate(Pages["Feedback"]);
+        }
+
         private void GoToBtn_Click(object sender, RoutedEventArgs e)
         {
             GoToPage_Executed(this, null);
@@ -698,6 +710,22 @@ namespace GreeniumPrototype
             }
             ModuleListBox.ItemsSource = LoadedModules;
         }
+
+        private void SelectModuleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog{ Filter = "Module files (.dll)|*.dll" };
+            if (openFileDialog.ShowDialog() == true)
+                ModulePathAccessLabel.Text = openFileDialog.FileName;
+
+        }
+
+        private void SearchModulesOnlineBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var ModuleDownloader = new ModuleDownloaderWindow();
+            ModuleDownloader.Show();
+            
+        }
+
 
         //
     }

@@ -12,6 +12,8 @@ namespace GreeniumCommon {
         public string Name { get; set; }
         public string Descriptor{ get; set; }
         public string Details { get; set; }
+        public bool IsFreemium { get; set; }
+        public bool IsUnlocked { get; set; }
 
         public String Image { get; set; }
 

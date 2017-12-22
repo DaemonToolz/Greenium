@@ -19,6 +19,9 @@ namespace GreeniumCommon {
         String Descriptor { get; set; }
         String Details { get; set; }
 
+        //bool IsFreemium { get; set; }
+        //bool IsUnlocked { get; set; }
+
         Object Register();
         Object Execute(Object[] Parameters);
     }

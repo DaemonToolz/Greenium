@@ -38,10 +38,8 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Go
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.PlatformServices.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Newtonsoft.Json.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Algorithms.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Encoding.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\System.Security.Cryptography.X509Certificates.dll
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Auth.xml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumCore\bin\Debug\Google.Apis.Core.xml

@@ -9,7 +9,7 @@
         xmlns:switch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Greenium" Height="600" Width="808.2">
+        Title="Greenium" Height="605" Width="808.2">
 
     <!--
     <Window.CommandBindings>
@@ -261,7 +261,7 @@
                                 </Button.Background>
 
                             </Button>
-                            <Button x:Name="btn_Copy1" Margin="4,472,3,0" BorderBrush="{x:Null}" >
+                            <Button x:Name="FeedbackBtn" Margin="4,462,3,10" BorderBrush="{x:Null}" Click="FeedbackBtn_Click" >
                                 <Button.Background>
                                     <ImageBrush ImageSource="Assets/comment.png"/>
                                 </Button.Background>
@@ -429,7 +429,7 @@
 
                                 </ListBox>
                                 <Button x:Name="ApplyModuleChangesBtn" Content="Appliquer" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" Width="121" Height="25" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Bold"/>
-                                <Button x:Name="ApplyModuleChangesBtn_Copy" Content="Appliquer" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" Width="121" Height="25" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Bold"/>
+                                <Button x:Name="SearchModulesOnlineBtn" Content="Télécharger des Modules" HorizontalAlignment="Left" Margin="321,424,0,0" VerticalAlignment="Top" Width="190" Height="25" Background="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Bold" Click="SearchModulesOnlineBtn_Click"/>
                             </Grid>
                         </TabItem>
                         <TabItem>
@@ -512,7 +512,11 @@
                                             </Grid>
                                         </Expander>
                                         <Expander ExpandDirection="Down" IsExpanded="false" x:Name="ModulesContribution" Header="Vos Modules" HorizontalAlignment="Left" VerticalAlignment="Top" Width="521" Margin="0,0,-0.2,0" >
-                                            <Grid Height="150"/>
+                                            <Grid Height="150">
+                                                <Button x:Name="SelectModuleBtn" Content="Sélectionner Module" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontWeight="Bold" IsTabStop="False" BorderThickness="0" Height="24" Click="SelectModuleBtn_Click"/>
+                                                <Button Content="Envoyer" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="135" Background="{x:Null}" FontWeight="Bold" IsTabStop="False" BorderThickness="0" Height="24"/>
+                                                <TextBlock x:Name="ModulePathAccessLabel" Text="Chemin d'accès..." TextWrapping="Wrap" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Width="358" FontStyle="Italic" Height="53"/>
+                                            </Grid>
                                         </Expander>
                                         <Expander ExpandDirection="Down" IsExpanded="false" x:Name="DashboardContribution" Header="Tableau de bord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="521" Margin="0,0,-0.2,0" >
                                             <Grid Height="150"/>

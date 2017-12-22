@@ -13,6 +13,10 @@ namespace GreeniumCommon {
         public string Descriptor{ get; set; }
         public string Details { get; set; }
 
+        public bool IsFreemium { get; set; }
+        public bool IsUnlocked { get; set; }
+
+
         public String Image { get; set; }
 
         public MyPluginDescriptor()

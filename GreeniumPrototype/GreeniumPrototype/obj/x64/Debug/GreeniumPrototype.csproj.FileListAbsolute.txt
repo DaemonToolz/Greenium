@@ -68,3 +68,7 @@ C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\UserHistoryPage.baml
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\ModuleItem.g.cs
 C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\ModuleItem.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Feedback.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\Feedback.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\ModuleDownloaderWindow.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumPrototype\obj\x64\Debug\ModuleDownloaderWindow.baml

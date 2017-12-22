@@ -23,7 +23,7 @@ var routes = Routes{
 	Route{
 		"Download",
 		"Get",
-		"/Addon/{ID}",
+		"/Addon/{module}",
 		Download,
 	},
 }
