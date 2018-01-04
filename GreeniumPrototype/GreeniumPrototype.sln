@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreeniumExtensionExample2",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreeniumExtensionExample3", "GreeniumExtensionExample3\GreeniumExtensionExample3.csproj", "{42BE7E4F-3402-438E-8AB8-C94CCCC1D043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreeniumAppLauncher", "GreeniumAppLauncher\GreeniumAppLauncher.csproj", "{6233521F-30E5-4D64-8754-F1008B65B6AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreeniumDownloadManager", "GreeniumDownloadManager\GreeniumDownloadManager.csproj", "{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +111,22 @@ Global
 		{42BE7E4F-3402-438E-8AB8-C94CCCC1D043}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42BE7E4F-3402-438E-8AB8-C94CCCC1D043}.Release|x64.ActiveCfg = Release|Any CPU
 		{42BE7E4F-3402-438E-8AB8-C94CCCC1D043}.Release|x64.Build.0 = Release|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{6233521F-30E5-4D64-8754-F1008B65B6AF}.Release|x64.Build.0 = Release|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Debug|x64.Build.0 = Debug|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Release|x64.ActiveCfg = Release|Any CPU
+		{85B71ED6-F70A-4224-A3BD-FB0BF9432BF9}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

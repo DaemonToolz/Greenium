@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -23,6 +24,7 @@ using CefSharp;
 using GreeniumCore.Addons;
 using GreeniumCore.Network.Discovery;
 using GreeniumCoreSQL.Engine;
+using GreeniumPrototype.Handler;
 using Microsoft.Win32;
 
 namespace GreeniumPrototype
@@ -47,7 +49,9 @@ namespace GreeniumPrototype
 
         private static String GreeniumDefaultURL => Properties.GeneralSettings.Default.MSAccountLink;
         private static Modules MyModules = new Modules() {MyModules = new List<DllReader>()};
-        
+
+        private static ObservableCollection<DownloadListItem> DownloadedListItems = new ObservableCollection<DownloadListItem>();
+       
         private static uint BackupXP
         {
             get { return Properties.GeneralSettings.Default.BackupXP; }
@@ -98,7 +102,6 @@ namespace GreeniumPrototype
         public MainWindow()
         {
 
-           
             InitializeComponent();
             
             AccountGrid.DataContext = MySession;
@@ -119,6 +122,11 @@ namespace GreeniumPrototype
             HistoryCountParam.Content = HistoryEngine.Count();
             UCID_BXP_Param.Text = BackupXP + "";
 
+            var downer = new DownloadHandler();
+
+            downer.OnBeforeDownloadFired += OnBeforeDownloadFired;
+            downer.OnDownloadUpdatedFired += OnDownloadUpdatedFired;
+            Browser.DownloadHandler = downer;
             // -------------------------- EMAIL TEMPLATE TEST
 
             var emails = new List<Object>();
@@ -129,7 +137,7 @@ namespace GreeniumPrototype
 
 
             // --------------------------
-
+            this.DataContext = this;
 
             //UCID_Param.Text = UniqueSerial.GetVolumeSerial(); To be revised          
 
@@ -141,6 +149,7 @@ namespace GreeniumPrototype
             BrowserSettings.CachePath = $@"{System.AppDomain.CurrentDomain.BaseDirectory}\cache";
             Cef.Initialize(BrowserSettings);
         }
+
 
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
@@ -726,6 +735,38 @@ namespace GreeniumPrototype
             
         }
 
+
+        //
+
+        // UPLOAD & DOWNLOAD SECTION
+        private void OnBeforeDownloadFired(object sender, DownloadItem e)
+        {
+            this.UpdateDownloadAction("OnBeforeDownload", e);
+        }
+
+        private void OnDownloadUpdatedFired(object sender, DownloadItem e)
+        {
+            this.UpdateDownloadAction("OnDownloadUpdated", e);
+        }
+
+        private void UpdateDownloadAction(string downloadAction, DownloadItem downloadItem)
+        {
+            // https://stackoverflow.com/questions/34289428/download-file-with-cefsharp-winforms
+            this.Dispatcher.Invoke(() =>
+            {
+                if (downloadAction.Equals("OnDowloadUpdated"))
+                    DownloadedListItems.Remove(
+                        DownloadedListItems.First(obj => obj.MyLink.SuggestedFileName.Equals(downloadItem.SuggestedFileName)));
+
+                DownloadedListItems.Add(new DownloadListItem() {MyLink = downloadItem});
+                DownloadList.ItemsSource = DownloadedListItems;
+            });
+            //var viewModel = (BrowserTabViewModel)this.DataContext;
+            //viewModel.LastDownloadAction = downloadAction;
+            //viewModel.DownloadItem = downloadItem;
+            //});
+
+        }
 
         //
     }

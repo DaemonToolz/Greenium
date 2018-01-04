@@ -107,9 +107,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DownloadListItem.xaml.cs">
+      <DependentUpon>DownloadListItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.xaml.cs">
       <DependentUpon>Feedback.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Handler\DownloadHandler.cs" />
     <Compile Include="ModuleDownloaderWindow.xaml.cs">
       <DependentUpon>ModuleDownloaderWindow.xaml</DependentUpon>
     </Compile>
@@ -132,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Contribute.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

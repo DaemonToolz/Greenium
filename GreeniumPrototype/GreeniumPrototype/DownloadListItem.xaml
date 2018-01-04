@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="GreeniumPrototype.DownloadListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GreeniumPrototype"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="510">
+    <Grid Background="White">
+        <Label x:Name="PercentileLbl" Content="{Binding Path=MyLink.PercentComplete}" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" Width="32"/>
+
+        <Label x:Name="FilenameLbl" Content="{Binding Path=MyLink.SuggestedFileName}" HorizontalAlignment="Left" Margin="40,10,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label x:Name="CurrentSizeLbl" Content="{Binding Path=MyLink.ReceivedBytes}" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="NoUse1" Content="(B) / " HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label x:Name="RealSizeLbl" Content="{Binding Path=MyLink.TotalBytes}" HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="NoUse2" Content="(B)" HorizontalAlignment="Left" Margin="368,10,0,0" VerticalAlignment="Top" Width="35"/>
+        <Button x:Name="CancelBtn" Content="Stop" HorizontalAlignment="Left" Height="45" Margin="465,0,0,-0.2" VerticalAlignment="Top" Width="35"/>
+
+    </Grid>
+</UserControl>

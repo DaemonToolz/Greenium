@@ -295,9 +295,7 @@
                             <TabItem.Header>
                                 <Grid Background="DarkGreen" Width="250" Height="50">
                                     <Image  Source="pack://application:,,,/Assets/GeneralSettingsIcon.png" Width="50px" HorizontalAlignment="Left" Margin="10,0,0,0"></Image>
-                                    <Label Foreground="white" Content="Général" Width="120" VerticalContentAlignment="Center" FontSize="20">
-
-                                    </Label>
+                                    <Label Foreground="white" Content="Général" VerticalContentAlignment="Center" FontSize="20" Margin="65,0,10,0"/>
                                 </Grid>
                             </TabItem.Header>
                             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
@@ -414,9 +412,7 @@
                             <TabItem.Header >
                                 <Grid x:Name="ModuleSettingsTabHeader" Background="DarkGreen" Width="250" Height="50" MouseLeftButtonDown="ModuleSettingsTabHeader_MouseLeftButtonDown">
                                     <Image  Source="pack://application:,,,/Assets/ModuleSettingsIcon.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
-                                    <Label Foreground="white" Width="120"  Content="Modules" VerticalContentAlignment="Center" FontSize="20">
-
-                                    </Label>
+                                    <Label Foreground="white"  Content="Modules" VerticalContentAlignment="Center" FontSize="20" Margin="65,0,10,0"/>
                                 </Grid>
                             </TabItem.Header>
                             <Grid Background="White">
@@ -436,9 +432,7 @@
                             <TabItem.Header>
                                 <Grid Background="DarkGreen" Width="250" Height="50">
                                     <Image  Source="pack://application:,,,/Assets/browser.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
-                                    <Label Foreground="white" Width="120"  Content="Apparence" VerticalContentAlignment="Center" FontSize="20">
-
-                                    </Label>
+                                    <Label Foreground="white"  Content="Apparence" VerticalContentAlignment="Center" FontSize="20" Margin="65,0,10,0"/>
                                 </Grid>
                             </TabItem.Header>
                             <Grid Background="White">
@@ -487,10 +481,21 @@
 
                             <TabItem.Header >
                                 <Grid Background="DarkGreen" Width="250" Height="50">
-                                    <Image  Source="pack://application:,,,/Assets/contribute.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
-                                    <Label Foreground="white" Width="120"  Content="Contribuer" VerticalContentAlignment="Center" FontSize="20">
+                                    <Image  Source="pack://application:,,,/Assets/downloadapp.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
+                                    <Label Foreground="white"  Content="Téléchargements" VerticalContentAlignment="Center" FontSize="20" Margin="65,0,10,0"/>
+                                </Grid>
+                            </TabItem.Header>
+                            <Grid>
+                                <ListBox x:Name="DownloadList" Margin="0,74,-0.2,83.8" ItemsSource="{Binding Path=DownloadedListItems}"/>
 
-                                    </Label>
+                            </Grid>
+                        </TabItem>
+                        <TabItem>
+
+                            <TabItem.Header >
+                                <Grid Background="DarkGreen" Width="250" Height="50">
+                                    <Image  Source="pack://application:,,,/Assets/contribute.png" Margin="10,0,0,0" Width="50px" HorizontalAlignment="Left"></Image>
+                                    <Label Foreground="white"  Content="Contribuer" VerticalContentAlignment="Center" FontSize="20" Margin="65,0,10,0"/>
                                 </Grid>
                             </TabItem.Header>
                             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
@@ -527,6 +532,7 @@
                                 </Grid>
                             </ScrollViewer>
                         </TabItem>
+
                     </TabControl>
 
                     <!--

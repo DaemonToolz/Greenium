@@ -1,0 +1,15 @@
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\bin\Debug\GreeniumAppLauncher.exe.config
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\bin\Debug\GreeniumAppLauncher.exe
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\bin\Debug\GreeniumAppLauncher.pdb
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.csprojResolveAssemblyReference.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\MainWindow.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\App.g.cs
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher_MarkupCompile.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher_MarkupCompile.lref
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\MainWindow.baml
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.g.resources
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.Properties.Resources.resources
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.csproj.GenerateResource.Cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.csproj.CoreCompileInputs.cache
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.exe
+C:\Users\macie\Source\Repos\Greenium\GreeniumPrototype\GreeniumAppLauncher\obj\Debug\GreeniumAppLauncher.pdb
