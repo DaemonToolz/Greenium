@@ -751,15 +751,25 @@ namespace GreeniumPrototype
 
         private void UpdateDownloadAction(string downloadAction, DownloadItem downloadItem)
         {
-            // https://stackoverflow.com/questions/34289428/download-file-with-cefsharp-winforms
-            this.Dispatcher.Invoke(() =>
-            {
-                if (downloadAction.Equals("OnDowloadUpdated"))
-                    DownloadedListItems.Remove(
-                        DownloadedListItems.First(obj => obj.MyLink.SuggestedFileName.Equals(downloadItem.SuggestedFileName)));
 
-                DownloadedListItems.Add(new DownloadListItem() {MyLink = downloadItem});
-                DownloadList.ItemsSource = DownloadedListItems;
+            // https://stackoverflow.com/questions/34289428/download-file-with-cefsharp-winforms
+
+            this.Dispatcher.Invoke(() => {
+                if (downloadAction.Equals("OnBeforeDownload"))
+                {
+                    BrowserLastDownload.Content = downloadItem.SuggestedFileName;
+                    DownloadedListItems.Add(new DownloadListItem() { MyLink = downloadItem });
+                    DownloadList.ItemsSource = DownloadedListItems;
+                }
+
+                if (downloadAction.Equals("OnDownloadUpdated")) {
+                    BrowserLastPercentile.Content = $"{downloadItem.PercentComplete}%";
+                    if(DownloadedListItems.Any(obj => obj.MyLink.Id.Equals(downloadItem.Id))){
+                        DownloadedListItems.First(obj => obj.MyLink.Id.Equals(downloadItem.Id)).MyLink.PercentComplete = downloadItem.PercentComplete;
+                        DownloadedListItems.First(obj => obj.MyLink.Id.Equals(downloadItem.Id)).MyLink.TotalBytes = downloadItem.TotalBytes;
+                        DownloadedListItems.First(obj => obj.MyLink.Id.Equals(downloadItem.Id)).MyLink.ReceivedBytes = downloadItem.ReceivedBytes;
+                    }
+                }
             });
             //var viewModel = (BrowserTabViewModel)this.DataContext;
             //viewModel.LastDownloadAction = downloadAction;

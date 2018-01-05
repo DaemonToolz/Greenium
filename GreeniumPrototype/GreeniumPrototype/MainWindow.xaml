@@ -235,6 +235,12 @@
                             <Button x:Name="BookmarkBtn" Click="BookmarkBtn_Click" >
                                 <Image  Source="Assets/bookmark.png" Width="16" Height="16" />
                             </Button>
+
+                            <Grid Width="250">
+                                <Image Margin="5 0 0 0" HorizontalAlignment="Left" Source="Assets/downloadapp.png" Width="16" Height="16"></Image>
+                                <Label x:Name="BrowserLastDownload" Margin="20 0 0 0 " HorizontalAlignment="Left"  Width="185" Content="Last Download"></Label>
+                                <Label x:Name="BrowserLastPercentile" HorizontalAlignment="Right"  Width="40" Content="0%"></Label>
+                            </Grid>
                         </ToolBar>
 
 
