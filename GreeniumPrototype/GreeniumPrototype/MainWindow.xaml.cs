@@ -126,6 +126,7 @@ namespace GreeniumPrototype
 
             downer.OnBeforeDownloadFired += OnBeforeDownloadFired;
             downer.OnDownloadUpdatedFired += OnDownloadUpdatedFired;
+            
             Browser.DownloadHandler = downer;
             // -------------------------- EMAIL TEMPLATE TEST
 

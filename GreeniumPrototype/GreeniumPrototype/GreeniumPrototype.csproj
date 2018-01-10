@@ -114,6 +114,7 @@
       <DependentUpon>Feedback.xaml</DependentUpon>
     </Compile>
     <Compile Include="Handler\DownloadHandler.cs" />
+    <Compile Include="Handler\KnowFolders.cs" />
     <Compile Include="ModuleDownloaderWindow.xaml.cs">
       <DependentUpon>ModuleDownloaderWindow.xaml</DependentUpon>
     </Compile>
